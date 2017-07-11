@@ -6,7 +6,7 @@ target 'BookSwap' do
   use_frameworks!
 
   pod 'Firebase/Core'
-
+  pod 'FirebaseDatabase'
   # Pods for BookSwap
 
 end
