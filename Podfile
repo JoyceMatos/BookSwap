@@ -7,6 +7,8 @@ target 'BookSwap' do
 
   pod 'Firebase/Core'
   pod 'FirebaseDatabase'
+  pod 'Firebase/Auth'
+
   # Pods for BookSwap
 
 end

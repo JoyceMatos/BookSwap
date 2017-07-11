@@ -10,11 +10,21 @@ import Foundation
 
 struct User {
     
-    var id: String
+    var id: String?
     var profilePhoto: URL?
     var firstName: String
     var lastName: String
     var email: String
     var location: String? // Might be zipcode
+    
+    func serialize() -> [String: Any] {
+        return [
+            "profilePhoto" : profilePhoto,
+            "firstName" : firstName,
+            "lastName" : lastName,
+            "email" : email,
+            "location" : location
+        ]
+    }
     
 }
