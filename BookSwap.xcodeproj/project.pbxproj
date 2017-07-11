@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED060ED86A722341791BB88C /* Pods_BookSwap.framework */; };
 		251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9511F1420D700B34960 /* AppDelegate.swift */; };
 		251AA9541F1420D700B34960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9531F1420D700B34960 /* ViewController.swift */; };
 		251AA9571F1420D700B34960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9551F1420D700B34960 /* Main.storyboard */; };
 		251AA9591F1420D700B34960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9581F1420D700B34960 /* Assets.xcassets */; };
 		251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA95A1F1420D700B34960 /* LaunchScreen.storyboard */; };
+		251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9691F151E7A00B34960 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		251AA9581F1420D700B34960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		251AA95B1F1420D700B34960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		251AA95D1F1420D700B34960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		251AA9691F151E7A00B34960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.release.xcconfig"; sourceTree = "<group>"; };
+		ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.debug.xcconfig"; sourceTree = "<group>"; };
+		ED060ED86A722341791BB88C /* Pods_BookSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				251AA9501F1420D600B34960 /* BookSwap */,
 				251AA94F1F1420D600B34960 /* Products */,
+				4A1B8FEB5933061861F7E03F /* Pods */,
+				3B1AE6CC05037FB856D2D315 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,10 +115,28 @@
 			children = (
 				251AA9511F1420D700B34960 /* AppDelegate.swift */,
 				251AA95D1F1420D700B34960 /* Info.plist */,
+				251AA9691F151E7A00B34960 /* GoogleService-Info.plist */,
 				251AA95A1F1420D700B34960 /* LaunchScreen.storyboard */,
 				251AA9581F1420D700B34960 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B1AE6CC05037FB856D2D315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED060ED86A722341791BB88C /* Pods_BookSwap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A1B8FEB5933061861F7E03F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */,
+				99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 251AA9601F1420D700B34960 /* Build configuration list for PBXNativeTarget "BookSwap" */;
 			buildPhases = (
+				145A650746F8FA21A71B391D /* [CP] Check Pods Manifest.lock */,
 				251AA94A1F1420D600B34960 /* Sources */,
 				251AA94B1F1420D600B34960 /* Frameworks */,
 				251AA94C1F1420D600B34960 /* Resources */,
+				9DFC02BDE27D54EFFAA1E743 /* [CP] Embed Pods Frameworks */,
+				6D44CA718A0C67A065466C95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */,
 				251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */,
 				251AA9591F1420D700B34960 /* Assets.xcassets in Resources */,
 				251AA9571F1420D700B34960 /* Main.storyboard in Resources */,
@@ -179,6 +210,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		145A650746F8FA21A71B391D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D44CA718A0C67A065466C95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DFC02BDE27D54EFFAA1E743 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		251AA94A1F1420D600B34960 /* Sources */ = {
@@ -307,12 +386,13 @@
 		};
 		251AA9611F1420D700B34960 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U442XCZ4BT;
 				INFOPLIST_FILE = BookSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.BookSwap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyceMatos.BookSwap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -320,12 +400,13 @@
 		};
 		251AA9621F1420D700B34960 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U442XCZ4BT;
 				INFOPLIST_FILE = BookSwap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Joyce-Matos.BookSwap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoyceMatos.BookSwap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -350,6 +431,7 @@
 				251AA9621F1420D700B34960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
