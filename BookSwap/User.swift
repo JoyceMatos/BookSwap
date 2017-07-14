@@ -28,11 +28,11 @@ struct User {
     
     func serialize() -> [String: Any] {
         let userInfo: [String: Any] = [
-            "profilePhoto" : profilePhoto,
+           // "profilePhoto" : profilePhoto,
             "firstName" : firstName,
             "lastName" : lastName,
-            "email" : email,
-            "location" : location
+            "email" : email
+          //  "location" : location
             ]
         
         return userInfo

@@ -11,22 +11,31 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-// TODO: - Refactor error & completions, ie: typealias
+// TODO: - Refactor
+// TODO: - Handle errors
+// TODO: - Create enum that determines where to the database we are writing to
+// ie:     // class func add(to database: DatabaseType)
+
+
 final class FirebaseManager {
     
-    static var ref: DatabaseReference!
+    static var ref = Database.database().reference()
     
     // Create New User
-    class func create(_ newUser: User?, email: String, password: String, completion: @escaping (Bool, User?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+    
+    // NOTE: - Note in use yet (will be used once create method is refactors)
+    class func authenticate(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
+        guard var newUser = newUser else {
+            print("no user") // TODO: - Handle Error
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: newUser.email, password: password, completion: { (user, error) in
             if error == nil {
-                if var newUser = newUser, let user = user {
-                ref.child("users").child(user.uid).setValue(newUser.serialize(), withCompletionBlock: { error, ref in
+                if let user = user {
                     newUser.id = user.uid
-                    guard error == nil else { completion(false, nil); return }
                     completion(true, newUser)
-                    }
-                )}
+                }
             } else {
                 completion(false, nil)
             }
@@ -34,6 +43,28 @@ final class FirebaseManager {
     }
     
     
-    
-    
+    class func create(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
+        guard var newUser = newUser else {
+            print("no user") // TODO: - Handle Error
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: newUser.email, password: password, completion: { (user, error) in
+            if error == nil {
+                if let user = user {
+                    ref.child("users").child(user.uid).setValue(newUser.serialize(), withCompletionBlock: { (error, ref) in
+                        newUser.id = user.uid
+                        guard error == nil else {
+                            completion(false, nil)
+                            return
+                        }
+                        completion(true, newUser)
+                    }
+                    )}
+            } else {
+                completion(false, nil)
+            }
+        })
+    }
 }
+
