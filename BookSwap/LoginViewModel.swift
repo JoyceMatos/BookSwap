@@ -10,7 +10,14 @@ import Foundation
 
 final class LoginViewModel {
     
+    var user: User?
+    var userDetails: [String: Any]
     
+    init(_ user: User?, userDetails: [String: Any]) {
+        self.user = user
+        self.userDetails = userDetails
+    }
+
     func createUser(from details: [String: Any]) -> User? {
         let profilePhoto = details["profilePhoto"] as? URL
         let email = details["email"] as! String
@@ -20,14 +27,7 @@ final class LoginViewModel {
         
         return User(id: nil, profilePhoto: profilePhoto, firstName: firstName, lastName: lastName, email: email, location: location)
     }
-    
-    func createAccount(for currentUser: User?) {
-        
-     //   FirebaseManager.create(<#T##newUser: User?##User?#>, email: <#T##String#>, password: <#T##String#>, completion: <#T##(Bool, User?) -> Void#>)
-        
-    }
-    
-    
+//
     
     
 }
