@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED060ED86A722341791BB88C /* Pods_BookSwap.framework */; };
+		2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9431F195C3400DC8665 /* SignUpViewModel.swift */; };
+		2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9451F196C9100DC8665 /* SignUpView.swift */; };
+		2511F9661F1986F200DC8665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9651F1986F200DC8665 /* Constants.swift */; };
+		2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9671F19889E00DC8665 /* LocationViewController.swift */; };
 		251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9511F1420D700B34960 /* AppDelegate.swift */; };
-		251AA9541F1420D700B34960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9531F1420D700B34960 /* ViewController.swift */; };
+		251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9531F1420D700B34960 /* SignUpViewController.swift */; };
 		251AA9571F1420D700B34960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9551F1420D700B34960 /* Main.storyboard */; };
 		251AA9591F1420D700B34960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9581F1420D700B34960 /* Assets.xcassets */; };
 		251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA95A1F1420D700B34960 /* LaunchScreen.storyboard */; };
@@ -24,9 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2511F9431F195C3400DC8665 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2511F9451F196C9100DC8665 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		2511F9651F1986F200DC8665 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2511F9671F19889E00DC8665 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		251AA94E1F1420D600B34960 /* BookSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251AA9511F1420D700B34960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		251AA9531F1420D700B34960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		251AA9531F1420D700B34960 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		251AA9561F1420D700B34960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		251AA9581F1420D700B34960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		251AA95B1F1420D700B34960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				251AA9761F1590EE00B34960 /* LoginViewModel.swift */,
+				2511F9431F195C3400DC8665 /* SignUpViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 			children = (
 				251AA9551F1420D700B34960 /* Main.storyboard */,
 				251AA9781F15911B00B34960 /* LoginView.swift */,
+				2511F9451F196C9100DC8665 /* SignUpView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,7 +127,8 @@
 		251AA9661F14210F00B34960 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				251AA9531F1420D700B34960 /* ViewController.swift */,
+				251AA9531F1420D700B34960 /* SignUpViewController.swift */,
+				2511F9671F19889E00DC8665 /* LocationViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 		251AA9671F14212900B34960 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2511F9651F1986F200DC8665 /* Constants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -294,14 +306,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
-				251AA9541F1420D700B34960 /* ViewController.swift in Sources */,
+				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,
 				251AA9751F156E6400B34960 /* Secrets.swift in Sources */,
 				251AA9791F15911B00B34960 /* LoginView.swift in Sources */,
 				251AA9731F156C8D00B34960 /* User.swift in Sources */,
+				2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */,
 				251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */,
+				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
+				2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */,
 				251AA96D1F156AFB00B34960 /* GoogleAPIClient.swift in Sources */,
+				2511F9661F1986F200DC8665 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
