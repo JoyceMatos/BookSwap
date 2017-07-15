@@ -14,11 +14,15 @@ import UIKit
 final class SignUpViewModel: NSObject {
     
     var user: User?
-    var userDetails: [String: Any]
+    var userDetails: [String: Any]?
     
     init(_ user: User?, userDetails: [String: Any]) {
         self.user = user
         self.userDetails = userDetails
+    }
+    
+    init(_ user: User?) {
+        self.user = user
     }
     
     
@@ -36,8 +40,8 @@ final class SignUpViewModel: NSObject {
     
     // MARK: - Action Method
     
-    func signUpTapped() {
-        FirebaseManager.create(user, password: "000000") { (success, user) in
+    func signUpTapped(by user: User, with password: String) {
+        FirebaseManager.create(user, password: password) { (success, user) in
             if success {
                 print(user?.id ?? "No user id")
                 
