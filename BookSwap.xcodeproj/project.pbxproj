@@ -13,6 +13,8 @@
 		2511F9661F1986F200DC8665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9651F1986F200DC8665 /* Constants.swift */; };
 		2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9671F19889E00DC8665 /* LocationViewController.swift */; };
 		2511F96C1F1A6B6200DC8665 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2511F96B1F1A6B6200DC8665 /* SignUpView.xib */; };
+		2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F96D1F1C163E00DC8665 /* LocationView.swift */; };
+		2511F9701F1C164A00DC8665 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2511F96F1F1C164A00DC8665 /* LocationView.xib */; };
 		251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9511F1420D700B34960 /* AppDelegate.swift */; };
 		251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9531F1420D700B34960 /* SignUpViewController.swift */; };
 		251AA9571F1420D700B34960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9551F1420D700B34960 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		2511F9651F1986F200DC8665 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2511F9671F19889E00DC8665 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2511F96B1F1A6B6200DC8665 /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		2511F96D1F1C163E00DC8665 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		2511F96F1F1C164A00DC8665 /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		251AA94E1F1420D600B34960 /* BookSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251AA9511F1420D700B34960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251AA9531F1420D700B34960 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				251AA9551F1420D700B34960 /* Main.storyboard */,
 				2511F96B1F1A6B6200DC8665 /* SignUpView.xib */,
 				2511F9451F196C9100DC8665 /* SignUpView.swift */,
+				2511F96D1F1C163E00DC8665 /* LocationView.swift */,
+				2511F96F1F1C164A00DC8665 /* LocationView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */,
+				2511F9701F1C164A00DC8665 /* LocationView.xib in Resources */,
 				251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */,
 				251AA9591F1420D700B34960 /* Assets.xcassets in Resources */,
 				2511F96C1F1A6B6200DC8665 /* SignUpView.xib in Resources */,
@@ -306,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */,
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,
 				251AA9751F156E6400B34960 /* Secrets.swift in Sources */,
