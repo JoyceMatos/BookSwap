@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Foundation
 
 // TODO: - Separate any business logic
 
-class SignUpView: UIView {
+final class SignUpView: UIView {
     
     // MARK: - Properties
     
@@ -22,9 +23,7 @@ class SignUpView: UIView {
     
     var user: User?
     
-    lazy var viewModel: SignUpViewModel = {
-        return SignUpViewModel(self.user)
-    }()
+    var viewModel: SignUpViewModel?
     
     // MARK: - View Lifecyle
     
@@ -43,22 +42,36 @@ class SignUpView: UIView {
         addSubview(contentView)
     }
     
-    // NOTE: - Don't think this logic should be here
-    func retrieveInput() {
-        guard let firstName = firstNameField.text, let lastName = lastNameField, let email = emailField.text, let password = passwordField.text else {
-            // TODO: - Handle this case
-            return
+    // TODO: - Refactor and validate inputs
+    
+    func retrieveAuthDetails() -> [String: Any] {
+        var input = [String: Any]()
+        if let firstName = firstNameField.text, let lastName = lastNameField.text, let email = emailField.text  {
+            input = ["firstName": firstName, "lastName": lastName, "email": email]
+
         }
-        
-        let input: [String: Any] = ["firstName": firstName, "lastName": lastName, "email": email, "password": password]
-        
-        viewModel.createUser(from: input)
-        
+        return input
+    }
+    
+    func retrievePassword() -> String {
+        let password = String()
+        if let input = passwordField.text  {
+            let password = input
+        }
+        return password
     }
     
     @IBAction func signUpButnTapped(_ sender: Any) {
         
+        print("tapped")
         
+        let userDetails = retrieveAuthDetails()
+        let password = retrievePassword()
+        
+        
+        user = viewModel.createUser(from: userDetails) {
+        viewModel.signUpTapped(by: newUser, with: password)
+        }
         
     }
     

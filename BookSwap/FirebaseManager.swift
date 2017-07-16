@@ -62,6 +62,7 @@ final class FirebaseManager {
                     }
                     )}
             } else {
+                print(error?.localizedDescription)
                 completion(false, nil)
             }
         })

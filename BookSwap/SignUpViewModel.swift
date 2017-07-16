@@ -44,7 +44,6 @@ final class SignUpViewModel: NSObject {
         FirebaseManager.create(user, password: password) { (success, user) in
             if success {
                 print(user?.id ?? "No user id")
-                
                 // Segue and pass this new user
             } else {
                 print("Error signing up")
