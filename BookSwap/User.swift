@@ -17,15 +17,6 @@ struct User {
     var email: String
     var location: String? // Might be zipcode
     
-//    init(_ details: [String: Any]) {
-//        let id
-//        let profilePhoto = details["profilePhoto"] as? URL
-//        let email = details["email"] as! String
-//        let firstName = details["firstName"] as! String
-//        let lastName = details["lastName"] as! String
-//        let location = details["locations"] as? String
-//    }
-    
     func serialize() -> [String: Any] {
         let userInfo: [String: Any] = [
            // "profilePhoto" : profilePhoto,
@@ -37,7 +28,14 @@ struct User {
         
         return userInfo
     }
+}
+
+extension User {
     
-    
+    init(_ details: [String: Any]) {
+        self.email = details["email"] as! String
+        self.firstName = details["firstName"] as! String
+        self.lastName = details["lastName"] as! String
+    }
     
 }

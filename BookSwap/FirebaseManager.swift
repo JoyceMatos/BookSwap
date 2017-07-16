@@ -62,6 +62,7 @@ final class FirebaseManager {
                     }
                     )}
             } else {
+                print("Password \(password)")
                 print(error?.localizedDescription)
                 completion(false, nil)
             }

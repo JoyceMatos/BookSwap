@@ -16,15 +16,9 @@ final class SignUpViewModel: NSObject {
     var user: User?
     var userDetails: [String: Any]?
     
-    init(_ user: User?, userDetails: [String: Any]) {
-        self.user = user
+    init(userDetails: [String: Any]) {
         self.userDetails = userDetails
     }
-    
-    init(_ user: User?) {
-        self.user = user
-    }
-    
     
     // MARK: - User Data Method
     
