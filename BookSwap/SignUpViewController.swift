@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     }
     
     func signUpTapped(for user: User) {
-        performSegue(withIdentifier: SegueIdentifier.showZipCode, sender: user)
+        performSegue(withIdentifier: SegueIdentifier.showLocation, sender: user)
 
     }
     

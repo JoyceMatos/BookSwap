@@ -50,7 +50,7 @@ final class SignUpViewModel: NSObject {
     // MARK: - Segue Methods
     
     func handle(segue: UIStoryboardSegue, withSender sender: Any?) {
-        if segue.identifier == SegueIdentifier.showZipCode {
+        if segue.identifier == SegueIdentifier.showLocation {
             let destVC = segue.destination as! LocationViewController
             destVC.user = user
         }

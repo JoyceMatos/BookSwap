@@ -15,6 +15,7 @@
 		2511F96C1F1A6B6200DC8665 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2511F96B1F1A6B6200DC8665 /* SignUpView.xib */; };
 		2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F96D1F1C163E00DC8665 /* LocationView.swift */; };
 		2511F9701F1C164A00DC8665 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2511F96F1F1C164A00DC8665 /* LocationView.xib */; };
+		2511F9741F1D313300DC8665 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9731F1D313300DC8665 /* Router.swift */; };
 		251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9511F1420D700B34960 /* AppDelegate.swift */; };
 		251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9531F1420D700B34960 /* SignUpViewController.swift */; };
 		251AA9571F1420D700B34960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9551F1420D700B34960 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		2511F96B1F1A6B6200DC8665 /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		2511F96D1F1C163E00DC8665 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		2511F96F1F1C164A00DC8665 /* LocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		2511F9731F1D313300DC8665 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		251AA94E1F1420D600B34960 /* BookSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251AA9511F1420D700B34960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		251AA9531F1420D700B34960 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2511F9651F1986F200DC8665 /* Constants.swift */,
+				2511F9731F1D313300DC8665 /* Router.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
+				2511F9741F1D313300DC8665 /* Router.swift in Sources */,
 				2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */,
 				251AA96D1F156AFB00B34960 /* GoogleAPIClient.swift in Sources */,
 				2511F9661F1986F200DC8665 /* Constants.swift in Sources */,

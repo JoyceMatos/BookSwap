@@ -10,6 +10,6 @@ import Foundation
 
 struct SegueIdentifier {
     
-    static let showZipCode = "showZipCode"
+    static let showLocation = "showLocation"
     
 }
