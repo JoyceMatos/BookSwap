@@ -21,6 +21,7 @@ final class SignUpView: UIView {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
     var user: User?
     var viewModel: SignUpViewModel?

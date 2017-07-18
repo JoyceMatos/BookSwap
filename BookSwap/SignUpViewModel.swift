@@ -13,29 +13,25 @@ import UIKit
 
 struct SignUpViewModel {
     
-    var user: User
-    var userDetails: [String: Any]?
+    var user: User?
+    var userDetails: [String: Any]
     
-    var id: Dynamic<String?>
-    var firstName: Dynamic<String>
-    var lastName: Dynamic<String>
-    var email: Dynamic<String>
-    var profilePhoto: Dynamic<URL?>
-    var location: Dynamic<String?>
+//    var id: Dynamic<String?>
+//    var firstName: Dynamic<String>
+//    var lastName: Dynamic<String>
+//    var email: Dynamic<String>
+//    var profilePhoto: Dynamic<URL?>
+//    var location: Dynamic<String?>
     
-//    init(userDetails: [String: Any]) {
-//        self.userDetails = userDetails
-//    }
-    
-    init(_ user: User) {
-        self.user = user
-        self.id = Dynamic(user.id)
-        self.firstName = Dynamic(user.firstName)
-        self.lastName = Dynamic(user.lastName)
-        self.email = Dynamic(user.email)
-        self.profilePhoto = Dynamic(user.profilePhoto)
-        self.location = Dynamic(user.location)
+    init(userDetails: [String: Any]) {
+        self.userDetails = userDetails
     }
+    
+//    init(_ firstName: String, lastName: String, email: String) {
+//        self.firstName = Dynamic(firstName)
+//        self.lastName = Dynamic(lastName)
+//        self.email = Dynamic(email)
+//    }
     
     // MARK: - User Data Method
     
