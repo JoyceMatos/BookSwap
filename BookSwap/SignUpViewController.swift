@@ -10,9 +10,20 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-  //  let signUpView = SignUpView()
-    var viewModel: SignUpViewModel!
+    var signUpView: SignUpView!
+//    var viewModel: SignUpViewModel {
+//        didSet {
+//            viewModel.firstName.bindAndFire { [unowned self] in
+//                viewModel.userDetails = viewModel.createUser(from: <#T##[String : Any]#>)
+//            }
+//            
+//            
+//            
+//            
+//        }
+//    }
     
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +36,7 @@ class SignUpViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        viewModel.handle(segue: segue, withSender: sender)
+//        viewModel.handle(segue: segue, withSender: sender)
     }
     
 

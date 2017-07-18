@@ -28,6 +28,7 @@
 		251AA9731F156C8D00B34960 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9721F156C8D00B34960 /* User.swift */; };
 		251AA9751F156E6400B34960 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9741F156E6400B34960 /* Secrets.swift */; };
 		251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9761F1590EE00B34960 /* LoginViewModel.swift */; };
+		25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83AEF1F1E6B59002031A6 /* Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		251AA9721F156C8D00B34960 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		251AA9741F156E6400B34960 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		251AA9761F1590EE00B34960 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		25F83AEF1F1E6B59002031A6 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.release.xcconfig"; sourceTree = "<group>"; };
 		ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.debug.xcconfig"; sourceTree = "<group>"; };
 		ED060ED86A722341791BB88C /* Pods_BookSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			children = (
 				251AA9701F156B2400B34960 /* Book.swift */,
 				251AA9721F156C8D00B34960 /* User.swift */,
+				25F83AEF1F1E6B59002031A6 /* Dynamic.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				251AA9751F156E6400B34960 /* Secrets.swift in Sources */,
 				251AA9731F156C8D00B34960 /* User.swift in Sources */,
 				2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */,
+				25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */,
 				251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */,
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,

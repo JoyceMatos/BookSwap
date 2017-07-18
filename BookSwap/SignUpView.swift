@@ -61,17 +61,17 @@ final class SignUpView: UIView {
         return password
     }
     
-    @IBAction func signUpButnTapped(_ sender: Any) {
-        let userDetails = retrieveAuthDetails()
-        let password = retrievePassword()
-        viewModel = SignUpViewModel(userDetails: userDetails)
-        user = viewModel?.createUser(from: userDetails)
+//    @IBAction func signUpButnTapped(_ sender: Any) {
+//        let userDetails = retrieveAuthDetails()
+//        let password = retrievePassword()
+//        viewModel = SignUpViewModel(userDetails: userDetails)
+//        user = viewModel?.createUser(from: userDetails)
+//        
+//        if let user = user {
+//            viewModel?.signUpTapped(by: user, with: password)
+//        }
         
-        if let user = user {
-            viewModel?.signUpTapped(by: user, with: password)
-        }
-        
-    }
+//    }
     
     
 }

@@ -11,13 +11,30 @@ import UIKit
 
 // TODO: - Make sure if NSObject is necessary
 
-final class SignUpViewModel: NSObject {
+struct SignUpViewModel {
     
-    var user: User?
+    var user: User
     var userDetails: [String: Any]?
     
-    init(userDetails: [String: Any]) {
-        self.userDetails = userDetails
+    var id: Dynamic<String?>
+    var firstName: Dynamic<String>
+    var lastName: Dynamic<String>
+    var email: Dynamic<String>
+    var profilePhoto: Dynamic<URL?>
+    var location: Dynamic<String?>
+    
+//    init(userDetails: [String: Any]) {
+//        self.userDetails = userDetails
+//    }
+    
+    init(_ user: User) {
+        self.user = user
+        self.id = Dynamic(user.id)
+        self.firstName = Dynamic(user.firstName)
+        self.lastName = Dynamic(user.lastName)
+        self.email = Dynamic(user.email)
+        self.profilePhoto = Dynamic(user.profilePhoto)
+        self.location = Dynamic(user.location)
     }
     
     // MARK: - User Data Method
@@ -34,13 +51,15 @@ final class SignUpViewModel: NSObject {
     
     // MARK: - Action Method
     
-    func signUpTapped(by user: User, with password: String) {
+    func signUpTapped(by user: User, with password: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.create(user, password: password) { (success, user) in
             if success {
                 print(user?.id ?? "No user id")
+                completion(true)
                 // Segue and pass this new user
             } else {
                 print("Error signing up")
+                completion(false)
                 // Handle this error
             }
         }
