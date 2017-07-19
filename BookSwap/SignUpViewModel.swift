@@ -26,14 +26,8 @@ struct SignUpViewModel {
     init(userDetails: [String: Any]) {
         self.userDetails = userDetails
     }
-    
-//    init(_ firstName: String, lastName: String, email: String) {
-//        self.firstName = Dynamic(firstName)
-//        self.lastName = Dynamic(lastName)
-//        self.email = Dynamic(email)
-//    }
-    
-    // MARK: - User Data Method
+
+    // MARK: - User Method
     
     func createUser(from details: [String: Any]) -> User? {
         let profilePhoto = details["profilePhoto"] as? URL
@@ -60,18 +54,5 @@ struct SignUpViewModel {
             }
         }
     }
-    
-    
-    // MARK: - Segue Methods
-    
-    func handle(segue: UIStoryboardSegue, withSender sender: Any?) {
-        if segue.identifier == SegueIdentifier.showLocation {
-            let destVC = segue.destination as! LocationViewController
-            destVC.user = user
-        }
-    }
-    
-    
-    
     
 }

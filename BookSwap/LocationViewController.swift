@@ -10,12 +10,14 @@ import UIKit
 
 class LocationViewController: UIViewController {
 
+    @IBOutlet weak var locationView: LocationView!
+    
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        print(user?.firstName)
     }
 
 

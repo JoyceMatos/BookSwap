@@ -30,6 +30,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="signUpView" destination="uow-Er-Uae" id="wXb-yT-5Er"/>
                         <segue destination="KcQ-t4-yE1" kind="show" identifier="showLocation" id="4cc-SO-W8E"/>
                     </connections>
                 </viewController>
@@ -57,6 +58,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="locationView" destination="OwN-5j-FAz" id="L4A-aj-D87"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1K-KP-MKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
