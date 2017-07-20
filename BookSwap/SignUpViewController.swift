@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindSignInData()
+        addSignUpAction()
     }
     
     // NOTE: - Does this logic belong here?
@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
         return input
     }
 
-    func bindSignInData() {
+    func addSignUpAction() {
         signUpView.signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
     
@@ -46,9 +46,9 @@ class SignUpViewController: UIViewController {
         let password = userDetails["password"] as! String
         viewModel = SignUpViewModel(userDetails: userDetails)
         if let user = viewModel?.createUser(from: userDetails) {
-            viewModel?.user = user
-            viewModel?.signUpTapped(by: user, with: password, completion: { (success) in
+            viewModel?.signUpTapped(by: user, with: password, completion: { (success, user) in
                 if success {
+                    self.viewModel?.user = user
                     // Send user with segue
                     self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil )
                 } else {

@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 // TODO: - Refactor
 // TODO: - Handle errors
+// TODO: - Create API protocols 
 // TODO: - Create enum that determines where to the database we are writing to
 // ie:     // class func add(to database: DatabaseType)
 
@@ -62,11 +63,21 @@ final class FirebaseManager {
                     }
                     )}
             } else {
-                print("Password \(password)")
                 print(error?.localizedDescription)
                 completion(false, nil)
             }
         })
+    }
+    
+    class func addUserLocation(_ uid: String, location: Int, completion: @escaping (Bool) -> Void) {
+        let userLocation = ["zipCode": location]
+        FirebaseManager.ref.child("user").child(uid).setValue(userLocation) { (error, ref) in
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
     }
 }
 

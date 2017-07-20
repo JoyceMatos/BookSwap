@@ -12,6 +12,7 @@ class LocationView: UIView {
 
     @IBOutlet weak var zipCodeField: UITextField!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
  
     
 }

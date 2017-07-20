@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED060ED86A722341791BB88C /* Pods_BookSwap.framework */; };
 		250184461F1FE27C00C43BFF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250184451F1FE27C00C43BFF /* Secrets.swift */; };
+		25064E6C1F1FF32C009CBFEF /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */; };
 		2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9431F195C3400DC8665 /* SignUpViewModel.swift */; };
 		2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9451F196C9100DC8665 /* SignUpView.swift */; };
 		2511F9661F1986F200DC8665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9651F1986F200DC8665 /* Constants.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		250184451F1FE27C00C43BFF /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		2511F9431F195C3400DC8665 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		2511F9451F196C9100DC8665 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2511F9651F1986F200DC8665 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				251AA9761F1590EE00B34960 /* LoginViewModel.swift */,
 				2511F9431F195C3400DC8665 /* SignUpViewModel.swift */,
+				25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */,
 				250184461F1FE27C00C43BFF /* Secrets.swift in Sources */,
+				25064E6C1F1FF32C009CBFEF /* LocationViewModel.swift in Sources */,
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,
 				251AA9731F156C8D00B34960 /* User.swift in Sources */,
