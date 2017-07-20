@@ -69,6 +69,8 @@ final class FirebaseManager {
         })
     }
     
+    // Add location
+    
     class func addUserLocation(_ uid: String, location: Int, completion: @escaping (Bool) -> Void) {
         let userLocation = ["zipCode": location]
         FirebaseManager.ref.child("users").child(uid).updateChildValues(userLocation) { (error, ref) in
@@ -76,6 +78,43 @@ final class FirebaseManager {
                 completion(true)
             } else {
                 completion(false)
+            }
+        }
+    }
+    
+    // Add Book 
+    // TODO: - Only adds the basics for now
+    // TODO: - Refactor!
+    class func add(_ book: Book, user: User, completion: @escaping (Bool) -> Void) {
+        
+        // Add book to book branch
+        // Add book to user
+        
+        FirebaseManager.ref.child("books").childByAutoId().updateChildValues(book.serialize()) { (error, ref) in
+            if error == nil {
+                
+                // 1. Retrieve book key
+                FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
+                    
+                    let bookID = snapshot.key
+                    
+                    // 2. Update user info
+                    FirebaseManager.ref.child("users").child(user.id!).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
+                        if error == nil {
+                            print("yay we updated book for user")
+                        } else {
+                            print("uh oh, didn't update user")
+                        }
+                    })
+                })
+                
+                // 1. Retrieve the book's key
+                // 2. Update user info with book key
+                completion(true)
+            } else {
+                print("error adding book")
+                completion(false)
+                // Handle this case
             }
         }
     }
