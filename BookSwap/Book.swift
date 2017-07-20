@@ -8,9 +8,11 @@
 
 import Foundation
 
+// TODO: - Add a user property
+
 struct Book {
     
-    var id: String
+    var id: String?
     var title: String
     var author: String
     var publisher: String?
@@ -24,5 +26,14 @@ struct Book {
     
     // Maybe?
     var location: String?
+    
+    // Just the basics for now
+    func serialize() -> [String: Any] {
+        let bookValue: [String: Any] = [
+            "title" : title,
+            "author" : author,
+        ]
+        return bookValue
+    }
 
 }
