@@ -1,5 +1,5 @@
 //
-//  AddBookView.swift
+//  ManuallyAddBookView.swift
 //  BookSwap
 //
 //  Created by Joyce Matos on 7/20/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBookView: UIView {
+class ManuallyAddBookView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
