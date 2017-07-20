@@ -10,6 +10,15 @@ import Foundation
 
 struct ManuallyAddBookViewModel {
     
+    var user: User?
     
+    init(user: User?) {
+        self.user = user
+    }
+    
+    func addBookTapped() {
+        
+      //  FirebaseManager
+    }
     
 }

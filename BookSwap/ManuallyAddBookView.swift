@@ -10,12 +10,27 @@ import UIKit
 
 class ManuallyAddBookView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var authorField: UITextField!
+    @IBOutlet weak var publisherField: UITextField!
+    @IBOutlet weak var categoriesField: UITextField!
+    @IBOutlet weak var addBookButton: UIButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        Bundle.main.loadNibNamed("ManuallyAddBookView", owner: self, options: nil)
+        addSubview(contentView)
+    }
+  
 
 }
