@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ManuallyAddBookViewModel {
     
@@ -16,9 +17,16 @@ struct ManuallyAddBookViewModel {
         self.user = user
     }
     
-    func addBookTapped() {
-        
-      //  FirebaseManager
+    func add(_ book: Book, user: User?, completion: @escaping (Bool) -> Void) {
+        if let user = user {
+            FirebaseManager.add(book, user: user, completion: { (success) in
+                if success {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            })
+        }
     }
     
 }
