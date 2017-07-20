@@ -35,6 +35,8 @@ class LocationViewController: UIViewController {
         return location
     }
     
+    
+    
     func addNextAction() {
         locationView.nextButton.addTarget(self, action: #selector(nextBtnTapped), for: .touchUpInside)
     }
@@ -43,9 +45,7 @@ class LocationViewController: UIViewController {
     
     func nextBtnTapped() {
         let stringLocation = retrieveLocation()
-        print("String Location: \(stringLocation)")
-        let location = retrieveLocation() as? Int
-        print("Location: \(location)")
+        let location = Int(stringLocation)
         user?.location = location
         guard let currentUser = user  else {
             print("No current user")
@@ -58,8 +58,7 @@ class LocationViewController: UIViewController {
         if let viewModel = viewModel {
             viewModel.addLocation(for: currentUser) { (success, user) in
                 if success {
-                    print("This is the user's location: \(currentUser.location)")
-                    // Segue
+                    self.performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: nil )
                 } else {
                     print("We have an error")
                     // Handle case

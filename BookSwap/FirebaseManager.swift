@@ -71,7 +71,7 @@ final class FirebaseManager {
     
     class func addUserLocation(_ uid: String, location: Int, completion: @escaping (Bool) -> Void) {
         let userLocation = ["zipCode": location]
-        FirebaseManager.ref.child("user").child(uid).setValue(userLocation) { (error, ref) in
+        FirebaseManager.ref.child("users").child(uid).updateChildValues(userLocation) { (error, ref) in
             if error == nil {
                 completion(true)
             } else {

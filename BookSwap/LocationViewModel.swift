@@ -20,6 +20,7 @@ struct LocationViewModel {
     
     func addLocation(for user: User, completion: @escaping (Bool, User?) -> Void) {
         guard let userID = user.id, let location = user.location else {
+            print("No user ID, no location")
             // Handle this
             return
         }

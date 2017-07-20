@@ -11,5 +11,6 @@ import Foundation
 struct SegueIdentifier {
     
     static let showLocation = "showLocation"
+    static let showTabBar = "showTabBar"
     
 }
