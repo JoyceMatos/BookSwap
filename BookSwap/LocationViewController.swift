@@ -8,6 +8,10 @@
 
 import UIKit
 
+// TODO: - Create extension on textfields that retrieve & unwrap values
+// TODO: - Refactor
+// TODO: - Move business logic out!
+
 class LocationViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
@@ -16,7 +20,8 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+        addNextAction()
+    }
     
     // TODO: - Check if is valid
     // TODO: - Separate business logic ; maybe this function should be on viewModel and take in a string
@@ -34,20 +39,29 @@ class LocationViewController: UIViewController {
         locationView.nextButton.addTarget(self, action: #selector(nextBtnTapped), for: .touchUpInside)
     }
     
+    
+    
     func nextBtnTapped() {
-        guard let user = user  else {
+        let stringLocation = retrieveLocation()
+        print("String Location: \(stringLocation)")
+        let location = retrieveLocation() as? Int
+        print("Location: \(location)")
+        user?.location = location
+        guard let currentUser = user  else {
+            print("No current user")
             // Handle
             return
         }
-        
+    
         viewModel = LocationViewModel(user: user)
 
         if let viewModel = viewModel {
-            viewModel.addLocation(for: user) { (success, user) in
+            viewModel.addLocation(for: currentUser) { (success, user) in
                 if success {
-                    print("This is the user's location: \(user.location)")
+                    print("This is the user's location: \(currentUser.location)")
                     // Segue
                 } else {
+                    print("We have an error")
                     // Handle case
                 }
             }
