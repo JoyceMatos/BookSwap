@@ -37,6 +37,8 @@
 		25E99FFF1F2123C200C1012B /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FFE1F2123C200C1012B /* AddBookView.swift */; };
 		25E9A0011F2123D900C1012B /* AddBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E9A0001F2123D900C1012B /* AddBookView.xib */; };
 		25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E9A0021F2123F600C1012B /* AddBookViewModel.swift */; };
+		25E9A0071F212A5F00C1012B /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E9A0051F212A5F00C1012B /* BookCollectionViewCell.swift */; };
+		25E9A0081F212A5F00C1012B /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E9A0061F212A5F00C1012B /* BookCollectionViewCell.xib */; };
 		25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83AEF1F1E6B59002031A6 /* Dynamic.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		25E99FFE1F2123C200C1012B /* AddBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		25E9A0001F2123D900C1012B /* AddBookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBookView.xib; sourceTree = "<group>"; };
 		25E9A0021F2123F600C1012B /* AddBookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewModel.swift; sourceTree = "<group>"; };
+		25E9A0051F212A5F00C1012B /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		25E9A0061F212A5F00C1012B /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		25F83AEF1F1E6B59002031A6 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.release.xcconfig"; sourceTree = "<group>"; };
 		ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				25E99FF81F21149600C1012B /* HomeView.xib */,
 				25E99FFE1F2123C200C1012B /* AddBookView.swift */,
 				25E9A0001F2123D900C1012B /* AddBookView.xib */,
+				25E9A0041F212A1700C1012B /* Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -200,6 +205,15 @@
 				251AA96E1F156B1200B34960 /* FirebaseManager.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		25E9A0041F212A1700C1012B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				25E9A0051F212A5F00C1012B /* BookCollectionViewCell.swift */,
+				25E9A0061F212A5F00C1012B /* BookCollectionViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		3B1AE6CC05037FB856D2D315 /* Frameworks */ = {
@@ -286,6 +300,7 @@
 				251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */,
 				2511F9701F1C164A00DC8665 /* LocationView.xib in Resources */,
 				251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */,
+				25E9A0081F212A5F00C1012B /* BookCollectionViewCell.xib in Resources */,
 				251AA9591F1420D700B34960 /* Assets.xcassets in Resources */,
 				2511F96C1F1A6B6200DC8665 /* SignUpView.xib in Resources */,
 				251AA9571F1420D700B34960 /* Main.storyboard in Resources */,
@@ -363,6 +378,7 @@
 				25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */,
 				25E99FF71F21148800C1012B /* HomeView.swift in Sources */,
 				251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */,
+				25E9A0071F212A5F00C1012B /* BookCollectionViewCell.swift in Sources */,
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
