@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-555"/>
         </scene>
-        <!--Item 2-->
+        <!--Add Book-->
         <scene sceneID="Ujn-5i-H27">
             <objects>
-                <viewController id="STp-xK-mNh" sceneMemberID="viewController">
+                <viewController id="STp-xK-mNh" customClass="AddBookViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7T9-wA-VNw"/>
                         <viewControllerLayoutGuide type="bottom" id="XID-HT-Bhq"/>
@@ -110,13 +110,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FQr-CS-INA"/>
+                    <tabBarItem key="tabBarItem" title="Add Book" id="FQr-CS-INA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TxZ-mu-OV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2990" y="366"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="lGS-qI-lHN">
             <objects>
                 <viewController id="YiY-1O-ich" customClass="HomeViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="YzS-Pd-Lfh"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="YzS-Pd-Lfh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZh-S4-33j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

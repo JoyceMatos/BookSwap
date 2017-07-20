@@ -10,5 +10,8 @@ import UIKit
 
 class HomeView: UIView {
 
-
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
 }
