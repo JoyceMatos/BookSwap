@@ -26,7 +26,7 @@ class HomeView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("HomeView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.home, owner: self, options: nil)
         collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         addSubview(contentView)
         
@@ -53,7 +53,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BookCollectionViewCell
         
-        print("Hello in cell!")
+        cell.backgroundColor = UIColor.blue
         
         return cell
     }

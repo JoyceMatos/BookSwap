@@ -12,7 +12,7 @@ import Foundation
 
 struct LocationViewModel {
     
-    let user: User?
+    var user: User?
     
     init(user: User?) {
         self.user = user
@@ -33,6 +33,11 @@ struct LocationViewModel {
                 }
         }
     }
+    
+//    mutating func attach(_ location: String) {
+//        let locationValue = Int(location)
+//        user?.location = locationValue
+//    }
 
     
 }

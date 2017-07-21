@@ -28,7 +28,7 @@ class LocationView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("LocationView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.location, owner: self, options: nil)
         addSubview(contentView)
     }
  

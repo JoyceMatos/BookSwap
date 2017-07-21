@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: - Add a user property
-
 struct Book {
     
     var id: String?
@@ -30,14 +28,18 @@ struct Book {
     
     // Just the basics for now
     func serialize() -> [String: Any] {
-        let bookValue: [String: Any] = [
-            "title" : title,
-            "author" : author,
-            "userID": userID
-        ]
+        var bookValue = [String: Any]()
+        
+        if let userID = userID {
+            bookValue["title"] = title
+            bookValue["author"] = author
+            bookValue["userID"] = userID
+            
+        }
+        
         return bookValue
     }
-
+    
 }
 
 extension Book {
@@ -46,4 +48,5 @@ extension Book {
         self.title = title
         self.author = author
     }
+    
 }

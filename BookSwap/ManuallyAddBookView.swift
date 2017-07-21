@@ -28,7 +28,7 @@ class ManuallyAddBookView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("ManuallyAddBookView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.manuallyAdd, owner: self, options: nil)
         addSubview(contentView)
     }
   

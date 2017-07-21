@@ -38,7 +38,7 @@ final class SignUpView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("SignUpView", owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.signUp, owner: self, options: nil)
         addSubview(contentView)
     }
     

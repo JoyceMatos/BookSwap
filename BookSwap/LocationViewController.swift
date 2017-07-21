@@ -24,7 +24,6 @@ class LocationViewController: UIViewController {
     }
     
     // TODO: - Check if is valid
-    // TODO: - Separate business logic ; maybe this function should be on viewModel and take in a string
     func retrieveLocation() -> String {
         var location = String()
         
@@ -35,13 +34,9 @@ class LocationViewController: UIViewController {
         return location
     }
     
-    
-    
     func addNextAction() {
         locationView.nextButton.addTarget(self, action: #selector(nextBtnTapped), for: .touchUpInside)
     }
-    
-    
     
     func nextBtnTapped() {
         let stringLocation = retrieveLocation()
@@ -52,9 +47,9 @@ class LocationViewController: UIViewController {
             // Handle
             return
         }
-    
+        
         viewModel = LocationViewModel(user: user)
-
+        
         if let viewModel = viewModel {
             viewModel.addLocation(for: currentUser) { (success, user) in
                 if success {

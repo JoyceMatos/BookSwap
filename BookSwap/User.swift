@@ -15,17 +15,14 @@ struct User {
     var firstName: String
     var lastName: String
     var email: String
-    var location: Int? // Might be zipcode
+    var location: Int?
     
     func serialize() -> [String: Any] {
         let userInfo: [String: Any] = [
-           // "profilePhoto" : profilePhoto,
             "firstName" : firstName,
             "lastName" : lastName,
             "email" : email
-          //  "location" : location
             ]
-        
         return userInfo
     }
 }

@@ -17,7 +17,6 @@ class SignUpViewController: UIViewController {
     var viewModel: SignUpViewModel?
     var user: User? // Not in use
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSignUpAction()
@@ -26,17 +25,17 @@ class SignUpViewController: UIViewController {
     // NOTE: - Does this logic belong here?
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
-    
+        
         if let firstName = signUpView.firstNameField.text,
             let lastName = signUpView.lastNameField.text,
             let email = signUpView.emailField.text,
-        let password = signUpView.passwordField.text {
+            let password = signUpView.passwordField.text {
             input = ["firstName": firstName, "lastName": lastName, "email": email, "password": password]
         }
-    
+        
         return input
     }
-
+    
     func addSignUpAction() {
         signUpView.signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
@@ -49,16 +48,15 @@ class SignUpViewController: UIViewController {
             viewModel?.signUpTapped(by: user, with: password, completion: { (success, user) in
                 if success {
                     self.viewModel?.user = user
-                    // Send user with segue
                     self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil )
                 } else {
                     print("ERRRORRRR (VC)")
                     // Handle this case
                 }
             })
+        }
+        
     }
-    
-}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.showLocation {
@@ -66,6 +64,6 @@ class SignUpViewController: UIViewController {
             destVC.user = viewModel?.user
         }
     }
-
-
+    
+    
 }

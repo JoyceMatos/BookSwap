@@ -16,13 +16,6 @@ struct SignUpViewModel {
     var user: User?
     var userDetails: [String: Any]
     
-//    var id: Dynamic<String?>
-//    var firstName: Dynamic<String>
-//    var lastName: Dynamic<String>
-//    var email: Dynamic<String>
-//    var profilePhoto: Dynamic<URL?>
-//    var location: Dynamic<String?>
-    
     init(userDetails: [String: Any]) {
         self.userDetails = userDetails
     }

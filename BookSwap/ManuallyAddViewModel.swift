@@ -18,7 +18,6 @@ struct ManuallyAddBookViewModel {
     }
     
     func add(_ book: Book, userID: String, completion: @escaping (Bool) -> Void) {
-      //  if let user = user {
             FirebaseManager.add(book, userID: userID, completion: { (success) in
                 if success {
                     completion(true)
@@ -27,6 +26,5 @@ struct ManuallyAddBookViewModel {
                 }
             })
         }
-   // }
     
 }
