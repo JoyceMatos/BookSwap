@@ -85,7 +85,7 @@ final class FirebaseManager {
     // Add Book 
     // TODO: - Only adds the basics for now
     // TODO: - Refactor!
-    class func add(_ book: Book, user: User, completion: @escaping (Bool) -> Void) {
+    class func add(_ book: Book, userID: String, completion: @escaping (Bool) -> Void) {
         
         // Add book to book branch
         // Add book to user
@@ -99,7 +99,7 @@ final class FirebaseManager {
                     let bookID = snapshot.key
                     
                     // 2. Update user info
-                    FirebaseManager.ref.child("users").child(user.id!).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
+                    FirebaseManager.ref.child("users").child(userID).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
                         if error == nil {
                             print("yay we updated book for user")
                         } else {

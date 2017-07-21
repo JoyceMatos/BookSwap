@@ -11,15 +11,15 @@ import UIKit
 
 struct ManuallyAddBookViewModel {
     
-    var user: User?
+    var userID: String?
     
-    init(user: User?) {
-        self.user = user
+    init(userID: String?) {
+        self.userID = userID
     }
     
-    func add(_ book: Book, user: User?, completion: @escaping (Bool) -> Void) {
-        if let user = user {
-            FirebaseManager.add(book, user: user, completion: { (success) in
+    func add(_ book: Book, userID: String, completion: @escaping (Bool) -> Void) {
+      //  if let user = user {
+            FirebaseManager.add(book, userID: userID, completion: { (success) in
                 if success {
                     completion(true)
                 } else {
@@ -27,6 +27,6 @@ struct ManuallyAddBookViewModel {
                 }
             })
         }
-    }
+   // }
     
 }

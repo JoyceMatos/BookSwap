@@ -23,6 +23,7 @@ struct Book {
     var language: String?
     var isbn: Int?
     var thumbnail: URL?
+    var userID: String?
     
     // Maybe?
     var location: String?
@@ -32,8 +33,17 @@ struct Book {
         let bookValue: [String: Any] = [
             "title" : title,
             "author" : author,
+            "userID": userID
         ]
         return bookValue
     }
 
+}
+
+extension Book {
+    
+    init(title: String, author: String) {
+        self.title = title
+        self.author = author
+    }
 }
