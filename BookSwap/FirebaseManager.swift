@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 // TODO: - Refactor
 // TODO: - Handle errors
-// TODO: - Create API protocols 
+// TODO: - Create API protocols
 // TODO: - Create enum that determines where to the database we are writing to
 // ie:     // class func add(to database: DatabaseType)
 
@@ -82,41 +82,38 @@ final class FirebaseManager {
         }
     }
     
-    // Add Book 
+    // MARK: Book Methods
     // TODO: - Only adds the basics for now
-    // TODO: - Refactor!
-    class func add(_ book: Book, userID: String, completion: @escaping (Bool) -> Void) {
-        
-        // Add book to book branch
-        // Add book to user
-        
+    // NOTE: - Adds book to book node
+    class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("books").childByAutoId().updateChildValues(book.serialize()) { (error, ref) in
             if error == nil {
-                
-                // 1. Retrieve book key
-                FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
-                    
-                    let bookID = snapshot.key
-                    
-                    // 2. Update user info
-                    FirebaseManager.ref.child("users").child(userID).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
-                        if error == nil {
-                            print("yay we updated book for user")
-                        } else {
-                            print("uh oh, didn't update user")
-                        }
-                    })
-                })
-                
-                // 1. Retrieve the book's key
-                // 2. Update user info with book key
                 completion(true)
             } else {
-                print("error adding book")
                 completion(false)
                 // Handle this case
             }
         }
+    }
+    
+    // NOTE: - Retrieves added book ID
+    class func retreiveAddedBook(_ completion: @escaping (String) -> Void) {
+        FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
+            let bookID = snapshot.key
+            completion(bookID)
+        })
+
+    }
+    
+    // NOTE: - Updates user with book ID
+    class func updateUsersBooks(_ userID: String, bookID: String, completion: @escaping (Bool) -> Void) {
+        FirebaseManager.ref.child("users").child(userID).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        })
     }
 }
 

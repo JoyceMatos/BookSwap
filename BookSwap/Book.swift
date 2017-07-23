@@ -29,14 +29,11 @@ struct Book {
     // Just the basics for now
     func serialize() -> [String: Any] {
         var bookValue = [String: Any]()
-        
         if let userID = userID {
             bookValue["title"] = title
             bookValue["author"] = author
-            bookValue["userID"] = userID
-            
+        bookValue["userID"] = userID
         }
-        
         return bookValue
     }
     

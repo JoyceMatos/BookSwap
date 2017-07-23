@@ -45,17 +45,26 @@ class AddBookViewController: UIViewController {
     }
     
     func addBookTapped() {
-        let book = retrieveValues()
+        var book = retrieveValues()
         let userID = Auth.auth().currentUser?.uid
         viewModel = ManuallyAddBookViewModel(userID: userID )
-        if let viewModel = viewModel, let book = book, let userID = userID {
-            viewModel.add(book, userID: userID, completion: { (success) in
-                if success {
-                    // yay do something
-                } else {
-                    // uh oh, handle case
-                }
-            })
+        if let viewModel = viewModel, var book = book, let userID = userID {
+        book.userID = userID
+           viewModel.add(book, userID: userID, completion: { (success) in
+            if success {
+                viewModel.retrieveAddedBook({ (bookID) in
+                    viewModel.updateUsers(userID, bookID: bookID, completion: { (success) in
+                        if success {
+                            print("yay we have updated the user")
+                        } else {
+                            print("Womp, no books added to user")
+                        }
+                    })
+                })
+            } else {
+                print("Could not add book")
+            }
+           })
         }
     }
     
