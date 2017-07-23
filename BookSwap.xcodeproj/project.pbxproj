@@ -29,6 +29,7 @@
 		251AA9711F156B2400B34960 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9701F156B2400B34960 /* Book.swift */; };
 		251AA9731F156C8D00B34960 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9721F156C8D00B34960 /* User.swift */; };
 		251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9761F1590EE00B34960 /* LoginViewModel.swift */; };
+		255271E21F254B4F008FF87F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E11F254B4F008FF87F /* DataStore.swift */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
 		25E99FF71F21148800C1012B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF61F21148800C1012B /* HomeView.swift */; };
 		25E99FF91F21149600C1012B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E99FF81F21149600C1012B /* HomeView.xib */; };
@@ -70,6 +71,7 @@
 		251AA9701F156B2400B34960 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		251AA9721F156C8D00B34960 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		251AA9761F1590EE00B34960 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		255271E11F254B4F008FF87F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		25E99FF61F21148800C1012B /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		25E99FF81F21149600C1012B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				251AA96C1F156AFB00B34960 /* GoogleAPIClient.swift */,
 				251AA96E1F156B1200B34960 /* FirebaseManager.swift */,
+				255271E11F254B4F008FF87F /* DataStore.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				25064E6C1F1FF32C009CBFEF /* LocationViewModel.swift in Sources */,
 				25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */,
 				25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */,
+				255271E21F254B4F008FF87F /* DataStore.swift in Sources */,
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				25E99FFF1F2123C200C1012B /* AddBookBarView.swift in Sources */,
 				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,

@@ -46,4 +46,11 @@ extension Book {
         self.author = author
     }
     
+    init(bookID: String, bookDict: [String: Any]) {
+        self.id = bookID
+        self.title = bookDict["title"] as! String
+        self.author = bookDict["author"] as! String
+        self.userID = bookDict["userID"] as! String
+    }
+    
 }

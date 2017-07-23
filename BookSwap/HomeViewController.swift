@@ -13,7 +13,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        DataStore.shared.getBooks {
+            print("yay we are getting books")
+        }
     }
 
 

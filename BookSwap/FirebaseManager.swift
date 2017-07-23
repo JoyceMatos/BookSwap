@@ -83,7 +83,8 @@ final class FirebaseManager {
     }
     
     // MARK: Book Methods
-    // TODO: - Only adds the basics for now
+    
+    // TODO: - Add additional book properties (only add author & title for now
     // NOTE: - Adds book to book node
     class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("books").childByAutoId().updateChildValues(book.serialize()) { (error, ref) in
@@ -113,6 +114,26 @@ final class FirebaseManager {
             } else {
                 completion(false)
             }
+        })
+    }
+    
+    class func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
+        FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
+         
+            var dictionary = [String: Any]()
+            let books = snapshot.value as? [String: Any]
+            
+            if let books = books {
+            
+            for book in books {
+                
+                let key = book.key
+                let value = book.value as? [String: Any]
+                dictionary[key] = value
+            }
+                completion(dictionary)
+            }
+
         })
     }
 }
