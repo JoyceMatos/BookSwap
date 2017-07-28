@@ -22,9 +22,6 @@ final class SignUpView: UIView {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-    var user: User?
-    var viewModel: SignUpViewModel?
-    
     // MARK: - View Lifecyle
     
     override init(frame: CGRect) {
@@ -40,6 +37,19 @@ final class SignUpView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(Nib.signUp, owner: self, options: nil)
         addSubview(contentView)
+        updateTextFields()
     }
+    
+    func updateTextFields() {
+        firstNameField.underline()
+        lastNameField.underline()
+
+        emailField.underline()
+
+        passwordField.underline()
+
+    }
+    
+    
     
 }

@@ -30,6 +30,12 @@ class LocationView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(Nib.location, owner: self, options: nil)
         addSubview(contentView)
+        
+        updateTextField()
+    }
+    
+    func updateTextField() {
+        zipCodeField.underline()
     }
  
     
