@@ -10,16 +10,8 @@ import Foundation
 
 struct HomeViewModel {
     
-//    var store = DataStore.shared
-//    var numberOfSections = 1
-//    var numberOfItems: Int?
-//    
-//    mutating func getBooks() {
-//        store.getBooks {
-//            numberOfItems = store.books.count
-//            // Handle this connection
-//        }
-//    }
+
+    
     
     
 }

@@ -14,11 +14,12 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpView: SignUpView!
-    var viewModel: SignUpViewModel?
-    var user: User? // Not in use
+    var viewModel: UserViewModel!
+    var delegate: SignUpDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         addSignUpAction()
     }
     
@@ -36,6 +37,8 @@ class SignUpViewController: UIViewController {
         return input
     }
     
+    // MARK: - Action Methods
+    
     func addSignUpAction() {
         signUpView.signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
     }
@@ -43,27 +46,45 @@ class SignUpViewController: UIViewController {
     func signUpTapped() {
         let userDetails = retrieveAuthDetails()
         let password = userDetails["password"] as! String
-        viewModel = SignUpViewModel(userDetails: userDetails)
-        if let user = viewModel?.createUser(from: userDetails) {
-            viewModel?.signUpTapped(by: user, with: password, completion: { (success, user) in
-                if success {
-                    self.viewModel?.user = user
-                    self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil )
-                } else {
-                    print("ERRRORRRR (VC)")
-                    // Handle this case
-                }
-            })
-        }
+        viewModel = UserViewModel(userDetails: userDetails)
+        
+        delegate?.signUp(viewModel.user, with: password, completion: { (success, id) in
+            if success {
+                self.viewModel.user.id = id
+                self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil)
+            }
+            else {
+                // Show error alert
+            }
+        })
         
     }
+
+    // MARK: - Segue Method
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifier.showLocation {
             let destVC = segue.destination as! LocationViewController
-            destVC.user = viewModel?.user
+            destVC.viewModel = viewModel
         }
     }
+}
+
+// MARK: - Delegate Method
+
+extension SignUpViewController: SignUpDelegate {
     
-    
+    func signUp(_ user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
+        FirebaseManager.create(user, password: password, completion: { (success, user) in
+            if success {
+                print(user?.id)
+                completion(true, user?.id)
+                // Segue and pass this new user
+            } else {
+                print("Error signing up")
+                completion(false, nil)
+                // Handle this error
+            }
+        })
+    }
 }

@@ -11,6 +11,13 @@ import UIKit
 
 // TODO: - Add protocols for firebase methods
 
+protocol AddBookDelegate {
+    
+    func add(_ book: Book, userID: String, completion: @escaping (Bool) -> Void)
+    func retrieveAddedBook(_ completion: @escaping (String) -> Void)
+    func updateUsers(_ uid: String, bookID: String, completion: @escaping (Bool) -> Void)
+}
+
 struct ManuallyAddBookViewModel {
     
     var userID: String?

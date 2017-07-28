@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED060ED86A722341791BB88C /* Pods_BookSwap.framework */; };
 		250184461F1FE27C00C43BFF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250184451F1FE27C00C43BFF /* Secrets.swift */; };
-		25064E6C1F1FF32C009CBFEF /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */; };
-		2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9431F195C3400DC8665 /* SignUpViewModel.swift */; };
+		250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C668C1F2AC3E00006BB8F /* Protocols.swift */; };
 		2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9451F196C9100DC8665 /* SignUpView.swift */; };
 		2511F9661F1986F200DC8665 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9651F1986F200DC8665 /* Constants.swift */; };
 		2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511F9671F19889E00DC8665 /* LocationViewController.swift */; };
@@ -28,8 +27,9 @@
 		251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA96E1F156B1200B34960 /* FirebaseManager.swift */; };
 		251AA9711F156B2400B34960 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9701F156B2400B34960 /* Book.swift */; };
 		251AA9731F156C8D00B34960 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9721F156C8D00B34960 /* User.swift */; };
-		251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9761F1590EE00B34960 /* LoginViewModel.swift */; };
+		251AA9771F1590EE00B34960 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9761F1590EE00B34960 /* UserViewModel.swift */; };
 		255271E21F254B4F008FF87F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E11F254B4F008FF87F /* DataStore.swift */; };
+		255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E31F279B4D008FF87F /* TestTableViewController.swift */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
 		25E99FF71F21148800C1012B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF61F21148800C1012B /* HomeView.swift */; };
 		25E99FF91F21149600C1012B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E99FF81F21149600C1012B /* HomeView.xib */; };
@@ -49,8 +49,7 @@
 
 /* Begin PBXFileReference section */
 		250184451F1FE27C00C43BFF /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
-		2511F9431F195C3400DC8665 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		250C668C1F2AC3E00006BB8F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		2511F9451F196C9100DC8665 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2511F9651F1986F200DC8665 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2511F9671F19889E00DC8665 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +69,9 @@
 		251AA96E1F156B1200B34960 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		251AA9701F156B2400B34960 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		251AA9721F156C8D00B34960 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		251AA9761F1590EE00B34960 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		251AA9761F1590EE00B34960 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		255271E11F254B4F008FF87F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		255271E31F279B4D008FF87F /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		25E99FF61F21148800C1012B /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		25E99FF81F21149600C1012B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -149,9 +149,7 @@
 		251AA9641F1420F100B34960 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				251AA9761F1590EE00B34960 /* LoginViewModel.swift */,
-				2511F9431F195C3400DC8665 /* SignUpViewModel.swift */,
-				25064E6B1F1FF32C009CBFEF /* LocationViewModel.swift */,
+				251AA9761F1590EE00B34960 /* UserViewModel.swift */,
 				25E99FFA1F2114A100C1012B /* HomeViewModel.swift */,
 				25E9A0021F2123F600C1012B /* AddBookViewModel.swift */,
 				25E9A00F1F21524000C1012B /* ManuallyAddViewModel.swift */,
@@ -186,6 +184,7 @@
 				25E99FF41F21145100C1012B /* HomeViewController.swift */,
 				25E99FFC1F2123AF00C1012B /* AddBookViewController.swift */,
 				25E9A00D1F21522A00C1012B /* ManuallyAddViewController.swift */,
+				255271E31F279B4D008FF87F /* TestTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -195,6 +194,7 @@
 			children = (
 				2511F9651F1986F200DC8665 /* Constants.swift */,
 				2511F9731F1D313300DC8665 /* Router.swift */,
+				250C668C1F2AC3E00006BB8F /* Protocols.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -383,7 +383,6 @@
 				25E99FFD1F2123AF00C1012B /* AddBookViewController.swift in Sources */,
 				2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */,
 				250184461F1FE27C00C43BFF /* Secrets.swift in Sources */,
-				25064E6C1F1FF32C009CBFEF /* LocationViewModel.swift in Sources */,
 				25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */,
 				25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */,
 				255271E21F254B4F008FF87F /* DataStore.swift in Sources */,
@@ -395,15 +394,16 @@
 				25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */,
 				25E9A00E1F21522A00C1012B /* ManuallyAddViewController.swift in Sources */,
 				25E99FF71F21148800C1012B /* HomeView.swift in Sources */,
-				251AA9771F1590EE00B34960 /* LoginViewModel.swift in Sources */,
+				251AA9771F1590EE00B34960 /* UserViewModel.swift in Sources */,
 				25E9A0071F212A5F00C1012B /* BookCollectionViewCell.swift in Sources */,
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
+				255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */,
 				25E9A0121F21525B00C1012B /* ManuallyAddBookView.swift in Sources */,
 				25E9A0101F21524000C1012B /* ManuallyAddViewModel.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
+				250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */,
 				2511F9741F1D313300DC8665 /* Router.swift in Sources */,
-				2511F9441F195C3400DC8665 /* SignUpViewModel.swift in Sources */,
 				251AA96D1F156AFB00B34960 /* GoogleAPIClient.swift in Sources */,
 				2511F9661F1986F200DC8665 /* Constants.swift in Sources */,
 			);

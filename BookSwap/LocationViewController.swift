@@ -11,15 +11,17 @@ import UIKit
 // TODO: - Create extension on textfields that retrieve & unwrap values
 // TODO: - Refactor
 // TODO: - Move business logic out!
+// TODO: - Segues should pass viewModels as opposed to actual properties in all controllers!
 
 class LocationViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
-    var viewModel: LocationViewModel?
-    var user: User?
+    var viewModel: UserViewModel!
+    var delegate: LocationDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         addNextAction()
     }
     
@@ -41,17 +43,10 @@ class LocationViewController: UIViewController {
     func nextBtnTapped() {
         let stringLocation = retrieveLocation()
         let location = Int(stringLocation)
-        user?.location = location
-        guard let currentUser = user  else {
-            print("No current user")
-            // Handle
-            return
-        }
-        
-        viewModel = LocationViewModel(user: user)
-        
-        if let viewModel = viewModel {
-            viewModel.addLocation(for: currentUser) { (success, user) in
+        viewModel.user.location = location
+       print(viewModel.user.location)
+        print(viewModel.user.id)
+       delegate?.addLocation(for: viewModel.user) { (success, user) in
                 if success {
                     self.performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: nil )
                 } else {
@@ -60,7 +55,23 @@ class LocationViewController: UIViewController {
                 }
             }
         }
+}
+
+extension LocationViewController: LocationDelegate {
+    
+    func addLocation(for user: User, completion: @escaping (Bool, User?) -> Void) {
+        guard let userID = user.id, let location = user.location else {
+            print("No user ID, no location")
+            // Handle this
+            return
+        }
+        
+        FirebaseManager.addUserLocation(userID, location: location) { (success) in
+            if success {
+                completion(true, user)
+            } else {
+                completion(false, nil)
+            }
+        }
     }
-    
-    
 }
