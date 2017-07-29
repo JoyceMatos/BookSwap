@@ -20,7 +20,7 @@ struct Nib {
     static let signUp = "SignUpView"
     static let location = "LocationView"
     static let home = "HomeView"
-    static let addBook = "AddBookBarView"
+    static let addBookBar = "AddBookBarView"
     static let manuallyAdd = "ManuallyAddBookView"
     static let detailedBook = "DetailedBookView"
     static let bookCollectionView = "BookView"
