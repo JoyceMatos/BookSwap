@@ -124,14 +124,12 @@ final class FirebaseManager {
             let books = snapshot.value as? [String: Any]
             
             if let books = books {
-            
             for book in books {
-                
                 let key = book.key
                 let value = book.value as? [String: Any]
                 dictionary[key] = value
             }
-                completion(dictionary)
+                    completion(dictionary)
             }
 
         })

@@ -19,5 +19,10 @@ protocol LocationDelegate {
     func addLocation(for user: User, completion: @escaping (Bool, User?) -> Void)
 }
 
+protocol RetrieveBooksDelegate {
+    
+     func fetch(_ completion: @escaping () -> Void)
+}
+
 
 

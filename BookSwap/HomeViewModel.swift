@@ -10,9 +10,10 @@ import Foundation
 
 struct HomeViewModel {
     
+    let books = DataStore.shared.books
+    let numberOfSections = 1
 
-    
-    
+    let reuseIdentifier = "bookCell"
     
 }
 
