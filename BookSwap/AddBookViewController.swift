@@ -45,7 +45,7 @@ class AddBookViewController: UIViewController {
     }
     
     func addBookTapped() {
-        var book = retrieveValues()
+        let book = retrieveValues()
         let userID = Auth.auth().currentUser?.uid
         viewModel = ManuallyAddBookViewModel(userID: userID )
         if let viewModel = viewModel, var book = book, let userID = userID {

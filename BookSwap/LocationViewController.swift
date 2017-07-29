@@ -44,8 +44,6 @@ class LocationViewController: UIViewController {
         let stringLocation = retrieveLocation()
         let location = Int(stringLocation)
         viewModel.user.location = location
-       print(viewModel.user.location)
-        print(viewModel.user.id)
        delegate?.addLocation(for: viewModel.user) { (success, user) in
                 if success {
                     self.performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: nil )

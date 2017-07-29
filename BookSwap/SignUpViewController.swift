@@ -77,9 +77,7 @@ extension SignUpViewController: SignUpDelegate {
     func signUp(_ user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
         FirebaseManager.create(user, password: password, completion: { (success, user) in
             if success {
-                print(user?.id)
                 completion(true, user?.id)
-                // Segue and pass this new user
             } else {
                 print("Error signing up")
                 completion(false, nil)
