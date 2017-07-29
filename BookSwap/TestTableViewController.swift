@@ -9,6 +9,7 @@
 import UIKit
 
 class TestTableViewController: UITableViewController {
+    
     var someArray = [Int]()
     var vm: TableViewModel!
     override func viewDidLoad() {

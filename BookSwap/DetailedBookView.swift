@@ -1,5 +1,5 @@
 //
-//  BookView.swift
+//  DetailedBookView.swift
 //  BookSwap
 //
 //  Created by Joyce Matos on 7/29/17.
@@ -8,11 +8,16 @@
 
 import UIKit
 
-class BookView: UIView {
+class DetailedBookView: UIView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var tradeWithLabel: UILabel!
+    @IBOutlet weak var ownerIcon: UIView!
+    @IBOutlet weak var tradeBtn: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,11 +30,9 @@ class BookView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed(Nib.bookCollectionView, owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.detailedBook, owner: self, options: nil)
         addSubview(contentView)
-        
     }
-
-    
+   
 
 }

@@ -34,6 +34,9 @@
 		2540968D1F2D2EB700ACF3B9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540968C1F2D2EB700ACF3B9 /* HomeCollectionViewCell.swift */; };
 		2540968F1F2D308E00ACF3B9 /* BookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2540968E1F2D308E00ACF3B9 /* BookView.xib */; };
 		254096911F2D30A900ACF3B9 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096901F2D30A900ACF3B9 /* BookView.swift */; };
+		254096931F2D357600ACF3B9 /* DetailedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096921F2D357600ACF3B9 /* DetailedBookView.swift */; };
+		254096951F2D358000ACF3B9 /* DetailedBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096941F2D358000ACF3B9 /* DetailedBookView.xib */; };
+		254096971F2D372E00ACF3B9 /* DetailedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096961F2D372E00ACF3B9 /* DetailedBookViewController.swift */; };
 		255271E21F254B4F008FF87F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E11F254B4F008FF87F /* DataStore.swift */; };
 		255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E31F279B4D008FF87F /* TestTableViewController.swift */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
@@ -80,6 +83,9 @@
 		2540968C1F2D2EB700ACF3B9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2540968E1F2D308E00ACF3B9 /* BookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookView.xib; sourceTree = "<group>"; };
 		254096901F2D30A900ACF3B9 /* BookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		254096921F2D357600ACF3B9 /* DetailedBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBookView.swift; sourceTree = "<group>"; };
+		254096941F2D358000ACF3B9 /* DetailedBookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedBookView.xib; sourceTree = "<group>"; };
+		254096961F2D372E00ACF3B9 /* DetailedBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedBookViewController.swift; sourceTree = "<group>"; };
 		255271E11F254B4F008FF87F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		255271E31F279B4D008FF87F /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -177,16 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				251AA9551F1420D700B34960 /* Main.storyboard */,
-				2511F9451F196C9100DC8665 /* SignUpView.swift */,
-				2511F96B1F1A6B6200DC8665 /* SignUpView.xib */,
-				2511F96D1F1C163E00DC8665 /* LocationView.swift */,
-				2511F96F1F1C164A00DC8665 /* LocationView.xib */,
+				254096981F2D37DB00ACF3B9 /* Sign In Flow */,
 				25E99FF61F21148800C1012B /* HomeView.swift */,
 				25E99FF81F21149600C1012B /* HomeView.xib */,
-				25E99FFE1F2123C200C1012B /* AddBookBarView.swift */,
-				25E9A0001F2123D900C1012B /* AddBookBarView.xib */,
-				25E9A0111F21525B00C1012B /* ManuallyAddBookView.swift */,
-				25E9A0131F21526600C1012B /* ManuallyAddBookView.xib */,
+				254096921F2D357600ACF3B9 /* DetailedBookView.swift */,
+				254096941F2D358000ACF3B9 /* DetailedBookView.xib */,
+				254096991F2D380100ACF3B9 /* Add Book Flow */,
 				250C66901F2AC6FC0006BB8F /* Custom */,
 				25E9A0041F212A1700C1012B /* Cell */,
 			);
@@ -201,6 +203,7 @@
 				25E99FF41F21145100C1012B /* HomeViewController.swift */,
 				25E99FFC1F2123AF00C1012B /* AddBookViewController.swift */,
 				25E9A00D1F21522A00C1012B /* ManuallyAddViewController.swift */,
+				254096961F2D372E00ACF3B9 /* DetailedBookViewController.swift */,
 				255271E31F279B4D008FF87F /* TestTableViewController.swift */,
 			);
 			name = "View Controller";
@@ -237,6 +240,28 @@
 				255271E11F254B4F008FF87F /* DataStore.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		254096981F2D37DB00ACF3B9 /* Sign In Flow */ = {
+			isa = PBXGroup;
+			children = (
+				2511F9451F196C9100DC8665 /* SignUpView.swift */,
+				2511F96B1F1A6B6200DC8665 /* SignUpView.xib */,
+				2511F96D1F1C163E00DC8665 /* LocationView.swift */,
+				2511F96F1F1C164A00DC8665 /* LocationView.xib */,
+			);
+			name = "Sign In Flow";
+			sourceTree = "<group>";
+		};
+		254096991F2D380100ACF3B9 /* Add Book Flow */ = {
+			isa = PBXGroup;
+			children = (
+				25E99FFE1F2123C200C1012B /* AddBookBarView.swift */,
+				25E9A0001F2123D900C1012B /* AddBookBarView.xib */,
+				25E9A0111F21525B00C1012B /* ManuallyAddBookView.swift */,
+				25E9A0131F21526600C1012B /* ManuallyAddBookView.xib */,
+			);
+			name = "Add Book Flow";
 			sourceTree = "<group>";
 		};
 		25E9A0041F212A1700C1012B /* Cell */ = {
@@ -342,6 +367,7 @@
 				2540968F1F2D308E00ACF3B9 /* BookView.xib in Resources */,
 				25E9A0011F2123D900C1012B /* AddBookBarView.xib in Resources */,
 				250C66941F2C06A30006BB8F /* BookCollectionViewCell.xib in Resources */,
+				254096951F2D358000ACF3B9 /* DetailedBookView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +428,7 @@
 			files = (
 				2540968D1F2D2EB700ACF3B9 /* HomeCollectionViewCell.swift in Sources */,
 				250C668F1F2AC6800006BB8F /* CustomTextField.swift in Sources */,
+				254096971F2D372E00ACF3B9 /* DetailedBookViewController.swift in Sources */,
 				25E99FFB1F2114A100C1012B /* HomeViewModel.swift in Sources */,
 				25E99FFD1F2123AF00C1012B /* AddBookViewController.swift in Sources */,
 				2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */,
@@ -412,6 +439,7 @@
 				254096911F2D30A900ACF3B9 /* BookView.swift in Sources */,
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				25E99FFF1F2123C200C1012B /* AddBookBarView.swift in Sources */,
+				254096931F2D357600ACF3B9 /* DetailedBookView.swift in Sources */,
 				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,
 				251AA9731F156C8D00B34960 /* User.swift in Sources */,
 				2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */,

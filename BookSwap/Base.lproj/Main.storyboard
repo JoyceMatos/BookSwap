@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bb2-bI-0Kf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aSt-83-iVv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -171,7 +171,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="bookView" destination="lpw-Kw-kiR" id="QNG-vC-bLN"/>
-                                            <segue destination="aSt-83-iVv" kind="showDetail" id="Wwu-DQ-Iha"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -185,12 +184,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="YzS-Pd-Lfh"/>
                     <connections>
-                        <outlet property="collectionView" destination="NJ8-Jy-jvn" id="EjC-Nd-J3Z"/>
+                        <outlet property="collectionView" destination="NJ8-Jy-jvn" id="nP9-ZF-ee2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZh-S4-33j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2722" y="-337"/>
+            <point key="canvasLocation" x="2687" y="-350"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="G3b-75-ULV">
@@ -210,15 +209,15 @@
             </objects>
             <point key="canvasLocation" x="1538" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Book View Controller-->
         <scene sceneID="9gT-lt-gHo">
             <objects>
-                <viewController id="aSt-83-iVv" sceneMemberID="viewController">
+                <viewController id="aSt-83-iVv" customClass="DetailedBookViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kzi-4D-Jne"/>
                         <viewControllerLayoutGuide type="bottom" id="b6N-KG-cdS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eqj-RW-sKG">
+                    <view key="view" contentMode="scaleToFill" id="eqj-RW-sKG" customClass="DetailedBookView" customModule="BookSwap" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBR-2I-Beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3724" y="-338"/>
+            <point key="canvasLocation" x="3481" y="-350"/>
         </scene>
     </scenes>
 </document>

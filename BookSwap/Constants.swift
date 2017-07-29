@@ -22,5 +22,7 @@ struct Nib {
     static let home = "HomeView"
     static let addBook = "AddBookBarView"
     static let manuallyAdd = "ManuallyAddBookView"
+    static let detailedBook = "DetailedBookView"
+    static let bookCollectionView = "BookView"
     
 }
