@@ -11,24 +11,28 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-
-   // @IBOutlet weak var homeView: HomeView!
+    var viewModel: HomeViewModel!
+    
     var delegate: RetrieveBooksDelegate?
     
+    // Remove these properties
     fileprivate let leftAndRightPadding: CGFloat = 52.0
     fileprivate let itemsPerRow: CGFloat = 3.0
     fileprivate let heightAdjustment: CGFloat = 64.0
     fileprivate let sectionInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
-    let reuseIdentifier = "bookCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegate = self
-        delegate?.fetch({
-            self.collectionView.reloadData()
+        self.delegate?.fetch({
+        print("Hello lets get this viewModel")
+            DispatchQueue.main.async {
+                self.viewModel = HomeViewModel(books: DataStore.shared.books)
+                self.collectionView.reloadData()
+            }
+
         })
-    
     }
 
     
@@ -41,14 +45,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataStore.shared.books.count
+        print("Uh, not quick enough")
+        return viewModel.books.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
-        let book = DataStore.shared.books[indexPath.row]
-        cell.bookView.titleLabel.text = book.title
-        print("Helloooo in cell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.homeCell, for: indexPath) as! HomeCollectionViewCell
+        
+        cell.bookView.titleLabel.text = viewModel.titleForBook(at: indexPath)
         return cell
     }
     
@@ -92,7 +96,9 @@ extension HomeViewController: RetrieveBooksDelegate {
     
     func fetch(_ completion: @escaping () -> Void) {
         DataStore.shared.getBooks {
-            completion()
+            DispatchQueue.main.async {
+                completion()
+            }
         }
     }
     

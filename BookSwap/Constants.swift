@@ -15,6 +15,12 @@ struct SegueIdentifier {
     
 }
 
+struct CellIdentifier {
+    
+    static let homeCell = "homeCell"
+    
+}
+
 struct Nib {
     
     static let signUp = "SignUpView"
