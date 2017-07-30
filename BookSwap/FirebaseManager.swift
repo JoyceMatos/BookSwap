@@ -95,6 +95,19 @@ final class FirebaseManager {
         }
     }
     
+    class func add(_ bookID: String, to libraryID: String, completion: @escaping (Bool) -> Void) {
+        FirebaseManager.ref.child("libraries").child(libraryID).child("books").updateChildValues([bookID: true]) { (error, ref) in
+
+            if error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                // Handle this case
+            }
+            
+        }
+    }
+    
     // NOTE: - Adds a new library from Library DB
     class func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
         // TODO: - Carefully unwrap userID
@@ -135,6 +148,7 @@ final class FirebaseManager {
     class func retreiveAddedBook(_ completion: @escaping (String) -> Void) {
         FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
             let bookID = snapshot.key
+            print("Here is th bookID", bookID)
             completion(bookID)
         })
         

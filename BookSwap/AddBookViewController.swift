@@ -12,7 +12,9 @@ import Firebase
 
 
 // TODO: - Swap manual view/viewModel for correct one
-// TODO: - Redo how you're passingdata into this tab bar
+// TODO: - Redo how you're passing data into this tab bar
+// TODO: - Refactor!!!
+// TODO: - Work on book method
 
 class AddBookViewController: UIViewController {
     
@@ -47,31 +49,23 @@ class AddBookViewController: UIViewController {
     func addBookTapped() {
         let book = retrieveValues()
         let userID = Auth.auth().currentUser?.uid
-        
-        /* New Implementations:
-         1. Create library with corresponding ID in DB
-         3. Retrieve library ID
-         2. Add libraryID to user's info
-         3. Create book with corresponding book info (including library ID)
-         */
-        
+    
         // MARK: - Library Methods
         // TODO: - Carefully unwrap ID
         FirebaseManager.addLibrary(for: userID!) { (success) in
             if success {
-                
-                
-                
                 FirebaseManager.retreiveAddedLibrary({ (libraryID) in
                     // TODO: - Carefully unwrap ID
                     FirebaseManager.update(userID!, with: libraryID, completion: { (success) in
                         if success {
+                            
+                          //  self.add(book, to: libraryID, for: userID)
+
                             print("yay we have updated the user with library")
                         } else {
                             print("Womp, no books added to user")
                         }
                     })
-                    
                     
                 })
                 
@@ -79,25 +73,28 @@ class AddBookViewController: UIViewController {
             
         }
         
+    }
     
-            // MARK: - Book Methods
-            //        viewModel = ManuallyAddBookViewModel(userID: userID )
-            //        if let viewModel = viewModel, var book = book, let userID = userID {
-            //        book.userID = userID
-            //           viewModel.add(book, userID: userID, completion: { (success) in
-            //            if success {
-            //                viewModel.retrieveAddedBook({ (bookID) in
-            //                    print("Yay we have added a book to books")
-            //                // TODO: - Add book ID to library ID?
-            //
-            //                })
-            //            } else {
-            //                print("Could not add book")
-            //            }
-            //           })
-            //        }
-            //        
-            //        
-            //   }
+    func add(_ book: Book?, to libraryID: String, for userID: String?) {
+        guard let bookID = book?.id, let book = book, let userID = userID else {
+            return
+        }
+        
+    FirebaseManager.add(book) { (success) in
+        if success {
+           
+            FirebaseManager.add(bookID, to: libraryID, completion: { (success) in
+                if success {
+                    
+                    print("BOOK IN LIBRARY")
+                    // do something
+                }
+            })
+            
+            
+            
+        }
+        }
+        
     }
 }
