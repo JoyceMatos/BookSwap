@@ -37,12 +37,18 @@
 		2540969F1F2E56E300ACF3B9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540969E1F2E56E300ACF3B9 /* Error.swift */; };
 		254096A11F2E573900ACF3B9 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096A01F2E573900ACF3B9 /* AlertMessage.swift */; };
 		254096A61F2E625C00ACF3B9 /* ConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096A51F2E625C00ACF3B9 /* ConfirmView.xib */; };
-		254096A91F2E628600ACF3B9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096A81F2E628600ACF3B9 /* MessagesView.swift */; };
 		254096AB1F2E629300ACF3B9 /* MessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096AA1F2E629300ACF3B9 /* MessagesView.xib */; };
-		254096AD1F2E62A600ACF3B9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096AC1F2E62A600ACF3B9 /* ChatView.swift */; };
 		254096AF1F2E62B100ACF3B9 /* ChatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096AE1F2E62B100ACF3B9 /* ChatView.xib */; };
 		254096B11F2E634100ACF3B9 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096B01F2E634100ACF3B9 /* ConfirmView.swift */; };
 		254096B31F2E641800ACF3B9 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096B21F2E641800ACF3B9 /* ConfirmViewController.swift */; };
+		254096B51F2E702A00ACF3B9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096B41F2E702A00ACF3B9 /* MessagesViewController.swift */; };
+		254096B71F2E703D00ACF3B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096B61F2E703D00ACF3B9 /* ProfileViewController.swift */; };
+		254096B91F2E708F00ACF3B9 /* ScanBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096B81F2E708F00ACF3B9 /* ScanBookView.swift */; };
+		254096BB1F2E709E00ACF3B9 /* ScanBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096BA1F2E709E00ACF3B9 /* ScanBookView.xib */; };
+		254096BD1F2E70B000ACF3B9 /* SearchBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096BC1F2E70B000ACF3B9 /* SearchBookView.swift */; };
+		254096BF1F2E70BC00ACF3B9 /* SearchBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254096BE1F2E70BC00ACF3B9 /* SearchBookView.xib */; };
+		254096C11F2E70D900ACF3B9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096C01F2E70D900ACF3B9 /* MessagesView.swift */; };
+		254096C31F2E70F500ACF3B9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254096C21F2E70F500ACF3B9 /* ChatView.swift */; };
 		255271E21F254B4F008FF87F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E11F254B4F008FF87F /* DataStore.swift */; };
 		255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E31F279B4D008FF87F /* TestTableViewController.swift */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
@@ -92,12 +98,18 @@
 		2540969E1F2E56E300ACF3B9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		254096A01F2E573900ACF3B9 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		254096A51F2E625C00ACF3B9 /* ConfirmView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmView.xib; sourceTree = "<group>"; };
-		254096A81F2E628600ACF3B9 /* MessagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		254096AA1F2E629300ACF3B9 /* MessagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesView.xib; sourceTree = "<group>"; };
-		254096AC1F2E62A600ACF3B9 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		254096AE1F2E62B100ACF3B9 /* ChatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatView.xib; sourceTree = "<group>"; };
 		254096B01F2E634100ACF3B9 /* ConfirmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		254096B21F2E641800ACF3B9 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		254096B41F2E702A00ACF3B9 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		254096B61F2E703D00ACF3B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		254096B81F2E708F00ACF3B9 /* ScanBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookView.swift; sourceTree = "<group>"; };
+		254096BA1F2E709E00ACF3B9 /* ScanBookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanBookView.xib; sourceTree = "<group>"; };
+		254096BC1F2E70B000ACF3B9 /* SearchBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookView.swift; sourceTree = "<group>"; };
+		254096BE1F2E70BC00ACF3B9 /* SearchBookView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBookView.xib; sourceTree = "<group>"; };
+		254096C01F2E70D900ACF3B9 /* MessagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		254096C21F2E70F500ACF3B9 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		255271E11F254B4F008FF87F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		255271E31F279B4D008FF87F /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +228,8 @@
 				25E9A00D1F21522A00C1012B /* ManuallyAddViewController.swift */,
 				254096961F2D372E00ACF3B9 /* DetailedBookViewController.swift */,
 				254096B21F2E641800ACF3B9 /* ConfirmViewController.swift */,
+				254096B41F2E702A00ACF3B9 /* MessagesViewController.swift */,
+				254096B61F2E703D00ACF3B9 /* ProfileViewController.swift */,
 				255271E31F279B4D008FF87F /* TestTableViewController.swift */,
 			);
 			name = "View Controller";
@@ -273,6 +287,10 @@
 				25E9A0001F2123D900C1012B /* AddBookBarView.xib */,
 				25E9A0111F21525B00C1012B /* ManuallyAddBookView.swift */,
 				25E9A0131F21526600C1012B /* ManuallyAddBookView.xib */,
+				254096B81F2E708F00ACF3B9 /* ScanBookView.swift */,
+				254096BA1F2E709E00ACF3B9 /* ScanBookView.xib */,
+				254096BC1F2E70B000ACF3B9 /* SearchBookView.swift */,
+				254096BE1F2E70BC00ACF3B9 /* SearchBookView.xib */,
 			);
 			name = "Add Book Flow";
 			sourceTree = "<group>";
@@ -293,9 +311,9 @@
 		254096A71F2E626800ACF3B9 /* Messages Flow */ = {
 			isa = PBXGroup;
 			children = (
-				254096A81F2E628600ACF3B9 /* MessagesView.swift */,
+				254096C01F2E70D900ACF3B9 /* MessagesView.swift */,
 				254096AA1F2E629300ACF3B9 /* MessagesView.xib */,
-				254096AC1F2E62A600ACF3B9 /* ChatView.swift */,
+				254096C21F2E70F500ACF3B9 /* ChatView.swift */,
 				254096AE1F2E62B100ACF3B9 /* ChatView.xib */,
 			);
 			name = "Messages Flow";
@@ -403,7 +421,9 @@
 				25E9A0141F21526600C1012B /* ManuallyAddBookView.xib in Resources */,
 				25E9A0011F2123D900C1012B /* AddBookBarView.xib in Resources */,
 				250C66941F2C06A30006BB8F /* BookCollectionViewCell.xib in Resources */,
+				254096BB1F2E709E00ACF3B9 /* ScanBookView.xib in Resources */,
 				254096951F2D358000ACF3B9 /* DetailedBookView.xib in Resources */,
+				254096BF1F2E70BC00ACF3B9 /* SearchBookView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,9 +482,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				254096C11F2E70D900ACF3B9 /* MessagesView.swift in Sources */,
 				250C668F1F2AC6800006BB8F /* CustomTextField.swift in Sources */,
 				254096B11F2E634100ACF3B9 /* ConfirmView.swift in Sources */,
 				254096A11F2E573900ACF3B9 /* AlertMessage.swift in Sources */,
+				254096BD1F2E70B000ACF3B9 /* SearchBookView.swift in Sources */,
 				254096971F2D372E00ACF3B9 /* DetailedBookViewController.swift in Sources */,
 				25E99FFB1F2114A100C1012B /* HomeViewModel.swift in Sources */,
 				25E99FFD1F2123AF00C1012B /* AddBookViewController.swift in Sources */,
@@ -472,23 +494,25 @@
 				250184461F1FE27C00C43BFF /* Secrets.swift in Sources */,
 				25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */,
 				25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */,
+				254096C31F2E70F500ACF3B9 /* ChatView.swift in Sources */,
 				255271E21F254B4F008FF87F /* DataStore.swift in Sources */,
 				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				25E99FFF1F2123C200C1012B /* AddBookBarView.swift in Sources */,
-				254096AD1F2E62A600ACF3B9 /* ChatView.swift in Sources */,
 				254096931F2D357600ACF3B9 /* DetailedBookView.swift in Sources */,
 				251AA9541F1420D700B34960 /* SignUpViewController.swift in Sources */,
 				251AA9731F156C8D00B34960 /* User.swift in Sources */,
 				2511F9461F196C9100DC8665 /* SignUpView.swift in Sources */,
 				25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */,
-				254096A91F2E628600ACF3B9 /* MessagesView.swift in Sources */,
 				25E9A00E1F21522A00C1012B /* ManuallyAddViewController.swift in Sources */,
 				25E99FF71F21148800C1012B /* HomeView.swift in Sources */,
 				251AA9771F1590EE00B34960 /* UserViewModel.swift in Sources */,
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
+				254096B51F2E702A00ACF3B9 /* MessagesViewController.swift in Sources */,
 				255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */,
 				25E9A0121F21525B00C1012B /* ManuallyAddBookView.swift in Sources */,
 				25E9A0101F21524000C1012B /* ManuallyAddViewModel.swift in Sources */,
+				254096B91F2E708F00ACF3B9 /* ScanBookView.swift in Sources */,
+				254096B71F2E703D00ACF3B9 /* ProfileViewController.swift in Sources */,
 				2540969F1F2E56E300ACF3B9 /* Error.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,

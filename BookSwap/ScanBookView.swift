@@ -1,5 +1,5 @@
 //
-//  ChatView.swift
+//  ScanBookView.swift
 //  BookSwap
 //
 //  Created by Joyce Matos on 7/30/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatView: UIView {
+class ScanBookView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

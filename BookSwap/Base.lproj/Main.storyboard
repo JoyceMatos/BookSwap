@@ -97,6 +97,54 @@
             </objects>
             <point key="canvasLocation" x="1614" y="-555"/>
         </scene>
+        <!--Messages-->
+        <scene sceneID="Izg-cw-nGn">
+            <objects>
+                <viewController id="PHP-rA-cPw" customClass="MessagesViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c37-pi-Cef"/>
+                        <viewControllerLayoutGuide type="bottom" id="8k8-UY-gzW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uqr-n1-K3f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Messages" id="cI7-SH-9ci"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQd-Fd-rx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="897"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="bqH-e2-Wod">
+            <objects>
+                <viewController id="IPQ-ac-JGE" customClass="ProfileViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wTk-Rp-LEn"/>
+                        <viewControllerLayoutGuide type="bottom" id="JGa-oH-7zP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pvg-KV-qDe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZT-Vn-cmb" customClass="HomeView" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="57" width="375" height="561"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="EIe-yk-JVh"/>
+                    <connections>
+                        <outlet property="profileView" destination="MZT-Vn-cmb" id="Ey0-yi-KRA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ApN-6h-M4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.8" y="895.50224887556226"/>
+        </scene>
         <!--Add Book-->
         <scene sceneID="Ujn-5i-H27">
             <objects>
@@ -181,6 +229,8 @@
                     <connections>
                         <segue destination="axq-Ft-WXH" kind="relationship" relationship="viewControllers" id="YWm-on-c0G"/>
                         <segue destination="STp-xK-mNh" kind="relationship" relationship="viewControllers" id="stn-Rc-b7Q"/>
+                        <segue destination="PHP-rA-cPw" kind="relationship" relationship="viewControllers" id="uWx-cG-gD9"/>
+                        <segue destination="IPQ-ac-JGE" kind="relationship" relationship="viewControllers" id="JJ8-N2-gUY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8J0-cU-3W0" userLabel="First Responder" sceneMemberID="firstResponder"/>

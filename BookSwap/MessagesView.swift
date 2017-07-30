@@ -6,4 +6,16 @@
 //  Copyright © 2017 Joyce Matos. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MessagesView: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
