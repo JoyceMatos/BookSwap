@@ -22,6 +22,7 @@ struct Book {
     var isbn: Int?
     var thumbnail: URL?
     var userID: String?
+    var libraryID: String?
     
     // Maybe?
     var location: String?

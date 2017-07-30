@@ -47,25 +47,57 @@ class AddBookViewController: UIViewController {
     func addBookTapped() {
         let book = retrieveValues()
         let userID = Auth.auth().currentUser?.uid
-        viewModel = ManuallyAddBookViewModel(userID: userID )
-        if let viewModel = viewModel, var book = book, let userID = userID {
-        book.userID = userID
-           viewModel.add(book, userID: userID, completion: { (success) in
+        
+        /* New Implementations:
+         1. Create library with corresponding ID in DB
+         3. Retrieve library ID
+         2. Add libraryID to user's info
+         3. Create book with corresponding book info (including library ID)
+         */
+        
+        // MARK: - Library Methods
+        // TODO: - Carefully unwrap ID
+        FirebaseManager.addLibrary(for: userID!) { (success) in
             if success {
-                viewModel.retrieveAddedBook({ (bookID) in
-                    viewModel.updateUsers(userID, bookID: bookID, completion: { (success) in
+                
+                
+                
+                FirebaseManager.retreiveAddedLibrary({ (libraryID) in
+                    // TODO: - Carefully unwrap ID
+                    FirebaseManager.update(userID!, with: libraryID, completion: { (success) in
                         if success {
-                            print("yay we have updated the user")
+                            print("yay we have updated the user with library")
                         } else {
                             print("Womp, no books added to user")
                         }
                     })
+                    
+                    
                 })
-            } else {
-                print("Could not add book")
+                
             }
-           })
+            
         }
-    }
+        
     
+            // MARK: - Book Methods
+            //        viewModel = ManuallyAddBookViewModel(userID: userID )
+            //        if let viewModel = viewModel, var book = book, let userID = userID {
+            //        book.userID = userID
+            //           viewModel.add(book, userID: userID, completion: { (success) in
+            //            if success {
+            //                viewModel.retrieveAddedBook({ (bookID) in
+            //                    print("Yay we have added a book to books")
+            //                // TODO: - Add book ID to library ID?
+            //
+            //                })
+            //            } else {
+            //                print("Could not add book")
+            //            }
+            //           })
+            //        }
+            //        
+            //        
+            //   }
+    }
 }

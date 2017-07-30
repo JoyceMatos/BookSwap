@@ -16,6 +16,7 @@ struct User {
     var lastName: String
     var email: String
     var location: Int?
+    var libraryID: String?
     
     func serialize() -> [String: Any] {
         let userInfo: [String: Any] = [
