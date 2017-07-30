@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="2657" y="357"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="lGS-qI-lHN">
             <objects>
                 <viewController id="YiY-1O-ich" customClass="HomeViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NJ8-Jy-jvn">
-                                <rect key="frame" x="0.0" y="66" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BBl-0U-Lpn">
@@ -176,6 +176,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="bookView" destination="lpw-Kw-kiR" id="QNG-vC-bLN"/>
+                                            <segue destination="aSt-83-iVv" kind="show" identifier="showDetail" id="vj5-j8-7Mf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -184,17 +185,25 @@
                                     <outlet property="delegate" destination="YiY-1O-ich" id="3g6-wK-R76"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFE-cS-PXT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="YzS-Pd-Lfh"/>
+                    <navigationItem key="navigationItem" id="OUT-pj-RcF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="Q44-s1-nYz"/>
+                        <barButtonItem key="rightBarButtonItem" title="List" id="dVR-VT-TOd"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="NJ8-Jy-jvn" id="nP9-ZF-ee2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZh-S4-33j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="-350"/>
+            <point key="canvasLocation" x="3624.8000000000002" y="-350.37481259370315"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="G3b-75-ULV">
@@ -206,7 +215,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="YiY-1O-ich" kind="relationship" relationship="viewControllers" id="YWm-on-c0G"/>
+                        <segue destination="axq-Ft-WXH" kind="relationship" relationship="viewControllers" id="YWm-on-c0G"/>
                         <segue destination="STp-xK-mNh" kind="relationship" relationship="viewControllers" id="stn-Rc-b7Q"/>
                     </connections>
                 </tabBarController>
@@ -230,7 +239,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBR-2I-Beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="-350"/>
+            <point key="canvasLocation" x="4420" y="-350.37481259370315"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="qVY-q1-cvz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="axq-Ft-WXH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="YzS-Pd-Lfh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbS-Uj-Y5j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YiY-1O-ich" kind="relationship" relationship="rootViewController" id="gWd-9i-PjA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hon-zm-Uzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685.5999999999999" y="-350.37481259370315"/>
         </scene>
     </scenes>
 </document>

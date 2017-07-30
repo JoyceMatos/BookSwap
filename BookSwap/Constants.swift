@@ -12,6 +12,7 @@ struct SegueIdentifier {
     
     static let showLocation = "showLocation"
     static let showTabBar = "showTabBar"
+    static let showDetailBook = "showDetail"
     
 }
 

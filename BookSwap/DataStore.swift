@@ -16,15 +16,19 @@ final class DataStore {
     private init() { }
     
     func getBooks(completion: @escaping () -> Void) {
+        print("In the datastore")
         books.removeAll()
         FirebaseManager.retrieveAllBooks { (storedBooks) in
             // TODO: - Maybe use higher order function indead
+          //  DispatchQueue.main.async {
+                print("In data store queue")
             for book in storedBooks {
                 let bookDict = book.value as! [String: Any]
                 let currentBook = Book(bookID: book.key, bookDict: bookDict)
                 self.books.append(currentBook)
             }
             completion()
-        }
+            }
+      //  }
     }
 }

@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 // TODO: - Refactor
 // TODO: - Handle errors
-// TODO: - Create API protocols
+// TODO: - Create API protocols and have this manager conform to it
 // TODO: - Create enum that determines where to the database we are writing to
 // ie:     // class func add(to database: DatabaseType)
 
@@ -117,8 +117,12 @@ final class FirebaseManager {
     }
     
     class func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
+        print("In firebase method")
+
         FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
-         
+                print("In firebase queue")
+
+
             var dictionary = [String: Any]()
             let books = snapshot.value as? [String: Any]
             
@@ -127,8 +131,12 @@ final class FirebaseManager {
                 let key = book.key
                 let value = book.value as? [String: Any]
                 dictionary[key] = value
-            }
+                }
+                DispatchQueue.main.async {
+
                     completion(dictionary)
+                }
+            
             }
 
         })

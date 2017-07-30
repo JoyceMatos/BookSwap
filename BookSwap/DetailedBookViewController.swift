@@ -9,9 +9,11 @@
 import UIKit
 
 class DetailedBookViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
 
         // Do any additional setup after loading the view.
     }
