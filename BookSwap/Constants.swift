@@ -18,7 +18,7 @@ struct SegueIdentifier {
 
 struct CellIdentifier {
     
-    static let homeCell = "homeCell"
+    static let bookCell = "bookCell"
     
 }
 

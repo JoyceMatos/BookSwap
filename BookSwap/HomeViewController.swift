@@ -12,9 +12,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var homeView: HomeView!
     var viewModel: HomeViewModel!
-    
+
     var delegate: RetrieveBooksDelegate?
     
     // Remove these properties
@@ -25,6 +25,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeView.collectionView.delegate = self
+        homeView.collectionView.dataSource = self
+
      //   delegate = self
        fetch()
     }
@@ -37,7 +40,7 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
             print("Getting books")
             self.viewModel = HomeViewModel(books: DataStore.shared.books)
-            self.collectionView.reloadData()
+            self.homeView.collectionView.reloadData()
             }
         }
 //        print("In the fetch")
@@ -83,9 +86,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.homeCell, for: indexPath) as! HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.bookCell, for: indexPath) as! BookCollectionViewCell
         
-        cell.bookView.titleLabel.text = viewModel.titleForBook(at: indexPath)
+        cell.titleLabel.text = viewModel.titleForBook(at: indexPath)
         return cell
     }
     
@@ -117,7 +120,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        // Segue to detail view
+        performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
         
     }
     

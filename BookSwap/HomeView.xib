@@ -20,9 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MaP-ZA-23F">
-                    <rect key="frame" x="0.0" y="117" width="375" height="505"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MaP-ZA-23F">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="SyU-Gj-mlZ">
@@ -32,20 +31,14 @@
                         <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-b4-QdE">
-                    <rect key="frame" x="279" y="20" width="66" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="List"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv6-W9-hir">
-                    <rect key="frame" x="16" y="67" width="71" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MaP-ZA-23F" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0PQ-yN-MVc"/>
+                <constraint firstItem="MaP-ZA-23F" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="8CW-dh-cCd"/>
+                <constraint firstItem="MaP-ZA-23F" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Nn0-PO-NSC"/>
+                <constraint firstItem="MaP-ZA-23F" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ige-To-563"/>
+            </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
