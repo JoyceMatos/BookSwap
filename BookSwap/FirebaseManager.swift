@@ -90,6 +90,7 @@ final class FirebaseManager {
                 completion(true)
             } else {
                 completion(false)
+                print("Here is our error", error?.localizedDescription)
                 // Handle this case
             }
         }
