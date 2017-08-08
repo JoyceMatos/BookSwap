@@ -51,7 +51,6 @@ class AddBookViewController: UIViewController {
         let user = Auth.auth().currentUser
         
         // MARK: - Library Methods
-        // TODO: - Carefully unwrap ID
         
         guard let userID = user?.uid else {
             return
