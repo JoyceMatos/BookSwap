@@ -30,12 +30,12 @@ struct Book {
     // Just the basics for now
     func serialize() -> [String: Any] {
         var bookValue = [String: Any]()
-        if let userID = userID, let libraryID = libraryID {
+      //  if let userID = userID, let libraryID = libraryID {
             bookValue["title"] = title
             bookValue["author"] = author
-            bookValue["userID"] = userID
-            bookValue["libraryID"] = libraryID
-        }
+          //  bookValue["userID"] = userID
+          //  bookValue["libraryID"] = libraryID
+     //   }
         return bookValue
     }
     
@@ -52,7 +52,7 @@ extension Book {
         self.id = bookID
         self.title = bookDict["title"] as! String
         self.author = bookDict["author"] as! String
-        self.userID = bookDict["userID"] as! String
+      //  self.userID = bookDict["userID"] as! String
     }
     
 }

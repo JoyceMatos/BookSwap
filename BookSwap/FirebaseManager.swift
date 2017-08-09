@@ -85,27 +85,34 @@ final class FirebaseManager {
     // TODO: - Add additional book properties (only add author & title for now
     // NOTE: - Adds book to Books DB
     class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
-        FirebaseManager.ref.child("books").childByAutoId().updateChildValues(book.serialize()) { (error, ref) in
-            if error == nil {
-                DispatchQueue.main.async {
-                    print("Completion true")
-                    completion(true)
+        print("lets add this book ref")
+        print("heres out book:", book)
+        if let bookID = book.id {
+            print("ok we got the bookID")
+            FirebaseManager.ref.child("books").updateChildValues([bookID: book.serialize()], withCompletionBlock: { (error, ref) in
+                print("book ref book ref")
+                if error == nil {
+                    print("no error in book ref")
+                    DispatchQueue.main.async {
+                        print("Completion true")
+                        completion(true)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
+                    //  completion(false)
+                    print("Here is our error", error?.localizedDescription)
+                    // Handle this case
                 }
-            } else {
-                DispatchQueue.main.async {
-                    completion(false)
-                }
-                //  completion(false)
-                print("Here is our error", error?.localizedDescription)
-                // Handle this case
-            }
+                
+            })
         }
     }
     
-    // Adds book to library's book property (complete with bookID already made made)
-    class func add(_ bookID: String, to libraryID: String, completion: @escaping (Bool) -> Void) {
-        FirebaseManager.ref.child("libraries").child(libraryID).child("books").updateChildValues([bookID: true]) { (error, ref) in
-            
+    // Adds book to library and create book ID
+    class func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
+        FirebaseManager.ref.child("libraries").child(libraryID).child("books").childByAutoId().setValue(true) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
                     completion(true)
@@ -115,8 +122,8 @@ final class FirebaseManager {
                     completion(false)
                 }
             }
-            
         }
+        
     }
     
     // NOTE: - Adds a new library from Library DB
@@ -163,41 +170,20 @@ final class FirebaseManager {
         }
     }
     
-    // NOTE: - Retrieves added book ID
-    class func retreiveAddedBook(_ completion: @escaping (String) -> Void) {
-        FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
+    // NOTE: - Updates user with book ID
+    class func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void) {
+        FirebaseManager.ref.child("libraries").child(libraryID).child("books").observe(.childAdded, with: { (snapshot) in
             let bookID = snapshot.key
-            print("Here is th bookID", bookID)
             DispatchQueue.main.async {
                 completion(bookID)
-            }
-        })
-        
-    }
-    
-    // NOTE: - Updates user with book ID
-    class func updateUsersBooks(_ userID: String, bookID: String, completion: @escaping (Bool) -> Void) {
-        FirebaseManager.ref.child("users").child(userID).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
-            if error == nil {
-                DispatchQueue.main.async {
-                    completion(true)
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(false)
-                }
             }
         })
     }
     
     class func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
-        print("In firebase method")
-        
         FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
-            print("In firebase queue")
             var dictionary = [String: Any]()
             let books = snapshot.value as? [String: Any]
-            
             if let books = books {
                 for book in books {
                     let key = book.key
@@ -205,7 +191,6 @@ final class FirebaseManager {
                     dictionary[key] = value
                 }
                 DispatchQueue.main.async {
-                    
                     completion(dictionary)
                 }
                 
@@ -217,13 +202,13 @@ final class FirebaseManager {
     
     class func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
         // TODO: - Carefully unwrap UID
-            FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
-                let libraryID = snapshot.value
-                print(libraryID)
-                DispatchQueue.main.async {
-                    completion(snapshot.value as! String)
-                }
-            })
+        FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
+            let libraryID = snapshot.value
+            print(libraryID)
+            DispatchQueue.main.async {
+                completion(snapshot.value as! String)
+            }
+        })
     }
     
     // 2. Go to libraries and retrieve books from library
