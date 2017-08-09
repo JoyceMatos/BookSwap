@@ -87,23 +87,33 @@ final class FirebaseManager {
     class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("books").childByAutoId().updateChildValues(book.serialize()) { (error, ref) in
             if error == nil {
-                completion(true)
+                DispatchQueue.main.async {
+                    print("Completion true")
+                    completion(true)
+                }
             } else {
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+                //  completion(false)
                 print("Here is our error", error?.localizedDescription)
                 // Handle this case
             }
         }
     }
     
+    // Adds book to library's book property (complete with bookID already made made)
     class func add(_ bookID: String, to libraryID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).child("books").updateChildValues([bookID: true]) { (error, ref) in
-
+            
             if error == nil {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
             } else {
-                completion(false)
-                // Handle this case
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
             
         }
@@ -114,10 +124,13 @@ final class FirebaseManager {
         // TODO: - Carefully unwrap userID
         FirebaseManager.ref.child("libraries").childByAutoId().updateChildValues(["userID": userID]) { (error, ref) in
             if error == nil {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
             } else {
-                completion(false)
-                // Handle this case
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         }
     }
@@ -127,7 +140,9 @@ final class FirebaseManager {
         // TODO: - Carefully unwrap userID
         FirebaseManager.ref.child("libraries").observe(.childAdded, with: { (snapshot) in
             let libraryID = snapshot.key
-            completion(libraryID)
+            DispatchQueue.main.async {
+                completion(libraryID)
+            }
         })
     }
     
@@ -137,10 +152,13 @@ final class FirebaseManager {
         FirebaseManager.ref.child("users").child(userID).child("library").setValue(libraryID) { (error, ref) in
             
             if error == nil {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
             } else {
-                completion(false)
-                // Handle this case
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         }
     }
@@ -150,7 +168,9 @@ final class FirebaseManager {
         FirebaseManager.ref.child("books").observe(.childAdded, with: { (snapshot) in
             let bookID = snapshot.key
             print("Here is th bookID", bookID)
-            completion(bookID)
+            DispatchQueue.main.async {
+                completion(bookID)
+            }
         })
         
     }
@@ -159,9 +179,13 @@ final class FirebaseManager {
     class func updateUsersBooks(_ userID: String, bookID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("users").child(userID).updateChildValues(["books": [bookID]], withCompletionBlock: { (error, ref) in
             if error == nil {
-                completion(true)
+                DispatchQueue.main.async {
+                    completion(true)
+                }
             } else {
-                completion(false)
+                DispatchQueue.main.async {
+                    completion(false)
+                }
             }
         })
     }
@@ -171,8 +195,6 @@ final class FirebaseManager {
         
         FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
             print("In firebase queue")
-            
-            
             var dictionary = [String: Any]()
             let books = snapshot.value as? [String: Any]
             
@@ -192,16 +214,16 @@ final class FirebaseManager {
         })
     }
     
-    // 1. Get library ID
     
-    class func getLibrary(for user: User, completion: @escaping (String) -> Void) {
+    class func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
         // TODO: - Carefully unwrap UID
-        FirebaseManager.ref.child("users").child(user.id!).child("library").observe(.value, with: { (snapshot) in
-            let libraryID = snapshot.value
-            print(libraryID)
-            //  completion(snapshot.value)
-            
-        })
+            FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
+                let libraryID = snapshot.value
+                print(libraryID)
+                DispatchQueue.main.async {
+                    completion(snapshot.value as! String)
+                }
+            })
     }
     
     // 2. Go to libraries and retrieve books from library

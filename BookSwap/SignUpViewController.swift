@@ -10,6 +10,7 @@ import UIKit
 
 // TODO: - Remove anything that is not in use
 // TODO: - Remove all string literals
+// TODO: - Watch out for strong references
 
 class SignUpViewController: UIViewController {
     
@@ -26,14 +27,12 @@ class SignUpViewController: UIViewController {
     // NOTE: - Does this logic belong here?
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
-        
         if let firstName = signUpView.firstNameField.text,
             let lastName = signUpView.lastNameField.text,
             let email = signUpView.emailField.text,
             let password = signUpView.passwordField.text {
             input = ["firstName": firstName, "lastName": lastName, "email": email, "password": password]
         }
-        
         return input
     }
     
@@ -50,8 +49,13 @@ class SignUpViewController: UIViewController {
         
         delegate?.signUp(viewModel.user, with: password, completion: { (success, id) in
             if success {
-                self.viewModel.user.id = id
-                self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil)
+                if let id = id {
+                    self.viewModel.user.id = id
+                    self.createLibrary(id, completion: { (libraryID) in
+                        self.viewModel.user.libraryID = libraryID
+                    })
+                    self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil)
+                }
             }
             else {
                 // Show error alert
@@ -59,7 +63,23 @@ class SignUpViewController: UIViewController {
         })
         
     }
-
+    
+    func createLibrary(_ userID: String, completion: @escaping (String?) -> Void) {
+        FirebaseManager.addLibrary(for: userID) { (success) in
+            if success {
+                FirebaseManager.retreiveAddedLibrary({ (libraryID) in
+                    FirebaseManager.update(userID, with: libraryID, completion: { (success) in
+                        if success {
+                            completion(libraryID)
+                        } else {
+                            completion(nil)
+                        }
+                    })
+                })
+            }
+        }
+    }
+    
     // MARK: - Segue Method
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

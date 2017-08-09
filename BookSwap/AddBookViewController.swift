@@ -55,34 +55,23 @@ class AddBookViewController: UIViewController {
         guard let userID = user?.uid else {
             return
         }
-        
-        FirebaseManager.addLibrary(for: userID) { (success) in
-            if success {
-                FirebaseManager.retreiveAddedLibrary({ (libraryID) in
-                    FirebaseManager.update(userID, with: libraryID, completion: { (success) in
-                        if success {
-                            book?.libraryID = libraryID
-                            print("Library id", book?.libraryID ?? "no library id")
-                        } else {
-                            print("Womp, no books added to user")
-                        }
-                    })
-                    
-                })
-                
-            }
+        if let book = book {
+            
+            // 1. Get libraryID 
+            // 2. Go to library branch and add bookID 
+            // 3. Go to library book db and add book with id
+            
+            FirebaseManager.getLibrary(for: userID, completion: { (libraryID) in
+                print("libraryID:", libraryID)
+                print("UserID:", userID)
+                self.add(book, to: libraryID, for: userID)
+
+            })
+            
+            
         }
+
         
-        
-//        if let book = book {
-//            print("book?")
-//            if let libraryID = book.libraryID {
-//                print("LibraryID?")
-//                print("Hello dispatch")
-//                self.add(book, to: libraryID, for: userID)
-//            }
-//            
-//        }
     }
     
     
@@ -93,6 +82,7 @@ class AddBookViewController: UIViewController {
         FirebaseManager.add(book) { (success) in
             print("Adding book to firebase db")
             if success {
+                print("We'eve got a success?")
                 FirebaseManager.retreiveAddedBook({ (bookID) in
                     print("Retrievingbook ID")
                     addedBook.id = bookID
