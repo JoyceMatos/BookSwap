@@ -110,6 +110,8 @@ class AddBookViewController: UIViewController {
                     // TODO: - Attach userID and libraryID to book, pass the book into the following function, and fix the serialization for the book method to include userID & libraryID
                     var newBook = book
                     newBook.id = bookID
+                    newBook.userID = userID
+                    newBook.libraryID = libraryID
                     
                     FirebaseManager.add(newBook, completion: { (success) in
                         if success {

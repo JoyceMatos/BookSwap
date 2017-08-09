@@ -199,7 +199,6 @@ final class FirebaseManager {
         })
     }
     
-    
     class func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
         // TODO: - Carefully unwrap UID
         FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
