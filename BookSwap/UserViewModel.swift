@@ -23,9 +23,5 @@ struct UserViewModel {
         
         self.user = User(id: nil, profilePhoto: profilePhoto, firstName: firstName, lastName: lastName, email: email, location: location, libraryID: libraryID)
     }
-    
-    
-    
-    
-    
+
 }

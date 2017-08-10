@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeView: HomeView!
     var viewModel: HomeViewModel!
     let firebaseManager = FirebaseManager()
-    var delegate: RetrieveBooksDelegate?
     
     // Remove these properties
     fileprivate let leftAndRightPadding: CGFloat = 52.0
@@ -27,24 +26,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
-
-     //   delegate = self
-       fetch(from: firebaseManager)
+        fetch(from: firebaseManager)
     }
-    
-    // API Method
+}
+
+// API Method
+extension HomeViewController {
     
     func fetch(from service: NetworkingService) {
         DataStore.shared.getBooks(from: service) {
             DispatchQueue.main.async {
-            self.viewModel = HomeViewModel(books: DataStore.shared.books)
-            self.homeView.collectionView.reloadData()
+                self.viewModel = HomeViewModel(books: DataStore.shared.books)
+                self.homeView.collectionView.reloadData()
             }
         }
     }
-    
-    // MARK: - Action Methods
-    
     
 }
 
@@ -56,9 +52,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Uh, not quick enough")
-     //   return viewModel.books.count
+        //   return viewModel.books.count
         return DataStore.shared.books.count
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -95,7 +91,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
         
     }

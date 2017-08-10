@@ -59,7 +59,11 @@ class AddBookViewController: UIViewController {
         }
     }
     
-    
+}
+
+// MARK: - API Methods
+extension AddBookViewController {
+
     func add(_ book: Book, to libraryID: String, for userID: String) {
         // Add bookID to library
         firebaseManager.add(book, to: libraryID) { (success) in
@@ -85,8 +89,6 @@ class AddBookViewController: UIViewController {
             }
         }
     }
-    
-    
-    
+
     
 }

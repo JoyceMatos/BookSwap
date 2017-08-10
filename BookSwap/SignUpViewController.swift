@@ -63,6 +63,21 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    // MARK: - Segue Method
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showLocation {
+            let destVC = segue.destination as! LocationViewController
+            destVC.viewModel = viewModel
+        }
+    }
+    
+}
+
+// MARK: - API Methods
+
+extension SignUpViewController {
+
     func signUp(for service: NetworkingService, user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
         service.create(user, password: password, completion: { (success, user) in
             if success {
@@ -91,13 +106,5 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    // MARK: - Segue Method
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.showLocation {
-            let destVC = segue.destination as! LocationViewController
-            destVC.viewModel = viewModel
-        }
-    }
 }
 
