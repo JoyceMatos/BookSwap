@@ -52,6 +52,7 @@
 		255271E21F254B4F008FF87F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E11F254B4F008FF87F /* DataStore.swift */; };
 		255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E31F279B4D008FF87F /* TestTableViewController.swift */; };
 		255843391F3A992A00238F83 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255843381F3A992A00238F83 /* NetworkingService.swift */; };
+		2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558433C1F3CF48500238F83 /* ScanBookViewController.swift */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
 		25E99FF71F21148800C1012B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF61F21148800C1012B /* HomeView.swift */; };
 		25E99FF91F21149600C1012B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E99FF81F21149600C1012B /* HomeView.xib */; };
@@ -114,6 +115,7 @@
 		255271E11F254B4F008FF87F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		255271E31F279B4D008FF87F /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		255843381F3A992A00238F83 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		2558433C1F3CF48500238F83 /* ScanBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookViewController.swift; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		25E99FF61F21148800C1012B /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		25E99FF81F21149600C1012B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				25E99FF41F21145100C1012B /* HomeViewController.swift */,
 				25E99FFC1F2123AF00C1012B /* AddBookViewController.swift */,
 				25E9A00D1F21522A00C1012B /* ManuallyAddViewController.swift */,
+				2558433C1F3CF48500238F83 /* ScanBookViewController.swift */,
 				254096961F2D372E00ACF3B9 /* DetailedBookViewController.swift */,
 				254096B21F2E641800ACF3B9 /* ConfirmViewController.swift */,
 				254096B41F2E702A00ACF3B9 /* MessagesViewController.swift */,
@@ -523,6 +526,7 @@
 				250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */,
 				2511F9741F1D313300DC8665 /* Router.swift in Sources */,
 				250C66931F2C06A30006BB8F /* BookCollectionViewCell.swift in Sources */,
+				2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */,
 				254096B31F2E641800ACF3B9 /* ConfirmViewController.swift in Sources */,
 				251AA96D1F156AFB00B34960 /* GoogleAPIClient.swift in Sources */,
 				2511F9661F1986F200DC8665 /* Constants.swift in Sources */,

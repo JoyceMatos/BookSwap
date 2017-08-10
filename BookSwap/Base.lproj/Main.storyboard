@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -157,27 +158,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeT-da-bs0" customClass="ManuallyAddBookView" customModule="BookSwap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-dk-dMs" customClass="AddBookBarView" customModule="BookSwap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="556" width="375" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-dk-dMs" customClass="AddBookBarView" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="564.5" width="375" height="53.5"/>
                                 <color key="backgroundColor" red="0.80777186160000003" green="0.80788880590000001" blue="0.80774611230000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-UB-jot">
+                                <rect key="frame" x="0.0" y="20" width="375" height="545"/>
+                                <connections>
+                                    <segue destination="1qV-Pv-fxq" kind="embed" id="Ude-gI-Ujp"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIl-Vr-vGY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="545"/>
+                                <connections>
+                                    <segue destination="yDE-Ew-GTc" kind="embed" id="hhh-Tl-qzT"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-bW-WhP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="544.5"/>
+                                <connections>
+                                    <segue destination="rIx-rL-AKQ" kind="embed" id="QrX-7w-gGe"/>
+                                </connections>
+                            </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XID-HT-Bhq" firstAttribute="top" secondItem="GHK-dk-dMs" secondAttribute="bottom" id="0Hf-sw-7nd"/>
+                            <constraint firstItem="pIl-Vr-vGY" firstAttribute="height" secondItem="Zlf-UB-jot" secondAttribute="height" id="0kx-Cw-bUR"/>
+                            <constraint firstItem="Zlf-UB-jot" firstAttribute="width" secondItem="qJs-8a-0vQ" secondAttribute="width" id="54n-j4-Lvx"/>
+                            <constraint firstItem="Zlf-UB-jot" firstAttribute="centerX" secondItem="qJs-8a-0vQ" secondAttribute="centerX" id="7x2-eI-rkG"/>
+                            <constraint firstItem="UC3-bW-WhP" firstAttribute="top" secondItem="7T9-wA-VNw" secondAttribute="bottom" id="8A0-RJ-UWL"/>
+                            <constraint firstItem="pIl-Vr-vGY" firstAttribute="leading" secondItem="Zlf-UB-jot" secondAttribute="leading" id="PlC-Ra-jFv"/>
+                            <constraint firstItem="UC3-bW-WhP" firstAttribute="bottom" secondItem="GHK-dk-dMs" secondAttribute="top" id="Wwm-yG-DhD"/>
+                            <constraint firstItem="UC3-bW-WhP" firstAttribute="width" secondItem="Zlf-UB-jot" secondAttribute="width" id="YG9-eN-nVp"/>
+                            <constraint firstItem="pIl-Vr-vGY" firstAttribute="width" secondItem="Zlf-UB-jot" secondAttribute="width" id="bsk-0t-JiU"/>
+                            <constraint firstItem="pIl-Vr-vGY" firstAttribute="top" secondItem="Zlf-UB-jot" secondAttribute="top" id="fKc-47-4Iq"/>
+                            <constraint firstItem="GHK-dk-dMs" firstAttribute="top" secondItem="Zlf-UB-jot" secondAttribute="bottom" id="gGs-WN-4Fo"/>
+                            <constraint firstItem="Zlf-UB-jot" firstAttribute="top" secondItem="7T9-wA-VNw" secondAttribute="bottom" id="kjc-hg-Azc"/>
+                            <constraint firstItem="GHK-dk-dMs" firstAttribute="width" secondItem="qJs-8a-0vQ" secondAttribute="width" id="lwh-UZ-MDy"/>
+                            <constraint firstItem="GHK-dk-dMs" firstAttribute="height" secondItem="qJs-8a-0vQ" secondAttribute="height" multiplier="0.08" id="o4z-10-0Zw"/>
+                            <constraint firstItem="UC3-bW-WhP" firstAttribute="centerX" secondItem="Zlf-UB-jot" secondAttribute="centerX" id="oKq-Jc-728"/>
+                            <constraint firstItem="GHK-dk-dMs" firstAttribute="centerX" secondItem="qJs-8a-0vQ" secondAttribute="centerX" id="wg8-Nl-w1O"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Book" id="FQr-CS-INA"/>
                     <connections>
+                        <outlet property="addBookBar" destination="GHK-dk-dMs" id="a41-SN-Qif"/>
+                        <outlet property="manualContainerView" destination="Zlf-UB-jot" id="NLA-Ss-Wbh"/>
                         <outlet property="manuallyAddBookView" destination="zeT-da-bs0" id="1RV-En-Daz"/>
+                        <outlet property="scanContainerView" destination="pIl-Vr-vGY" id="Wf6-q1-ba2"/>
+                        <outlet property="searchContainerView" destination="UC3-bW-WhP" id="2Kc-wI-um1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TxZ-mu-OV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="357"/>
+            <point key="canvasLocation" x="2656.8000000000002" y="356.67166416791605"/>
+        </scene>
+        <!--Manually Add View Controller-->
+        <scene sceneID="ELX-1z-UXv">
+            <objects>
+                <viewController storyboardIdentifier="ManualViewController" id="1qV-Pv-fxq" customClass="ManuallyAddViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MOQ-dD-qMs"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbJ-gc-oJI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NFf-bi-bR6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeT-da-bs0" customClass="ManuallyAddBookView" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zeT-da-bs0" firstAttribute="left" secondItem="NFf-bi-bR6" secondAttribute="left" id="B1v-av-ys7"/>
+                            <constraint firstItem="rbJ-gc-oJI" firstAttribute="top" secondItem="zeT-da-bs0" secondAttribute="bottom" id="Sce-9P-bU5"/>
+                            <constraint firstAttribute="right" secondItem="zeT-da-bs0" secondAttribute="right" id="qr7-S9-39y"/>
+                            <constraint firstItem="zeT-da-bs0" firstAttribute="top" secondItem="MOQ-dD-qMs" secondAttribute="bottom" id="zRv-iL-ny3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAq-AD-IKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3529" y="273"/>
+        </scene>
+        <!--Scan Book View Controller-->
+        <scene sceneID="onD-sy-zoG">
+            <objects>
+                <viewController storyboardIdentifier="ScanViewController" id="yDE-Ew-GTc" customClass="ScanBookViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lh7-bf-kYQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tNu-0C-SNB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fmA-Id-Whw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93409991260000003" green="0.53833818440000003" blue="0.52561187740000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSz-7P-W4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4310" y="481"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lGS-qI-lHN">
@@ -294,6 +377,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hon-zm-Uzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2685.5999999999999" y="-350.37481259370315"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3h4-Pq-5Vw">
+            <objects>
+                <viewController id="rIx-rL-AKQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tB-qY-dTt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="544.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9Y-rx-DBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3092" y="1057"/>
         </scene>
     </scenes>
 </document>

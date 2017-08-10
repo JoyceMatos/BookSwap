@@ -16,79 +16,82 @@ import Firebase
 // TODO: - Refactor!!!
 // TODO: - Error handling
 
+struct State {
+    
+    var manualTapped: Bool
+    var scannedTapped: Bool
+}
+
+// TODO: - Seperate state logic
+
 class AddBookViewController: UIViewController {
     
-    // NOTE: - Manual view is just for testing
+    @IBOutlet weak var manualContainerView: UIView!
+    @IBOutlet weak var scanContainerView: UIView!
+    @IBOutlet weak var searchContainerView: UIView!
+    @IBOutlet weak var addBookBar: AddBookBarView!
     
-    @IBOutlet weak var manuallyAddBookView: ManuallyAddBookView!
-    let firebaseManager = FirebaseManager()
-    var user: User? // Is this ever used?
-    var viewModel: ManuallyAddBookViewModel? // Is this ever used?
+    var didTapManual = true
+    var didTapScan = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBookAction()
+        addButtonTargets()
+        self.manualContainerView.alpha = 1.0
+        self.scanContainerView.alpha = 0.0
+        self.searchContainerView.alpha = 0.0
     }
     
-    func retrieveValues() -> Book? {
-        var book: Book?
-        if let title = manuallyAddBookView.titleField.text, let author = manuallyAddBookView.authorField.text {
-            book = Book(title: title, author: author)
+    func addButtonTargets() {
+        addBookBar.manualBtn.addTarget(self, action: #selector(manualTapped), for: .touchUpInside)
+        addBookBar.scanBtn.addTarget(self, action: #selector(scanTapped), for: .touchUpInside)
+        addBookBar.searchBtn.addTarget(self, action: #selector(searchTapped), for: .touchUpInside)
+    }
+    
+    func manualTapped() {
+        var didTapManual = true
+        var didTapScan = false
+        animateManualView()
+    }
+    
+    func scanTapped() {
+        var didTapManual = false
+        var didTapScan = true
+        animateScanView()
+    }
+    
+    func searchTapped() {
+        var didTapManual = false
+        var didTapScan = true
+        animateSearchView()
+    }
+    
+    // MARK: - Animate Container Views
+    func animateManualView() {
+        UIView.animate(withDuration: 0.5) {
+            self.manualContainerView.alpha = 1.0
+            self.scanContainerView.alpha = 0.0
+            self.searchContainerView.alpha = 0.0
         }
-        return book
     }
     
-    func addBookAction() {
-        manuallyAddBookView.addBookButton.addTarget(self, action: #selector(addBookTapped), for: .touchUpInside)
-    }
-    
-    func addBookTapped() {
-        let book = retrieveValues()
-        let user = Auth.auth().currentUser
-        
-        guard let userID = user?.uid else {
-            return
+    func animateScanView() {
+        UIView.animate(withDuration: 0.5) {
+            self.manualContainerView.alpha = 0.0
+            self.scanContainerView.alpha = 1.0
+            self.searchContainerView.alpha = 0.0
         }
-        
-        if let book = book {
-            // Get Library ID
-            firebaseManager.getLibrary(for: userID, completion: { (libraryID) in
-                // Add Book
-                self.add(book, to: libraryID, for: userID)
-            })
+    }
+    
+    func animateSearchView() {
+        UIView.animate(withDuration: 0.5) {
+            self.manualContainerView.alpha = 0.0
+            self.scanContainerView.alpha = 0.0
+            self.searchContainerView.alpha = 1.0
         }
     }
     
 }
 
-// MARK: - API Methods
-extension AddBookViewController {
 
-    func add(_ book: Book, to libraryID: String, for userID: String) {
-        // Add bookID to library
-        firebaseManager.add(book, to: libraryID) { (success) in
-            if success {
-                // Get bookID
-                self.firebaseManager.retrieveAddedBookID(from: libraryID, completion: { (bookID) in
-                    // Add book, library, and user ID to book
-                    var newBook = book
-                    newBook.id = bookID
-                    newBook.userID = userID
-                    newBook.libraryID = libraryID
-                    // Add book to book node
-                    self.firebaseManager.add(newBook, completion: { (success) in
-                        if success {
-                            // do something
-                        } else {
-                            // handle
-                        }
-                    })
-                })
-            } else {
-                // handle
-            }
-        }
-    }
-
-    
-}
