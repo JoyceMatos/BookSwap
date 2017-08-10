@@ -18,14 +18,14 @@ import FirebaseDatabase
 // TODO: - Create enum that determines where to the database we are writing to
 // TODO: - Fix multithreading with qos: userInitiated
 
-final class FirebaseManager {
+final class FirebaseManager: NetworkingService {
     
     static var ref = Database.database().reference()
     
     // Create New User
     
     // NOTE: - Note in use yet (will be used once create method is refactors)
-    class func authenticate(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
+    func authenticate(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
         guard var newUser = newUser else {
             print("no user") // TODO: - Handle Error
             return
@@ -45,7 +45,7 @@ final class FirebaseManager {
     }
     
     
-    class func create(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
+    func create(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
         guard var newUser = newUser else {
             print("no user") // TODO: - Handle Error
             return
@@ -54,7 +54,7 @@ final class FirebaseManager {
         Auth.auth().createUser(withEmail: newUser.email, password: password, completion: { (user, error) in
             if error == nil {
                 if let user = user {
-                    ref.child("users").child(user.uid).setValue(newUser.serialize(), withCompletionBlock: { (error, ref) in
+                    FirebaseManager.ref.child("users").child(user.uid).setValue(newUser.serialize(), withCompletionBlock: { (error, ref) in
                         newUser.id = user.uid
                         guard error == nil else {
                             // TODO: - Handle error
@@ -71,7 +71,7 @@ final class FirebaseManager {
     }
     
     // Add location to users info
-    class func addUserLocation(_ uid: String, location: Int, completion: @escaping (Bool) -> Void) {
+    func addUserLocation(_ uid: String, location: Int, completion: @escaping (Bool) -> Void) {
         let userLocation = ["zipCode": location]
         FirebaseManager.ref.child("users").child(uid).updateChildValues(userLocation) { (error, ref) in
             if error == nil {
@@ -87,7 +87,7 @@ final class FirebaseManager {
     
     // TODO: - Add additional book properties (only add author & title for now
     // Adds book with book ID to Books DB
-    class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
+     func add(_ book: Book, completion: @escaping (Bool) -> Void) {
         if let bookID = book.id {
             FirebaseManager.ref.child("books").updateChildValues([bookID: book.serialize()], withCompletionBlock: { (error, ref) in
                 if error == nil {
@@ -107,7 +107,7 @@ final class FirebaseManager {
     }
     
     // Adds book to library and create book ID
-    class func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
+     func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).child("books").childByAutoId().setValue(true) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -124,7 +124,7 @@ final class FirebaseManager {
     }
     
     // NOTE: - Adds a new library to Library DB
-    class func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
+     func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("libraries").childByAutoId().updateChildValues(["userID": userID]) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -140,7 +140,7 @@ final class FirebaseManager {
     }
     
     // NOTE: - Retrieves newly added libraryID from Library DB
-    class func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) {
+     func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) {
         // TODO: - Carefully unwrap userID
         FirebaseManager.ref.child("libraries").observe(.childAdded, with: { (snapshot) in
             let libraryID = snapshot.key
@@ -151,7 +151,7 @@ final class FirebaseManager {
     }
     
     // NOTE: - Updates user info with newly created library
-    class func update(_ userID: String, with libraryID: String, completion: @escaping (Bool) -> Void) {
+     func update(_ userID: String, with libraryID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("users").child(userID).child("library").setValue(libraryID) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -166,7 +166,7 @@ final class FirebaseManager {
     }
     
     // NOTE: - Updates user with book ID
-    class func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void) {
+     func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).child("books").observe(.childAdded, with: { (snapshot) in
             let bookID = snapshot.key
             DispatchQueue.main.async {
@@ -176,7 +176,7 @@ final class FirebaseManager {
     }
     
     // Gets all books from book ref
-    class func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
+     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
         FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
             var dictionary = [String: Any]()
             let books = snapshot.value as? [String: Any]
@@ -196,7 +196,7 @@ final class FirebaseManager {
     }
     
     // Get LibraryID
-    class func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
+     func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
         FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
             let libraryID = snapshot.value
             DispatchQueue.main.async {
@@ -206,7 +206,7 @@ final class FirebaseManager {
     }
     
     // 2. Go to libraries and retrieve books from library
-    class func retrieveBooks(from libraryID: String, completion: @escaping ([String: Any]) -> Void) {
+     func retrieveBooks(from libraryID: String, completion: @escaping ([String: Any]) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).observe(.value, with: { (snapshot) in
             
             // GET Books

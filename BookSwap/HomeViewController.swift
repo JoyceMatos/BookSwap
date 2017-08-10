@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeView: HomeView!
     var viewModel: HomeViewModel!
-
+    let firebaseManager = FirebaseManager()
     var delegate: RetrieveBooksDelegate?
     
     // Remove these properties
@@ -29,46 +29,22 @@ class HomeViewController: UIViewController {
         homeView.collectionView.dataSource = self
 
      //   delegate = self
-       fetch()
+       fetch(from: firebaseManager)
     }
     
     // API Method
     
-    func fetch() {
-        print("In the fetch")
-        DataStore.shared.getBooks {
+    func fetch(from service: NetworkingService) {
+        DataStore.shared.getBooks(from: service) {
             DispatchQueue.main.async {
-            print("Getting books")
             self.viewModel = HomeViewModel(books: DataStore.shared.books)
             self.homeView.collectionView.reloadData()
             }
         }
-//        print("In the fetch")
-//        self.delegate?.fetch({
-//            print("Hello lets get this viewModel")
-//                self.viewModel = HomeViewModel(books: DataStore.shared.books)
-//                self.collectionView.reloadData()
-//            
-//        })
-//        
-
     }
     
     // MARK: - Action Methods
     
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        // Pass book by segue 
-//        
-////        if segue.identifier == SegueIdentifier.showDetailBook {
-////            let destVC = segue.destination as! DetailedBookViewController
-////            
-////          //  destVC.book = viewModel.book[inde]
-////        }
-//    }
-
     
 }
 
@@ -128,16 +104,3 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
 }
 
-//extension HomeViewController: RetrieveBooksDelegate {
-//    
-////    func fetch(_ completion: @escaping () -> Void) {
-////        print("Okay fetch protocol")
-////        DispatchQueue.main.async {
-////            print("In the protocol queue")
-////        DataStore.shared.getBooks {
-////                completion()
-////            }
-////        }
-////    }
-//    
-//}

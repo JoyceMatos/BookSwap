@@ -16,11 +16,10 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpView: SignUpView!
     var viewModel: UserViewModel!
-    var delegate: SignUpDelegate?
+    let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         addSignUpAction()
     }
     
@@ -47,11 +46,11 @@ class SignUpViewController: UIViewController {
         let password = userDetails["password"] as! String
         viewModel = UserViewModel(userDetails: userDetails)
         
-        delegate?.signUp(viewModel.user, with: password, completion: { (success, id) in
+        signUp(for: firebaseManager, user: viewModel.user, with: password) { (success, id) in
             if success {
                 if let id = id {
                     self.viewModel.user.id = id
-                    self.createLibrary(id, completion: { (libraryID) in
+                    self.createLibrary(for: self.firebaseManager, userID: id, completion: { (libraryID) in
                         self.viewModel.user.libraryID = libraryID
                     })
                     self.performSegue(withIdentifier: SegueIdentifier.showLocation, sender: nil)
@@ -60,15 +59,27 @@ class SignUpViewController: UIViewController {
             else {
                 // Show error alert
             }
-        })
-        
+
+        }
     }
     
-    func createLibrary(_ userID: String, completion: @escaping (String?) -> Void) {
-        FirebaseManager.addLibrary(for: userID) { (success) in
+    func signUp(for service: NetworkingService, user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
+        service.create(user, password: password, completion: { (success, user) in
             if success {
-                FirebaseManager.retreiveAddedLibrary({ (libraryID) in
-                    FirebaseManager.update(userID, with: libraryID, completion: { (success) in
+                completion(true, user?.id)
+            } else {
+                print("Error signing up")
+                completion(false, nil)
+                // Handle this error
+            }
+        })
+    }
+    
+    func createLibrary(for service: NetworkingService, userID: String, completion: @escaping (String?) -> Void) {
+        service.addLibrary(for: userID) { (success) in
+            if success {
+                service.retreiveAddedLibrary({ (libraryID) in
+                    service.update(userID, with: libraryID, completion: { (success) in
                         if success {
                             completion(libraryID)
                         } else {
@@ -90,19 +101,3 @@ class SignUpViewController: UIViewController {
     }
 }
 
-// MARK: - Delegate Method
-
-extension SignUpViewController: SignUpDelegate {
-    
-    func signUp(_ user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
-        FirebaseManager.create(user, password: password, completion: { (success, user) in
-            if success {
-                completion(true, user?.id)
-            } else {
-                print("Error signing up")
-                completion(false, nil)
-                // Handle this error
-            }
-        })
-    }
-}

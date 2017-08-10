@@ -18,6 +18,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var locationView: LocationView!
     var viewModel: UserViewModel!
     var delegate: LocationDelegate?
+    let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,7 @@ extension LocationViewController: LocationDelegate {
             return
         }
         
-        FirebaseManager.addUserLocation(userID, location: location) { (success) in
+        firebaseManager.addUserLocation(userID, location: location) { (success) in
             if success {
                 completion(true, user)
             } else {
