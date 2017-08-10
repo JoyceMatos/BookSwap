@@ -20,7 +20,6 @@ struct UserViewModel {
         let location = userDetails["locations"] as? Int
         let libraryID = userDetails["library"] as? String
 
-        
         self.user = User(id: nil, profilePhoto: profilePhoto, firstName: firstName, lastName: lastName, email: email, location: location, libraryID: libraryID)
     }
 
