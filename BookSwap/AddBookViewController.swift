@@ -21,7 +21,7 @@ class AddBookViewController: UIViewController {
     // NOTE: - Manual view is just for testing
     
     @IBOutlet weak var manuallyAddBookView: ManuallyAddBookView!
-    
+    let firebaseManager = FirebaseManager()
     var user: User? // Is this ever used?
     var viewModel: ManuallyAddBookViewModel? // Is this ever used?
     
@@ -52,27 +52,31 @@ class AddBookViewController: UIViewController {
         
         if let book = book {
             // Get Library ID
-            FirebaseManager.getLibrary(for: userID, completion: { (libraryID) in
+            firebaseManager.getLibrary(for: userID, completion: { (libraryID) in
                 // Add Book
                 self.add(book, to: libraryID, for: userID)
             })
         }
     }
     
-    
+}
+
+// MARK: - API Methods
+extension AddBookViewController {
+
     func add(_ book: Book, to libraryID: String, for userID: String) {
         // Add bookID to library
-        FirebaseManager.add(book, to: libraryID) { (success) in
+        firebaseManager.add(book, to: libraryID) { (success) in
             if success {
                 // Get bookID
-                FirebaseManager.retrieveAddedBookID(from: libraryID, completion: { (bookID) in
+                self.firebaseManager.retrieveAddedBookID(from: libraryID, completion: { (bookID) in
                     // Add book, library, and user ID to book
                     var newBook = book
                     newBook.id = bookID
                     newBook.userID = userID
                     newBook.libraryID = libraryID
                     // Add book to book node
-                    FirebaseManager.add(newBook, completion: { (success) in
+                    self.firebaseManager.add(newBook, completion: { (success) in
                         if success {
                             // do something
                         } else {
@@ -85,8 +89,6 @@ class AddBookViewController: UIViewController {
             }
         }
     }
-    
-    
-    
+
     
 }

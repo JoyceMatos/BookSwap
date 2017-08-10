@@ -14,8 +14,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeView: HomeView!
     var viewModel: HomeViewModel!
-
-    var delegate: RetrieveBooksDelegate?
+    let firebaseManager = FirebaseManager()
     
     // Remove these properties
     fileprivate let leftAndRightPadding: CGFloat = 52.0
@@ -27,48 +26,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
-
-     //   delegate = self
-       fetch()
+        fetch(from: firebaseManager)
     }
+}
+
+// API Method
+extension HomeViewController {
     
-    // API Method
-    
-    func fetch() {
-        print("In the fetch")
-        DataStore.shared.getBooks {
+    func fetch(from service: NetworkingService) {
+        DataStore.shared.getBooks(from: service) {
             DispatchQueue.main.async {
-            print("Getting books")
-            self.viewModel = HomeViewModel(books: DataStore.shared.books)
-            self.homeView.collectionView.reloadData()
+                self.viewModel = HomeViewModel(books: DataStore.shared.books)
+                self.homeView.collectionView.reloadData()
             }
         }
-//        print("In the fetch")
-//        self.delegate?.fetch({
-//            print("Hello lets get this viewModel")
-//                self.viewModel = HomeViewModel(books: DataStore.shared.books)
-//                self.collectionView.reloadData()
-//            
-//        })
-//        
-
     }
-    
-    // MARK: - Action Methods
-    
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        // Pass book by segue 
-//        
-////        if segue.identifier == SegueIdentifier.showDetailBook {
-////            let destVC = segue.destination as! DetailedBookViewController
-////            
-////          //  destVC.book = viewModel.book[inde]
-////        }
-//    }
-
     
 }
 
@@ -80,9 +52,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("Uh, not quick enough")
-     //   return viewModel.books.count
+        //   return viewModel.books.count
         return DataStore.shared.books.count
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -119,7 +91,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
         
     }
@@ -128,16 +100,3 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
 }
 
-//extension HomeViewController: RetrieveBooksDelegate {
-//    
-////    func fetch(_ completion: @escaping () -> Void) {
-////        print("Okay fetch protocol")
-////        DispatchQueue.main.async {
-////            print("In the protocol queue")
-////        DataStore.shared.getBooks {
-////                completion()
-////            }
-////        }
-////    }
-//    
-//}

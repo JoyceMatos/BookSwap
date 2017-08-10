@@ -15,9 +15,9 @@ final class DataStore {
     
     private init() { }
     
-    func getBooks(completion: @escaping () -> Void) {
+    func getBooks(from service: NetworkingService, completion: @escaping () -> Void) {
         books.removeAll()
-        FirebaseManager.retrieveAllBooks { (storedBooks) in
+        service.retrieveAllBooks { (storedBooks) in
             // TODO: - Maybe use higher order function indead
             for book in storedBooks {
                 let bookDict = book.value as! [String: Any]
