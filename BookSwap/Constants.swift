@@ -8,6 +8,14 @@
 
 import Foundation
 
+struct Ref {
+    
+    static let users = "users"
+    static let libraries = "libraries"
+    static let books = "books"
+    
+}
+
 struct SegueIdentifier {
     
     static let showLocation = "showLocation"
