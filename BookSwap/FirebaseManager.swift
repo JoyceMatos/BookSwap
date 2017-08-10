@@ -16,7 +16,7 @@ import FirebaseDatabase
 // TODO: - Create API protocols and have this manager conform to it
 // TODO: - Create enum that determines where to the database we are writing to
 // ie:     // class func add(to database: DatabaseType)
-
+// TODO: - Fix multithreading with qos: userInitiated
 
 final class FirebaseManager {
     
@@ -38,6 +38,7 @@ final class FirebaseManager {
                     completion(true, newUser)
                 }
             } else {
+                // TODO: - Handle error
                 completion(false, nil)
             }
         })
@@ -56,6 +57,7 @@ final class FirebaseManager {
                     ref.child("users").child(user.uid).setValue(newUser.serialize(), withCompletionBlock: { (error, ref) in
                         newUser.id = user.uid
                         guard error == nil else {
+                            // TODO: - Handle error
                             completion(false, nil)
                             return
                         }
@@ -75,6 +77,7 @@ final class FirebaseManager {
             if error == nil {
                 completion(true)
             } else {
+                // Handle Error
                 completion(false)
             }
         }
@@ -85,25 +88,18 @@ final class FirebaseManager {
     // TODO: - Add additional book properties (only add author & title for now
     // NOTE: - Adds book to Books DB
     class func add(_ book: Book, completion: @escaping (Bool) -> Void) {
-        print("lets add this book ref")
-        print("heres out book:", book)
         if let bookID = book.id {
-            print("ok we got the bookID")
             FirebaseManager.ref.child("books").updateChildValues([bookID: book.serialize()], withCompletionBlock: { (error, ref) in
-                print("book ref book ref")
                 if error == nil {
-                    print("no error in book ref")
                     DispatchQueue.main.async {
-                        print("Completion true")
                         completion(true)
                     }
                 } else {
+                    // TODO: - Handle error
                     DispatchQueue.main.async {
                         completion(false)
                     }
-                    //  completion(false)
                     print("Here is our error", error?.localizedDescription)
-                    // Handle this case
                 }
                 
             })
@@ -118,6 +114,7 @@ final class FirebaseManager {
                     completion(true)
                 }
             } else {
+                // Handle error
                 DispatchQueue.main.async {
                     completion(false)
                 }
@@ -128,13 +125,13 @@ final class FirebaseManager {
     
     // NOTE: - Adds a new library from Library DB
     class func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
-        // TODO: - Carefully unwrap userID
         FirebaseManager.ref.child("libraries").childByAutoId().updateChildValues(["userID": userID]) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
                     completion(true)
                 }
             } else {
+                // Handle error
                 DispatchQueue.main.async {
                     completion(false)
                 }
@@ -200,10 +197,8 @@ final class FirebaseManager {
     }
     
     class func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
-        // TODO: - Carefully unwrap UID
         FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
             let libraryID = snapshot.value
-            print(libraryID)
             DispatchQueue.main.async {
                 completion(snapshot.value as! String)
             }

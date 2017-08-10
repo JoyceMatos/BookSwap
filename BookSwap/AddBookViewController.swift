@@ -14,7 +14,6 @@ import Firebase
 // TODO: - Swap manual view/viewModel for correct one
 // TODO: - Redo how you're passing data into this tab bar
 // TODO: - Refactor!!!
-// TODO: - Work on book method
 // TODO: - Error handling
 
 class AddBookViewController: UIViewController {
@@ -23,114 +22,68 @@ class AddBookViewController: UIViewController {
     
     @IBOutlet weak var manuallyAddBookView: ManuallyAddBookView!
     
-    var user: User?
-    var viewModel: ManuallyAddBookViewModel?
+    var user: User? // Is this ever used?
+    var viewModel: ManuallyAddBookViewModel? // Is this ever used?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBookAction()
-        
     }
     
     func retrieveValues() -> Book? {
         var book: Book?
-        
         if let title = manuallyAddBookView.titleField.text, let author = manuallyAddBookView.authorField.text {
             book = Book(title: title, author: author)
         }
-        
         return book
     }
     
     func addBookAction() {
         manuallyAddBookView.addBookButton.addTarget(self, action: #selector(addBookTapped), for: .touchUpInside)
-        
     }
     
     func addBookTapped() {
-        var book = retrieveValues()
+        let book = retrieveValues()
         let user = Auth.auth().currentUser
-        
-        // MARK: - Library Methods
         
         guard let userID = user?.uid else {
             return
         }
-        if let book = book {
-            
-            // 1. Get libraryID 
-            // 2. Go to library branch and add bookID 
-            // 3. Go to library book db and add book with id
-            
-            FirebaseManager.getLibrary(for: userID, completion: { (libraryID) in
-                print("libraryID:", libraryID)
-                print("UserID:", userID)
-                self.add(book, to: libraryID, for: userID)
-
-            })
-            
-            
-        }
-
         
+        if let book = book {
+            // Get Library ID
+            FirebaseManager.getLibrary(for: userID, completion: { (libraryID) in
+                // Add Book
+                self.add(book, to: libraryID, for: userID)
+            })
+        }
     }
     
     
     func add(_ book: Book, to libraryID: String, for userID: String) {
-//        print("Are we adding the book?")
-//        // Handle this case
-//        var addedBook = book
-//        FirebaseManager.add(book) { (success) in
-//            print("Adding book to firebase db")
-//            if success {
-//                print("We'eve got a success?")
-//                FirebaseManager.retreiveAddedBook({ (bookID) in
-//                    print("Retrievingbook ID")
-//                    addedBook.id = bookID
-//                    FirebaseManager.add(bookID, to: libraryID, completion: { (success) in
-//                        print("Ok now lets add the book to the library")
-//                        if success {
-//                            print("BOOK IN LIBRARY")
-//                            // do something
-//                        }
-//                    })
-//                    
-//                })
-//                
-//            }
-//        }
-        
-        
-        
+        // Add bookID to library
         FirebaseManager.add(book, to: libraryID) { (success) in
             if success {
+                // Get bookID
                 FirebaseManager.retrieveAddedBookID(from: libraryID, completion: { (bookID) in
-                  //  book.id = bookID
-                    
-                    // TODO: - Attach userID and libraryID to book, pass the book into the following function, and fix the serialization for the book method to include userID & libraryID
+                    // Add book, library, and user ID to book
                     var newBook = book
                     newBook.id = bookID
                     newBook.userID = userID
                     newBook.libraryID = libraryID
-                    
+                    // Add book to book node
                     FirebaseManager.add(newBook, completion: { (success) in
                         if success {
-                            
-                            
-                        
+                            // do something
                         } else {
-                            print("Uh, think we need some more work")
+                            // handle
                         }
                     })
-                    print("ayyyyy heres the bookID:", bookID)
                 })
-                // 1. Observe last updated book and get ID
-                print("We have a bookID in our library")
             } else {
-                print("no bookID")
+                // handle
             }
         }
-        
     }
     
     
