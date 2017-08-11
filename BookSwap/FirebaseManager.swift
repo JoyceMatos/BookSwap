@@ -87,7 +87,7 @@ final class FirebaseManager: NetworkingService {
     
     // TODO: - Add additional book properties (only add author & title for now
     // Adds book with book ID to Books DB
-     func add(_ book: Book, completion: @escaping (Bool) -> Void) {
+    func add(_ book: Book, completion: @escaping (Bool) -> Void) {
         if let bookID = book.id {
             FirebaseManager.ref.child("books").updateChildValues([bookID: book.serialize()], withCompletionBlock: { (error, ref) in
                 if error == nil {
@@ -106,8 +106,9 @@ final class FirebaseManager: NetworkingService {
         }
     }
     
+    // TODO: !!!! WORK ON THIS METHOD. THIS SHOULD NOT SETVALUE!!!!!
     // Adds book to library and create book ID
-     func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
+    func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).child("books").childByAutoId().setValue(true) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -124,7 +125,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // NOTE: - Adds a new library to Library DB
-     func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
+    func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("libraries").childByAutoId().updateChildValues(["userID": userID]) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -140,7 +141,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // NOTE: - Retrieves newly added libraryID from Library DB
-     func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) {
+    func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) {
         // TODO: - Carefully unwrap userID
         FirebaseManager.ref.child("libraries").observe(.childAdded, with: { (snapshot) in
             let libraryID = snapshot.key
@@ -151,7 +152,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // NOTE: - Updates user info with newly created library
-     func update(_ userID: String, with libraryID: String, completion: @escaping (Bool) -> Void) {
+    func update(_ userID: String, with libraryID: String, completion: @escaping (Bool) -> Void) {
         FirebaseManager.ref.child("users").child(userID).child("library").setValue(libraryID) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
@@ -166,7 +167,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // NOTE: - Updates user with book ID
-     func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void) {
+    func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void) {
         FirebaseManager.ref.child("libraries").child(libraryID).child("books").observe(.childAdded, with: { (snapshot) in
             let bookID = snapshot.key
             DispatchQueue.main.async {
@@ -176,7 +177,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // Gets all books from book ref
-     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
+    func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
         FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
             var dictionary = [String: Any]()
             let books = snapshot.value as? [String: Any]
@@ -196,7 +197,7 @@ final class FirebaseManager: NetworkingService {
     }
     
     // Get LibraryID
-     func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
+    func getLibrary(for userID: String, completion: @escaping (String) -> Void) {
         FirebaseManager.ref.child("users").child(userID).child("library").observe(.value, with: { (snapshot) in
             let libraryID = snapshot.value
             DispatchQueue.main.async {
@@ -206,18 +207,36 @@ final class FirebaseManager: NetworkingService {
     }
     
     // 2. Go to libraries and retrieve books from library
-     func retrieveBooks(from libraryID: String, completion: @escaping ([String: Any]) -> Void) {
-        FirebaseManager.ref.child("libraries").child(libraryID).observe(.value, with: { (snapshot) in
-            
-            // GET Books
-            print(snapshot.value)
-            //   let book = snapshot.value
-            
-            // 3. Create book objects
-            // 4. Return array of books
+    func retrieveBooks(from libraryID: String, completion: @escaping ([String]) -> Void) {
+        FirebaseManager.ref.child("libraries").child(libraryID).child("books").observe(.value, with: { (snapshot) in
+            var bookIDs = [String]()
+            let books = snapshot.value as? [String: Any]
+            if let books = books {
+                for book in books {
+                    bookIDs.append(book.key)
+                }
+            }
+            completion(bookIDs)
             
         })
     }
+    
+    func retrieveBooks(for bookIDs: [String], completion: @escaping ([String: Any]) -> Void) {
+        FirebaseManager.ref.child("books").observe(.value, with: { (snapshot) in
+            let bookDictionary = snapshot.value as? [String: Any]
+            var books = [String: Any]()
+            if let bookDictionary = bookDictionary {
+                for book in bookDictionary {
+                    if bookIDs.contains(book.key) {
+                        books[book.key] = book.value
+                    }
+                }
+            }
+            completion(books)
+        })
+        
+    }
+    
     
 }
 

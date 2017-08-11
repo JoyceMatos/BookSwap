@@ -19,20 +19,21 @@ class ManuallyAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   addBookAction()
+        addBookAction()
     }
     
     func retrieveValues() -> Book? {
         var book: Book?
-        if let title = manuallyAddBookView.titleField.text, let author = manuallyAddBookView.authorField.text {
+        if let title = manuallyAddBookView.titleField.text,
+            let author = manuallyAddBookView.authorField.text {
             book = Book(title: title, author: author)
         }
         return book
     }
     
-//    func addBookAction() {
-//        manuallyAddBookView.addBookButton.addTarget(self, action: #selector(addBookTapped), for: .touchUpInside)
-//    }
+    func addBookAction() {
+        manuallyAddBookView.addBookButton.addTarget(self, action: #selector(addBookTapped), for: .touchUpInside)
+    }
     
     func addBookTapped() {
         let book = retrieveValues()

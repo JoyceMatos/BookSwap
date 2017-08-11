@@ -17,6 +17,5 @@ class BookCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
 
     }
-    
 
 }

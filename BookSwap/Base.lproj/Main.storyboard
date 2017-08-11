@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bb2-bI-0Kf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -205,7 +205,6 @@
                     <connections>
                         <outlet property="addBookBar" destination="GHK-dk-dMs" id="a41-SN-Qif"/>
                         <outlet property="manualContainerView" destination="Zlf-UB-jot" id="NLA-Ss-Wbh"/>
-                        <outlet property="manuallyAddBookView" destination="zeT-da-bs0" id="1RV-En-Daz"/>
                         <outlet property="scanContainerView" destination="pIl-Vr-vGY" id="Wf6-q1-ba2"/>
                         <outlet property="searchContainerView" destination="UC3-bW-WhP" id="2Kc-wI-um1"/>
                     </connections>
@@ -239,6 +238,9 @@
                             <constraint firstItem="zeT-da-bs0" firstAttribute="top" secondItem="MOQ-dD-qMs" secondAttribute="bottom" id="zRv-iL-ny3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="manuallyAddBookView" destination="zeT-da-bs0" id="zdY-0x-yNs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAq-AD-IKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,6 +384,10 @@
         <scene sceneID="3h4-Pq-5Vw">
             <objects>
                 <viewController id="rIx-rL-AKQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERn-Z9-UbA"/>
+                        <viewControllerLayoutGuide type="bottom" id="jae-iG-ALE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9tB-qY-dTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="544.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

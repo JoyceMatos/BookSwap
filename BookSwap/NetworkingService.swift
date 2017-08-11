@@ -23,11 +23,13 @@ protocol NetworkingService: class {
     func add(_ book: Book, completion: @escaping (Bool) -> Void)
     func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void)
     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void)
+    func retrieveBooks(for bookIDs: [String], completion: @escaping ([String: Any]) -> Void)
+
     
     // Libraries
     func addLibrary(for userID: String, completion: @escaping (Bool) -> Void)
     func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void)
     func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) 
-    func retrieveBooks(from libraryID: String, completion: @escaping ([String: Any]) -> Void)
+    func retrieveBooks(from libraryID: String, completion: @escaping ([String]) -> Void)
     
 }
