@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileView: HomeView!
     let firebaseManager = FirebaseManager()
     
+    let allBooks = [Book]()
+    
     // Remove these properties
     fileprivate let leftAndRightPadding: CGFloat = 52.0
     fileprivate let itemsPerRow: CGFloat = 3.0
@@ -33,7 +35,10 @@ class ProfileViewController: UIViewController {
                 self.getBooks(for: self.firebaseManager, libraryID: libraryID, completion: { (bookIDs) in
                     self.getUsersBooks(for: self.firebaseManager, from: bookIDs, completion: { (books) in
                         
-                        // TODO: - Create book objects out of these dictionaries
+                        for book in books {
+                            // TODO: - Create book objects out of these dictionaries
+
+                        }
                         
                     })
                 })
