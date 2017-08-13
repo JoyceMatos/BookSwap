@@ -43,13 +43,33 @@ class ManuallyAddViewController: UIViewController {
             return
         }
         
-        if let book = book {
+        if var book = book {
             // Get Library ID
             firebaseManager.getLibrary(for: userID, completion: { (libraryID) in
                 // Add Book
-                self.add(book, to: libraryID, for: userID)
+                
+                book.userID = userID
+                book.libraryID = libraryID
+                
+                
+                self.addToRef(book)
+                
+                
+                
+                
+                // self.add(book, to: libraryID, for: userID)
             })
         }
+        
+        
+        
+        
+        // Attempt 2
+        
+        // Add book with userID to book ref
+        // Retrieve latest book
+        // Get user's libraryID and add ID to user
+        // Go to library ref and create a books ref and set value to bookID with true
     }
     
 }
@@ -82,6 +102,38 @@ extension ManuallyAddViewController {
             }
         }
     }
-
-
+    
+    
+    func addToRef(_ book: Book) {
+        
+        firebaseManager.create(book) { (success) in
+            if success {
+                self.firebaseManager.retrieveID(for: book, completion: { (bookID) in
+                    guard let libraryID = book.libraryID else {
+                        
+                        print("Well no libraryID")
+                        // handle case
+                        return
+                    }
+                    
+                    var updatedBook = book
+                    updatedBook.id = bookID
+                    
+                    self.firebaseManager.add(updatedBook, to: libraryID, completion: { (success) in
+                        print("we in this add block tho")
+                        if success {
+                            print("We've added a book")
+                        } else {
+                            print("nopeeeee")
+                        }
+                    })
+                })
+                
+            }
+        }
+        
+        
+    }
+    
+    
 }

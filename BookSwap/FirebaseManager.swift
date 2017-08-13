@@ -106,23 +106,66 @@ final class FirebaseManager: NetworkingService {
         }
     }
     
-    // TODO: !!!! WORK ON THIS METHOD. THIS SHOULD NOT SETVALUE!!!!!
-    // Adds book to library and create book ID
-    func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
-        FirebaseManager.ref.child("libraries").child(libraryID).child("books").childByAutoId().setValue(true) { (error, ref) in
+    
+    func create(_ book: Book, completion: @escaping (Bool) -> Void) {
+        guard let userID = book.userID, let libraryID = book.libraryID else {
+            completion(false)
+            return
+        }
+        
+        let bookDict = ["title": book.title, "author": book.author, "userID": book.userID, "libraryID": book.libraryID]
+        
+        FirebaseManager.ref.child("books").childByAutoId().updateChildValues(bookDict) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
                     completion(true)
                 }
             } else {
-                // Handle error
                 DispatchQueue.main.async {
                     completion(false)
                 }
             }
+            
+        }
+    }
+    
+    
+    
+    
+    
+    // TODO: !!!! WORK ON THIS METHOD. THIS SHOULD NOT SETVALUE!!!!!
+    // Adds book to library and create book ID
+    func add(_ book: Book, to libraryID: String, completion: @escaping (Bool) -> Void) {
+        
+        print("LEts add the book to the library")
+        guard let bookID = book.id else {
+            print("Nope no book ID")
+            completion(false)
+            return
         }
         
+        print("LibraryID for adding book to", libraryID)
+        
+        FirebaseManager.ref.child("libraries").child(libraryID).child("books").updateChildValues([bookID: true]) { (error, ref) in
+            if error == nil {
+                DispatchQueue.main.async {
+                    print("Hello completion?")
+                    completion(true)
+                }
+                } else {
+                    
+                DispatchQueue.main.async {
+                    print("Uh error?")
+                    completion(false)
+                }
+                }
+            }
+
     }
+
+    
+    
+    
     
     // NOTE: - Adds a new library to Library DB
     func addLibrary(for userID: String, completion: @escaping (Bool) -> Void) {
@@ -175,6 +218,15 @@ final class FirebaseManager: NetworkingService {
             }
         })
     }
+    
+    func retrieveID(for book: Book, completion: @escaping (String) -> Void) {
+        FirebaseManager.ref.child("books").observeSingleEvent(of: .childAdded, with: { (snapshot) in
+            DispatchQueue.main.async {
+                completion(snapshot.key)
+            }
+        })
+    }
+    
     
     // Gets all books from book ref
     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {
