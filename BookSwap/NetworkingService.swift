@@ -22,10 +22,8 @@ protocol NetworkingService: class {
     // Books
     func add(_ book: Book, completion: @escaping (Bool) -> Void)
     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void)
-    func retrieveBooks(for bookIDs: [String], completion: @escaping ([String: Any]) -> Void)
-    func retrieveID(for book: Book, completion: @escaping (String) -> Void)
-    
-    func create(_ book: Book, completion: @escaping (Bool) -> Void)
+    func retrieveBooks(for bookIDs: [String], completion: @escaping ([String: Any]) -> Void)    
+    func create(_ book: Book, completion: @escaping (String?) -> Void)
     
     // Libraries
     func addLibrary(for userID: String, completion: @escaping (Bool) -> Void)

@@ -92,7 +92,7 @@ final class FirebaseManager: NetworkingService {
             FirebaseManager.ref.child("books").updateChildValues([bookID: book.serialize()], withCompletionBlock: { (error, ref) in
                 if error == nil {
                     DispatchQueue.main.async {
-                        completion(true)
+                            completion(true)
                     }
                 } else {
                     // TODO: - Handle error
@@ -107,9 +107,9 @@ final class FirebaseManager: NetworkingService {
     }
     
     
-    func create(_ book: Book, completion: @escaping (Bool) -> Void) {
+    func create(_ book: Book, completion: @escaping (String?) -> Void) {
         guard let userID = book.userID, let libraryID = book.libraryID else {
-            completion(false)
+            completion(nil)
             return
         }
         
@@ -118,11 +118,11 @@ final class FirebaseManager: NetworkingService {
         FirebaseManager.ref.child("books").childByAutoId().updateChildValues(bookDict) { (error, ref) in
             if error == nil {
                 DispatchQueue.main.async {
-                    completion(true)
+                    completion(ref.key)
                 }
             } else {
                 DispatchQueue.main.async {
-                    completion(false)
+                    completion(nil)
                 }
             }
             
@@ -218,15 +218,6 @@ final class FirebaseManager: NetworkingService {
             }
         })
     }
-    
-    func retrieveID(for book: Book, completion: @escaping (String) -> Void) {
-        FirebaseManager.ref.child("books").observeSingleEvent(of: .childAdded, with: { (snapshot) in
-            DispatchQueue.main.async {
-                completion(snapshot.key)
-            }
-        })
-    }
-    
     
     // Gets all books from book ref
     func retrieveAllBooks(_ completion: @escaping ([String: Any]) -> Void) {

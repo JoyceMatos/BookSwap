@@ -22,6 +22,7 @@ class ManuallyAddViewController: UIViewController {
         addBookAction()
     }
     
+    // TODO: - Use textfield delegate to retrieve values instead
     func retrieveValues() -> Book? {
         var book: Book?
         if let title = manuallyAddBookView.titleField.text,
@@ -44,32 +45,14 @@ class ManuallyAddViewController: UIViewController {
         }
         
         if var book = book {
-            // Get Library ID
+            // TODO: - Improve this
             firebaseManager.getLibrary(for: userID, completion: { (libraryID) in
                 // Add Book
-                
                 book.userID = userID
                 book.libraryID = libraryID
-                
-                
-                self.addToRef(book)
-                
-                
-                
-                
-                // self.add(book, to: libraryID, for: userID)
+                self.add(book)
             })
         }
-        
-        
-        
-        
-        // Attempt 2
-        
-        // Add book with userID to book ref
-        // Retrieve latest book
-        // Get user's libraryID and add ID to user
-        // Go to library ref and create a books ref and set value to bookID with true
     }
     
 }
@@ -77,62 +60,24 @@ class ManuallyAddViewController: UIViewController {
 // MARK: - API Methods
 extension ManuallyAddViewController {
     
-    func add(_ book: Book, to libraryID: String, for userID: String) {
-        // Add bookID to library
-        firebaseManager.add(book, to: libraryID) { (success) in
-            if success {
-                // Get bookID
-                self.firebaseManager.retrieveAddedBookID(from: libraryID, completion: { (bookID) in
-                    // Add book, library, and user ID to book
-                    var newBook = book
-                    newBook.id = bookID
-                    newBook.userID = userID
-                    newBook.libraryID = libraryID
-                    // Add book to book node
-                    self.firebaseManager.add(newBook, completion: { (success) in
-                        if success {
-                            // do something
-                        } else {
-                            // handle
-                        }
-                    })
-                })
-            } else {
-                // handle
+    func add(_ book: Book) {
+        firebaseManager.create(book) { (bookID) in
+            guard let libraryID = book.libraryID else {
+                //handle case
+                return
             }
+            
+            var updatedBook = book
+            updatedBook.id = bookID
+            
+            self.firebaseManager.add(updatedBook, to: libraryID, completion: { (success) in
+                if success {
+                    print("We've added a book")
+                } else {
+                    print("nopeeeee")
+                }
+            })
         }
-    }
-    
-    
-    func addToRef(_ book: Book) {
-        
-        firebaseManager.create(book) { (success) in
-            if success {
-                self.firebaseManager.retrieveID(for: book, completion: { (bookID) in
-                    guard let libraryID = book.libraryID else {
-                        
-                        print("Well no libraryID")
-                        // handle case
-                        return
-                    }
-                    
-                    var updatedBook = book
-                    updatedBook.id = bookID
-                    
-                    self.firebaseManager.add(updatedBook, to: libraryID, completion: { (success) in
-                        print("we in this add block tho")
-                        if success {
-                            print("We've added a book")
-                        } else {
-                            print("nopeeeee")
-                        }
-                    })
-                })
-                
-            }
-        }
-        
-        
     }
     
     
