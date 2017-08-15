@@ -55,6 +55,8 @@
 		2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558433C1F3CF48500238F83 /* ScanBookViewController.swift */; };
 		25DA75691F43795700442F3F /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA75681F43795700442F3F /* ProfileHeader.swift */; };
 		25DA756B1F43796400442F3F /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DA756A1F43796400442F3F /* ProfileHeader.xib */; };
+		25DA756E1F437F9600442F3F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA756C1F437F9600442F3F /* MessageTableViewCell.swift */; };
+		25DA756F1F437F9600442F3F /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DA756D1F437F9600442F3F /* MessageTableViewCell.xib */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
 		25E99FF71F21148800C1012B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF61F21148800C1012B /* HomeView.swift */; };
 		25E99FF91F21149600C1012B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E99FF81F21149600C1012B /* HomeView.xib */; };
@@ -120,6 +122,8 @@
 		2558433C1F3CF48500238F83 /* ScanBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookViewController.swift; sourceTree = "<group>"; };
 		25DA75681F43795700442F3F /* ProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		25DA756A1F43796400442F3F /* ProfileHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
+		25DA756C1F437F9600442F3F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		25DA756D1F437F9600442F3F /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		25E99FF61F21148800C1012B /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		25E99FF81F21149600C1012B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 			children = (
 				250C66911F2C06A30006BB8F /* BookCollectionViewCell.swift */,
 				250C66921F2C06A30006BB8F /* BookCollectionViewCell.xib */,
+				25DA756C1F437F9600442F3F /* MessageTableViewCell.swift */,
+				25DA756D1F437F9600442F3F /* MessageTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				251AA9571F1420D700B34960 /* Main.storyboard in Resources */,
 				25E9A0141F21526600C1012B /* ManuallyAddBookView.xib in Resources */,
 				25E9A0011F2123D900C1012B /* AddBookBarView.xib in Resources */,
+				25DA756F1F437F9600442F3F /* MessageTableViewCell.xib in Resources */,
 				250C66941F2C06A30006BB8F /* BookCollectionViewCell.xib in Resources */,
 				254096BB1F2E709E00ACF3B9 /* ScanBookView.xib in Resources */,
 				254096951F2D358000ACF3B9 /* DetailedBookView.xib in Resources */,
@@ -540,6 +547,7 @@
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
 				250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */,
+				25DA756E1F437F9600442F3F /* MessageTableViewCell.swift in Sources */,
 				2511F9741F1D313300DC8665 /* Router.swift in Sources */,
 				250C66931F2C06A30006BB8F /* BookCollectionViewCell.swift in Sources */,
 				2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */,

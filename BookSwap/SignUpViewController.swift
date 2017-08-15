@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
     }
     
     // NOTE: - Does this logic belong here?
+    // TODO: - Use textfield delegate to retrieve this info 
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
         if let firstName = signUpView.firstNameField.text,

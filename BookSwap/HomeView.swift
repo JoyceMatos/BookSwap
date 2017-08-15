@@ -35,7 +35,7 @@ class HomeView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(Nib.home, owner: self, options: nil)
         // collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView.register(UINib(nibName: "BookCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib(nibName: Nib.bookCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         addSubview(contentView)
         collectionView.isUserInteractionEnabled = true
         //        setupCollectionView()
@@ -89,8 +89,6 @@ class HomeView: UIView {
 //
 //        return 0
 //    }
-//
-//
-//
+
 //
 //}
