@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 
 // TODO: - Watch out for strong reference cycles
+// TODO: - Add viewModel
 
 class ProfileViewController: UIViewController {
     
@@ -27,7 +28,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         profileView.collectionView.delegate = self
         profileView.collectionView.dataSource = self
-        
         getUsersBooks()
     }
     
@@ -72,11 +72,9 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: width, height: width + heightAdjustment)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
@@ -89,8 +87,5 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
     }
-    
-    
-    
     
 }
