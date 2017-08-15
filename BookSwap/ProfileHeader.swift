@@ -1,18 +1,17 @@
 //
-//  ScanBookView.swift
+//  ProfileHeader.swift
 //  BookSwap
 //
-//  Created by Joyce Matos on 7/30/17.
+//  Created by Joyce Matos on 8/15/17.
 //  Copyright © 2017 Joyce Matos. All rights reserved.
 //
 
 import UIKit
 
-class ScanBookView: UIView {
+class ProfileHeader: UIView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var scanLabel: UILabel!
-    @IBOutlet weak var scanView: UIView!
+  
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +24,9 @@ class ScanBookView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed(Nib.scanView, owner: self, options: nil)
+        Bundle.main.loadNibNamed(Nib.profileHeader, owner: self, options: nil)
         addSubview(contentView)
     }
     
-
+    
 }

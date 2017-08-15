@@ -53,6 +53,8 @@
 		255271E41F279B4D008FF87F /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255271E31F279B4D008FF87F /* TestTableViewController.swift */; };
 		255843391F3A992A00238F83 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255843381F3A992A00238F83 /* NetworkingService.swift */; };
 		2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2558433C1F3CF48500238F83 /* ScanBookViewController.swift */; };
+		25DA75691F43795700442F3F /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DA75681F43795700442F3F /* ProfileHeader.swift */; };
+		25DA756B1F43796400442F3F /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DA756A1F43796400442F3F /* ProfileHeader.xib */; };
 		25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF41F21145100C1012B /* HomeViewController.swift */; };
 		25E99FF71F21148800C1012B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E99FF61F21148800C1012B /* HomeView.swift */; };
 		25E99FF91F21149600C1012B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E99FF81F21149600C1012B /* HomeView.xib */; };
@@ -116,6 +118,8 @@
 		255271E31F279B4D008FF87F /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		255843381F3A992A00238F83 /* NetworkingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		2558433C1F3CF48500238F83 /* ScanBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBookViewController.swift; sourceTree = "<group>"; };
+		25DA75681F43795700442F3F /* ProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		25DA756A1F43796400442F3F /* ProfileHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		25E99FF41F21145100C1012B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		25E99FF61F21148800C1012B /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		25E99FF81F21149600C1012B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				254096981F2D37DB00ACF3B9 /* Sign In Flow */,
 				254096A21F2E622B00ACF3B9 /* Home Flow */,
 				254096991F2D380100ACF3B9 /* Add Book Flow */,
+				25DA75671F43793200442F3F /* Profile Flow */,
 				254096A71F2E626800ACF3B9 /* Messages Flow */,
 				250C66901F2AC6FC0006BB8F /* Custom */,
 				25E9A0041F212A1700C1012B /* Cell */,
@@ -325,6 +330,15 @@
 			name = "Messages Flow";
 			sourceTree = "<group>";
 		};
+		25DA75671F43793200442F3F /* Profile Flow */ = {
+			isa = PBXGroup;
+			children = (
+				25DA75681F43795700442F3F /* ProfileHeader.swift */,
+				25DA756A1F43796400442F3F /* ProfileHeader.xib */,
+			);
+			name = "Profile Flow";
+			sourceTree = "<group>";
+		};
 		25E9A0041F212A1700C1012B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +430,7 @@
 			files = (
 				25E99FF91F21149600C1012B /* HomeView.xib in Resources */,
 				251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */,
+				25DA756B1F43796400442F3F /* ProfileHeader.xib in Resources */,
 				254096AF1F2E62B100ACF3B9 /* ChatView.xib in Resources */,
 				2511F9701F1C164A00DC8665 /* LocationView.xib in Resources */,
 				251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */,
@@ -497,6 +512,7 @@
 				25E99FFB1F2114A100C1012B /* HomeViewModel.swift in Sources */,
 				25E99FFD1F2123AF00C1012B /* AddBookViewController.swift in Sources */,
 				2511F96E1F1C163E00DC8665 /* LocationView.swift in Sources */,
+				25DA75691F43795700442F3F /* ProfileHeader.swift in Sources */,
 				250184461F1FE27C00C43BFF /* Secrets.swift in Sources */,
 				25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */,
 				25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */,

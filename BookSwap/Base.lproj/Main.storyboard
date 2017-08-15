@@ -130,7 +130,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZT-Vn-cmb" customClass="HomeView" customModule="BookSwap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="57" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="514"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-3e-FlB" customClass="ProfileHeader" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -257,12 +262,19 @@
                     <view key="view" contentMode="scaleToFill" id="fmA-Id-Whw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93409991260000003" green="0.53833818440000003" blue="0.52561187740000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-J9-cEG" customClass="ScanBookView" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSz-7P-W4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4310" y="481"/>
+            <point key="canvasLocation" x="4309.6000000000004" y="480.80959520239884"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lGS-qI-lHN">
@@ -391,12 +403,19 @@
                     <view key="view" contentMode="scaleToFill" id="9tB-qY-dTt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="544.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYC-c8-15t" customClass="SearchBookView" customModule="BookSwap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9Y-rx-DBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="1057"/>
+            <point key="canvasLocation" x="3092" y="1055.6221889055473"/>
         </scene>
     </scenes>
 </document>

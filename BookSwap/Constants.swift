@@ -39,5 +39,9 @@ struct Nib {
     static let manuallyAdd = "ManuallyAddBookView"
     static let detailedBook = "DetailedBookView"
     static let bookCollectionView = "BookView"
+    static let scanView = "ScanBookView"
+    static let searchView = "SearchBookView"
+    static let profileHeader = "ProfileHeader"
+
     
 }
