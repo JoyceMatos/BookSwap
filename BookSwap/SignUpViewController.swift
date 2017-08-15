@@ -11,6 +11,7 @@ import UIKit
 // TODO: - Remove anything that is not in use
 // TODO: - Remove all string literals
 // TODO: - Watch out for strong references
+// TODO: - Add keyboard observers
 
 class SignUpViewController: UIViewController {
     
@@ -107,4 +108,5 @@ extension SignUpViewController {
     }
     
 }
+
 

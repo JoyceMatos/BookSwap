@@ -11,7 +11,7 @@ import Foundation
 
 // TODO: - ContentView may not be needed
 
-final class SignUpView: UIView {
+class SignUpView: UIView {
     
     // MARK: - Properties
     
@@ -38,18 +38,34 @@ final class SignUpView: UIView {
         Bundle.main.loadNibNamed(Nib.signUp, owner: self, options: nil)
         addSubview(contentView)
         updateTextFields()
+        configureFields()
+    }
+    
+    func configureFields() {
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     func updateTextFields() {
         firstNameField.underline()
         lastNameField.underline()
-
         emailField.underline()
-
         passwordField.underline()
+    }
 
+}
+
+extension SignUpView: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.returnKeyType = .done
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
