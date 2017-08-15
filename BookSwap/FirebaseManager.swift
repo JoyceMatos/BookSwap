@@ -14,7 +14,6 @@ import FirebaseDatabase
 // TODO: - Refactor
 // TODO: - Update string literals for refs
 // TODO: - Handle errors
-// TODO: - Conform to API protocol
 // TODO: - Create enum that determines where to the database we are writing to
 // TODO: - Fix multithreading with qos: userInitiated
 
