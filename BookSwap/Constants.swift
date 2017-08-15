@@ -12,6 +12,7 @@ struct Ref {
     
     static let users = "users"
     static let libraries = "libraries"
+    static let library = "library"
     static let books = "books"
     
 }
