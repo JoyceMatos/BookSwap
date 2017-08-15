@@ -10,14 +10,12 @@ import UIKit
 import FirebaseAuth
 
 // TODO: - Watch out for strong reference cycles
-// TODO: - Get book objects
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileView: HomeView!
     let firebaseManager = FirebaseManager()
-    
-    let allBooks = [Book]()
+    let store = DataStore.shared
     
     // Remove these properties
     fileprivate let leftAndRightPadding: CGFloat = 52.0
@@ -30,48 +28,26 @@ class ProfileViewController: UIViewController {
         profileView.collectionView.delegate = self
         profileView.collectionView.dataSource = self
         
+        getUsersBooks()
+    }
+    
+    func getUsersBooks() {
         if let userID = Auth.auth().currentUser?.uid {
-            getLibrary(for: firebaseManager, userID: userID) { (libraryID) in
-                self.getBooks(for: self.firebaseManager, libraryID: libraryID, completion: { (bookIDs) in
-                    self.getUsersBooks(for: self.firebaseManager, from: bookIDs, completion: { (books) in
-                        
-                        for book in books {
-                            // TODO: - Create book objects out of these dictionaries
+            store.getUsersBooks(from: firebaseManager, for: userID, completion: { (success) in
+                if success {
+                        self.profileView.collectionView.reloadData()
 
-                        }
-                        
-                    })
-                })
-            }
+                } else {
+                    // Handle this case
+                    print("uh oh, error")
+                }
+            })
         }
     }
-    
     
     
 }
 
-extension ProfileViewController {
-    
-    func getLibrary(for service: NetworkingService, userID: String, completion: @escaping (String) -> Void) {
-        service.getLibrary(for: userID) { (libraryID) in
-            completion(libraryID)
-        }
-    }
-    
-    func getBooks(for service: NetworkingService, libraryID: String, completion: @escaping ([String]) ->Void) {
-        service.retrieveBooks(from: libraryID) { (allBookIDS) in
-            completion(allBookIDS)
-        }
-    }
-    
-    
-    func getUsersBooks(for service: NetworkingService, from bookIDs: [String], completion: @escaping ([String:Any]) -> Void) {
-        service.retrieveBooks(for: bookIDs) { (allBooks) in
-            completion(allBooks)
-        }
-    }
-    
-}
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -80,14 +56,14 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Uh, not quick enough")
         //   return viewModel.books.count
-        return DataStore.shared.books.count
+        return store.usersBooks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.bookCell, for: indexPath) as! BookCollectionViewCell
-        cell.titleLabel.text = "My books"
+        let book = store.usersBooks[indexPath.row]
+        cell.titleLabel.text = book.title
         return cell
     }
     

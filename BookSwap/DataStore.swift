@@ -8,10 +8,13 @@
 
 import Foundation
 
+// TODO: - Account for errors
+
 final class DataStore {
     
     static let shared = DataStore()
     var books: [Book] = []
+    var usersBooks: [Book] = []
     
     private init() { }
     
@@ -25,6 +28,22 @@ final class DataStore {
                 self.books.append(currentBook)
             }
             completion()
-            }
+        }
+    }
+    
+    func getUsersBooks(from service: NetworkingService, for userID: String, completion: @escaping (Bool) -> Void) {
+        service.getLibrary(for: userID) { (libraryID) in
+            service.retrieveBooks(from: libraryID, completion: { (bookIDs) in
+                service.retrieveBooks(for: bookIDs, completion: { (allBooks) in
+                    for book in allBooks {
+                        let bookDict = book.value as! [String: Any]
+                        let usersBook = Book(bookID: book.key, bookDict: bookDict)
+                        self.usersBooks.append(usersBook)
+                        print("These are ths books", self.usersBooks)
+                    }
+                    completion(true)
+                })
+            })
+        }  
     }
 }

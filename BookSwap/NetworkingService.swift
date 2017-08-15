@@ -8,6 +8,8 @@
 
 import Foundation
 
+// TODO: - Remove any method that is not in use
+
 protocol NetworkingService: class {
     
     // Authentication
