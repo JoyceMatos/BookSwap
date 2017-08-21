@@ -32,6 +32,7 @@ final class DataStore {
     }
     
     func getUsersBooks(from service: NetworkingService, for userID: String, completion: @escaping (Bool) -> Void) {
+        usersBooks.removeAll()
         service.getLibrary(for: userID) { (libraryID) in
             service.retrieveBooks(from: libraryID, completion: { (bookIDs) in
                 service.retrieveBooks(for: bookIDs, completion: { (allBooks) in
@@ -39,7 +40,6 @@ final class DataStore {
                         let bookDict = book.value as! [String: Any]
                         let usersBook = Book(bookID: book.key, bookDict: bookDict)
                         self.usersBooks.append(usersBook)
-                        print("These are ths books", self.usersBooks)
                     }
                     completion(true)
                 })

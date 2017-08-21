@@ -24,9 +24,7 @@ final class FirebaseManager: NetworkingService {
 // MARK: - Auth Methods
 
 extension FirebaseManager {
-    
-    // Create New User
-    
+        
     // NOTE: - Note in use yet (will be used once create method is refactors)
     func authenticate(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
         guard var newUser = newUser else {

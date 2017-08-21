@@ -152,11 +152,12 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="EIe-yk-JVh"/>
                     <connections>
                         <outlet property="profileView" destination="MZT-Vn-cmb" id="Ey0-yi-KRA"/>
+                        <segue destination="aSt-83-iVv" kind="show" identifier="showBookDetails" id="dkC-JC-TZ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApN-6h-M4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928.8" y="895.50224887556226"/>
+            <point key="canvasLocation" x="2686" y="1064"/>
         </scene>
         <!--Add Book-->
         <scene sceneID="Ujn-5i-H27">
@@ -281,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSz-7P-W4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4309.6000000000004" y="480.80959520239884"/>
+            <point key="canvasLocation" x="4366" y="272"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lGS-qI-lHN">
@@ -422,7 +423,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9Y-rx-DBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="1055.6221889055473"/>
+            <point key="canvasLocation" x="5081" y="272"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dkC-JC-TZ2"/>
+    </inferredMetricsTieBreakers>
 </document>

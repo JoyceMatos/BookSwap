@@ -36,7 +36,6 @@ class ProfileViewController: UIViewController {
             store.getUsersBooks(from: firebaseManager, for: userID, completion: { (success) in
                 if success {
                         self.profileView.collectionView.reloadData()
-
                 } else {
                     // Handle this case
                     print("uh oh, error")
@@ -85,7 +84,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
+        performSegue(withIdentifier: SegueIdentifier.userBookDetails, sender: nil)
     }
     
 }

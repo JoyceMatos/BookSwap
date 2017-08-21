@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// NOTE: - This file is not in use
+// NOTE: - ROUTE methods are not in use
 
 protocol Router: class {
     

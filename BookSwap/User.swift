@@ -23,7 +23,7 @@ struct User {
             "firstName" : firstName,
             "lastName" : lastName,
             "email" : email
-            ]
+        ]
         return userInfo
     }
 }

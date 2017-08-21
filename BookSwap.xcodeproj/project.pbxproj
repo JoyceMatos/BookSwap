@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C8AFF739C2CAFA89A886B4E /* Pods_BookSwap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED060ED86A722341791BB88C /* Pods_BookSwap.framework */; };
 		250184461F1FE27C00C43BFF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250184451F1FE27C00C43BFF /* Secrets.swift */; };
-		250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C668C1F2AC3E00006BB8F /* Protocols.swift */; };
 		250C668F1F2AC6800006BB8F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C668E1F2AC6800006BB8F /* CustomTextField.swift */; };
 		250C66931F2C06A30006BB8F /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C66911F2C06A30006BB8F /* BookCollectionViewCell.swift */; };
 		250C66941F2C06A30006BB8F /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 250C66921F2C06A30006BB8F /* BookCollectionViewCell.xib */; };
@@ -74,7 +73,6 @@
 
 /* Begin PBXFileReference section */
 		250184451F1FE27C00C43BFF /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		250C668C1F2AC3E00006BB8F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		250C668E1F2AC6800006BB8F /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		250C66911F2C06A30006BB8F /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		250C66921F2C06A30006BB8F /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			children = (
 				2511F9651F1986F200DC8665 /* Constants.swift */,
 				2511F9731F1D313300DC8665 /* Router.swift */,
-				250C668C1F2AC3E00006BB8F /* Protocols.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -546,7 +543,6 @@
 				2540969F1F2E56E300ACF3B9 /* Error.swift in Sources */,
 				251AA9521F1420D700B34960 /* AppDelegate.swift in Sources */,
 				251AA9711F156B2400B34960 /* Book.swift in Sources */,
-				250C668D1F2AC3E00006BB8F /* Protocols.swift in Sources */,
 				25DA756E1F437F9600442F3F /* MessageTableViewCell.swift in Sources */,
 				2511F9741F1D313300DC8665 /* Router.swift in Sources */,
 				250C66931F2C06A30006BB8F /* BookCollectionViewCell.swift in Sources */,
