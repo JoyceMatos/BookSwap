@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailedBookView" customModule="BookSwap" customModuleProvider="target">
             <connections>
-                <outlet property="authorLabel" destination="Lcv-gG-HgG" id="9QQ-Gx-yrY"/>
+                <outlet property="authorLabel" destination="Lcv-gG-HgG" id="QMO-qX-qsM"/>
                 <outlet property="categoriesLabel" destination="GFl-qm-7x3" id="gEj-So-u89"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ElK-gB-5d5"/>
                 <outlet property="ownerIcon" destination="6VB-F4-CvO" id="ol9-F0-0DN"/>

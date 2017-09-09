@@ -8,8 +8,6 @@
 
 import UIKit
 
-// TODO: - Fix tabBar. It doesn't appear when you go back from a segue
-
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeView: HomeView!
@@ -41,7 +39,17 @@ extension HomeViewController {
             }
         }
     }
+}
+
+extension HomeViewController {
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == SegueIdentifier.showDetailBook {
+//            let destVC = segue.destination as! DetailedBookViewController
+//            // This should VM
+//            destVC.book = DataStore.shared.books[indexPath.row]
+//        }
+//    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -92,8 +100,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
-        
+        let detailedVC = DetailedBookViewController()
+        detailedVC.book = DataStore.shared.books[indexPath.item]
+        print(detailedVC.book)
+       performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
     }
     
     
