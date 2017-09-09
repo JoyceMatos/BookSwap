@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bb2-bI-0Kf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -345,7 +345,7 @@
         <!--Detailed Book View Controller-->
         <scene sceneID="9gT-lt-gHo">
             <objects>
-                <viewController id="aSt-83-iVv" customClass="DetailedBookViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="aSt-83-iVv" customClass="DetailedBookViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kzi-4D-Jne"/>
                         <viewControllerLayoutGuide type="bottom" id="b6N-KG-cdS"/>
@@ -427,6 +427,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dkC-JC-TZ2"/>
+        <segue reference="ENm-L7-g8l"/>
     </inferredMetricsTieBreakers>
 </document>

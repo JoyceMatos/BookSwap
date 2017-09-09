@@ -184,13 +184,11 @@ extension FirebaseManager {
                     completion(true)
                 }
             } else {
-                
                 DispatchQueue.main.async {
                     completion(false)
                 }
             }
         }
-        
     }
     
 }
