@@ -31,6 +31,11 @@ class ProfileViewController: UIViewController {
         getUsersBooks()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     func getUsersBooks() {
         if let userID = Auth.auth().currentUser?.uid {
             store.getUsersBooks(from: firebaseManager, for: userID, completion: { (success) in
