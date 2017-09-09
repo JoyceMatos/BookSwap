@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="1013.6" y="896.40179910044981"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="bqH-e2-Wod">
             <objects>
                 <viewController id="IPQ-ac-JGE" customClass="ProfileViewController" customModule="BookSwap" customModuleProvider="target" sceneMemberID="viewController">
@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZT-Vn-cmb" customClass="HomeView" customModule="BookSwap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104" width="375" height="514"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -149,7 +149,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="EIe-yk-JVh"/>
+                    <navigationItem key="navigationItem" id="BbS-tN-ggW"/>
                     <connections>
                         <outlet property="profileView" destination="MZT-Vn-cmb" id="Ey0-yi-KRA"/>
                         <segue destination="aSt-83-iVv" kind="show" identifier="showBookDetails" id="dkC-JC-TZ2"/>
@@ -157,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ApN-6h-M4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="1064"/>
+            <point key="canvasLocation" x="3133.5999999999999" y="1085.3073463268368"/>
         </scene>
         <!--Add Book-->
         <scene sceneID="Ujn-5i-H27">
@@ -335,7 +335,7 @@
                         <segue destination="axq-Ft-WXH" kind="relationship" relationship="viewControllers" id="YWm-on-c0G"/>
                         <segue destination="STp-xK-mNh" kind="relationship" relationship="viewControllers" id="stn-Rc-b7Q"/>
                         <segue destination="PHP-rA-cPw" kind="relationship" relationship="viewControllers" id="uWx-cG-gD9"/>
-                        <segue destination="IPQ-ac-JGE" kind="relationship" relationship="viewControllers" id="JJ8-N2-gUY"/>
+                        <segue destination="RGv-aq-e0o" kind="relationship" relationship="viewControllers" id="JJ8-N2-gUY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8J0-cU-3W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -425,8 +425,27 @@
             </objects>
             <point key="canvasLocation" x="5081" y="272"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="ux9-Tu-NZT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RGv-aq-e0o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="EIe-yk-JVh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JcX-gM-mbC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IPQ-ac-JGE" kind="relationship" relationship="rootViewController" id="KXT-BH-Ggy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2k-rw-Rt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2249" y="1087"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ENm-L7-g8l"/>
+        <segue reference="dkC-JC-TZ2"/>
     </inferredMetricsTieBreakers>
 </document>
