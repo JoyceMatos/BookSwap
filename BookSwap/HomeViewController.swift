@@ -43,13 +43,13 @@ extension HomeViewController {
 
 extension HomeViewController {
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == SegueIdentifier.showDetailBook {
-//            let destVC = segue.destination as! DetailedBookViewController
-//            // This should VM
-//            destVC.book = DataStore.shared.books[indexPath.row]
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.showDetailBook {
+            let destVC = segue.destination as! DetailedBookViewController
+            // This should be passing data between two VMs
+            destVC.book = viewModel.selectedBook
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -59,7 +59,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Uh, not quick enough")
+        //   print("Uh, not quick enough")
         //   return viewModel.books.count
         return DataStore.shared.books.count
         
@@ -99,11 +99,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let detailedVC = DetailedBookViewController()
-        detailedVC.book = DataStore.shared.books[indexPath.item]
-        print(detailedVC.book)
-       performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
+        viewModel.selectedBook = DataStore.shared.books[indexPath.row]
+        performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
     }
     
     

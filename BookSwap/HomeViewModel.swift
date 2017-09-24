@@ -11,6 +11,7 @@ import Foundation
 struct HomeViewModel {
     
     let books: [Book]
+    var selectedBook: Book?
     
     static let numberOfSections = 1
     private let leftAndRightPadding = 32.0

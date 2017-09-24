@@ -28,7 +28,4 @@ class DetailedBookViewController: UIViewController {
     // TODO: - Trade Info
     // 1. Get book's userID
     // 2. Go to user brance and retrieve necessary info
-
-
-
 }
