@@ -47,7 +47,7 @@ extension HomeViewController {
         if segue.identifier == SegueIdentifier.showDetailBook {
             let destVC = segue.destination as! DetailedBookViewController
             // This should be passing data between two VMs
-            destVC.book = viewModel.selectedBook
+            destVC.book = self.viewModel.selectedBook
         }
     }
 }
@@ -100,7 +100,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selectedBook = DataStore.shared.books[indexPath.row]
-        performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
+            
+        }
     }
     
     

@@ -12,17 +12,27 @@ import UIKit
 
 class DetailedBookViewController: UIViewController {
     
-    var viewModel = DetailedBookView()
+    var detailedView = DetailedBookView()
     var book: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
-        DispatchQueue.main.async {
         print("Book title", self.book?.title)
         print("Book owner", self.book?.userID)
-        }
+            self.configureViews()
+
         
+    }
+    
+    // NOTE: - Just for testing
+    // TODO: - Separate logic
+    func configureViews() {
+        
+        detailedView.titleLabel.text = book?.title
+        detailedView.authorLabel.text = book?.author
+        detailedView.tradeWithLabel.text = book?.userID
+
     }
     
     // TODO: - Trade Info
