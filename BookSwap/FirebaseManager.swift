@@ -16,9 +16,7 @@ import FirebaseDatabase
 // TODO: - Fix multithreading with qos: userInitiated
 
 final class FirebaseManager: NetworkingService {
-    
     static var ref = Database.database().reference()
-    
 }
 
 // MARK: - Auth Methods
@@ -44,13 +42,11 @@ extension FirebaseManager {
             }
         })
     }
-    
 }
 
 // MARK: - Users Methods
 
 extension FirebaseManager {
-    
     
     // TODO: - Refactor and use auth method above!!
     func create(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void) {
@@ -114,7 +110,6 @@ extension FirebaseManager {
             }
         }
     }
-    
 }
 
 // MARK: - Libraries Methods
@@ -190,7 +185,6 @@ extension FirebaseManager {
             }
         }
     }
-    
 }
 
 // MARK: - Books Methods
@@ -209,7 +203,6 @@ extension FirebaseManager {
             }
             completion(books)
         })
-        
     }
     
     // Gets all books from book ref
@@ -226,9 +219,7 @@ extension FirebaseManager {
                 DispatchQueue.main.async {
                     completion(dictionary)
                 }
-                
             }
-            
         })
     }
     
@@ -250,7 +241,6 @@ extension FirebaseManager {
                     completion(nil)
                 }
             }
-            
         }
     }
     
@@ -270,13 +260,7 @@ extension FirebaseManager {
                     }
                     print("Here is our error", error?.localizedDescription)
                 }
-                
             })
         }
     }
-    
-    
-    
-    
 }
-

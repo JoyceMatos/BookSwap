@@ -12,7 +12,6 @@ class ProfileHeader: UIView {
 
     @IBOutlet var contentView: UIView!
   
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -27,6 +26,4 @@ class ProfileHeader: UIView {
         Bundle.main.loadNibNamed(Nib.profileHeader, owner: self, options: nil)
         addSubview(contentView)
     }
-    
-    
 }

@@ -9,14 +9,13 @@
 import UIKit
 
 class LocationView: UIView {
-
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var zipCodeField: UITextField!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
     // MARK: - View Lifecyle
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -37,6 +36,4 @@ class LocationView: UIView {
     func updateTextField() {
         zipCodeField.underline()
     }
- 
-    
 }

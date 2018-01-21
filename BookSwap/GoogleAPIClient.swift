@@ -32,7 +32,4 @@ final class GoogleAPIClient {
         }
         task.resume()
     }
-
-    
-    
 }

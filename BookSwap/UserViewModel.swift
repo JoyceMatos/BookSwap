@@ -9,7 +9,6 @@
 import Foundation
 
 struct UserViewModel {
-    
     var user: User
     
     init(userDetails: [String: Any]) {
@@ -22,5 +21,4 @@ struct UserViewModel {
 
         self.user = User(id: nil, profilePhoto: profilePhoto, firstName: firstName, lastName: lastName, email: email, location: location, libraryID: libraryID)
     }
-
 }

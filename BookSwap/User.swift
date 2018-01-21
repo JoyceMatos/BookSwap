@@ -9,7 +9,6 @@
 import Foundation
 
 struct User {
-    
     var id: String?
     var profilePhoto: URL?
     var firstName: String
@@ -29,11 +28,9 @@ struct User {
 }
 
 extension User {
-    
     init(_ details: [String: Any]) {
         self.email = details["email"] as! String
         self.firstName = details["firstName"] as! String
         self.lastName = details["lastName"] as! String
     }
-    
 }

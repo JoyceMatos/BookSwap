@@ -53,7 +53,6 @@ struct HomeViewModel {
         let book = books[indexPath.item]
         return book.userID
     }
-    
 }
 
 

@@ -9,7 +9,6 @@
 import Foundation
 
 class Dynamic<T> {
-    
     typealias Listener = (T) -> Void
     
     var listener: Listener?
@@ -32,5 +31,4 @@ class Dynamic<T> {
         self.listener = listener
         listener?(value)
     }
-    
 }

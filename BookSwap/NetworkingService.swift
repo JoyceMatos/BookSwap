@@ -11,7 +11,6 @@ import Foundation
 // TODO: - Remove any method that is not in use
 
 protocol NetworkingService: class {
-    
     // Authentication
     func authenticate(_ newUser: User?, password: String, completion: @escaping (Bool, User?) -> Void)
     
@@ -33,5 +32,4 @@ protocol NetworkingService: class {
     func retreiveAddedLibrary(_ completion: @escaping (String) -> Void) 
     func retrieveBooks(from libraryID: String, completion: @escaping ([String]) -> Void)
     func retrieveAddedBookID(from libraryID: String, completion: @escaping (String) -> Void)
-
 }

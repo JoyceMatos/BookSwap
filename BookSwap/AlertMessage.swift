@@ -9,8 +9,6 @@
 import Foundation
 
 struct AlertMessage {
-    
     let title: String
     let message: String
-    
 }

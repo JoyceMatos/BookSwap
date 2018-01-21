@@ -43,7 +43,6 @@ enum Endpoint {
 // NOTE: - This returns the appropriate endpoint string for any given enum
 
 extension Endpoint: Path {
-    
     var path: String {
         switch self {
         case .getISBN(let isbn):
@@ -55,7 +54,6 @@ extension Endpoint: Path {
 // NOTE: - This returns the url for each enum case based on it's value
 
 extension Endpoint {
-    
     var url: URL? {
         switch self {
         case .getISBN:
@@ -67,7 +65,6 @@ extension Endpoint {
 // NOTE: - This generates a url from a string
 
 extension Endpoint {
-    
     func generateURL(with parameter: String) -> URL? {
         let string = Endpoint.baseURL + parameter + Secrets.googleKey 
         return URL(string: string)

@@ -17,5 +17,4 @@ struct ManuallyAddBookViewModel {
     init(userID: String?) {
         self.userID = userID
     }
-    
 }

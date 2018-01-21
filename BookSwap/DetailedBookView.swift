@@ -33,6 +33,4 @@ class DetailedBookView: UIView {
         Bundle.main.loadNibNamed(Nib.detailedBook, owner: self, options: nil)
         addSubview(contentView)
     }
-   
-
 }

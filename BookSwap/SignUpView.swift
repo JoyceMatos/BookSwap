@@ -14,7 +14,6 @@ import Foundation
 class SignUpView: UIView {
     
     // MARK: - Properties
-    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -23,7 +22,6 @@ class SignUpView: UIView {
     @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: - View Lifecyle
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -54,11 +52,9 @@ class SignUpView: UIView {
         emailField.underline()
         passwordField.underline()
     }
-
 }
 
 extension SignUpView: UITextFieldDelegate {
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.returnKeyType = .done
     }
@@ -67,5 +63,4 @@ extension SignUpView: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
 }

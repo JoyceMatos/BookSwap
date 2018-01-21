@@ -9,7 +9,6 @@
 import Foundation
 
 struct Book {
-    
     var id: String?
     var title: String
     var author: String
@@ -38,11 +37,9 @@ struct Book {
         }
         return bookValue
     }
-    
 }
 
 extension Book {
-    
     init(title: String, author: String) {
         self.title = title
         self.author = author
@@ -54,5 +51,4 @@ extension Book {
         self.author = bookDict["author"] as! String
       //  self.userID = bookDict["userID"] as! String
     }
-    
 }

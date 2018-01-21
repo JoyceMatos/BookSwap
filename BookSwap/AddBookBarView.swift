@@ -29,5 +29,4 @@ class AddBookBarView: UIView {
         Bundle.main.loadNibNamed(Nib.addBookBar, owner: self, options: nil)
         addSubview(contentView)
     }
-    
 }

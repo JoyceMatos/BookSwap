@@ -18,7 +18,6 @@ protocol ErrorHandling: class {
 
 // NOTE: - This enum create an alert message for a particular error case
 enum ErrorType {
-    
     case retrievingBooks
     case deletingBook
     case deletingLibrary
@@ -40,8 +39,6 @@ enum ErrorType {
             return AlertMessage(title: "", message: "Had trouble adding book. Please try again later.")
         case .missingFields:
             return AlertMessage(title: "", message: "Please type in the title and/or author")
-            
         }
     }
-    
 }
