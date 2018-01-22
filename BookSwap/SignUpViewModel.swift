@@ -9,9 +9,11 @@
 import Foundation
 
 struct SignUpViewModel {
+    unowned let view: SignUpViewable
     unowned let networkingService: NetworkingService
     
-    init(networkingService: NetworkingService) {
+    init(view: SignUpViewable, networkingService: NetworkingService) {
+        self.view = view
         self.networkingService = networkingService
     }
     

@@ -76,6 +76,7 @@
 		E9FE614A201536D0003401BA /* MessagesFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FE6149201536D0003401BA /* MessagesFlow.storyboard */; };
 		E9FE614C20154B3B003401BA /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE614B20154B3B003401BA /* Injector.swift */; };
 		E9FE614E201560A1003401BA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE614D201560A1003401BA /* SignUpViewModel.swift */; };
+		E9FE61512015645B003401BA /* SignUpViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE61502015645B003401BA /* SignUpViewable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,7 @@
 		E9FE6149201536D0003401BA /* MessagesFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessagesFlow.storyboard; sourceTree = "<group>"; };
 		E9FE614B20154B3B003401BA /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		E9FE614D201560A1003401BA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		E9FE61502015645B003401BA /* SignUpViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewable.swift; sourceTree = "<group>"; };
 		ED060ED86A722341791BB88C /* Pods_BookSwap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookSwap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -393,6 +395,7 @@
 		E9FE614F201560E7003401BA /* Viewable */ = {
 			isa = PBXGroup;
 			children = (
+				E9FE61502015645B003401BA /* SignUpViewable.swift */,
 			);
 			name = Viewable;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				2558433D1F3CF48500238F83 /* ScanBookViewController.swift in Sources */,
 				254096B31F2E641800ACF3B9 /* ConfirmViewController.swift in Sources */,
 				251AA96D1F156AFB00B34960 /* GoogleAPIClient.swift in Sources */,
+				E9FE61512015645B003401BA /* SignUpViewable.swift in Sources */,
 				E9FE614E201560A1003401BA /* SignUpViewModel.swift in Sources */,
 				2511F9661F1986F200DC8665 /* Constants.swift in Sources */,
 			);

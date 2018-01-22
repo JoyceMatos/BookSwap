@@ -13,9 +13,11 @@ class Injector {
     let networkingService: FirebaseManager! = nil
     let dataStore: DataStore! = nil
     
+    let signUpView: SignUpViewable! = nil
+    
     // MARK: - ViewModels
     func signUpViewModel() -> SignUpViewModel {
-        return SignUpViewModel(networkingService: networkingService)
+        return SignUpViewModel(view: signUpView, networkingService: networkingService)
     }
     
     // TODO: - This should take in data store
