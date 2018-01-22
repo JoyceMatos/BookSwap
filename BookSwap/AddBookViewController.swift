@@ -17,7 +17,6 @@ import Firebase
 // TODO: - Error handling
 
 struct State {
-    
     var manualTapped: Bool
     var scannedTapped: Bool
 }
@@ -33,7 +32,6 @@ class AddBookViewController: UIViewController {
     
     var didTapManual = true
     var didTapScan = false
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +89,6 @@ class AddBookViewController: UIViewController {
             self.searchContainerView.alpha = 1.0
         }
     }
-    
 }
 
 

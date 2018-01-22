@@ -61,7 +61,6 @@ class SignUpViewController: UIViewController {
             else {
                 // Show error alert
             }
-
         }
     }
     
@@ -73,7 +72,6 @@ class SignUpViewController: UIViewController {
             destVC.viewModel = viewModel
         }
     }
-    
 }
 
 // MARK: - API Methods
@@ -107,7 +105,6 @@ extension SignUpViewController {
             }
         }
     }
-    
 }
 
 

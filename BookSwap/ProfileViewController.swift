@@ -48,8 +48,6 @@ class ProfileViewController: UIViewController {
             })
         }
     }
-    
-    
 }
 
 
@@ -91,5 +89,4 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: SegueIdentifier.userBookDetails, sender: nil)
     }
-    
 }

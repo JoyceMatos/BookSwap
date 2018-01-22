@@ -24,6 +24,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TODO: - Initialize viewmodel like so: viewModel = Injector.homeViewModel()
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
         fetch(from: firebaseManager)
@@ -32,7 +34,6 @@ class HomeViewController: UIViewController {
 
 // API Method
 extension HomeViewController {
-    
     func fetch(from service: NetworkingService) {
         DataStore.shared.getBooks(from: service) {
             DispatchQueue.main.async {
@@ -41,7 +42,6 @@ extension HomeViewController {
             }
         }
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -75,28 +75,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,insetForSectionAt section: Int) -> UIEdgeInsets {
-        
         return sectionInsets
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         performSegue(withIdentifier: SegueIdentifier.showDetailBook, sender: nil)
-        
     }
-    
-    
-    
 }
 

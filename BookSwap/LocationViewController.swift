@@ -54,7 +54,6 @@ class LocationViewController: UIViewController {
 }
 
 extension LocationViewController {
-    
     func addLocation(for service: NetworkingService, user: User, completion: @escaping (Bool, User?) -> Void) {
         guard let userID = user.id, let location = user.location else {
             print("No user ID, no location")

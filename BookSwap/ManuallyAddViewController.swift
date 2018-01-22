@@ -54,7 +54,6 @@ class ManuallyAddViewController: UIViewController {
             })
         }
     }
-    
 }
 
 // MARK: - API Methods
@@ -79,6 +78,4 @@ extension ManuallyAddViewController {
             })
         }
     }
-    
-    
 }

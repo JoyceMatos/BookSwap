@@ -9,13 +9,8 @@
 import UIKit
 
 class DetailedBookViewController: UIViewController {
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
     }
-
-
-
 }
