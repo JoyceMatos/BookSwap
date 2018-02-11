@@ -10,23 +10,21 @@ class Injector {
     
     init() {}
     
-    let networkingService: FirebaseManager! = nil
-    let dataStore: DataStore! = nil
-    
-    let signUpView: SignUpViewable! = nil
+    var networkingService: FirebaseManager! = nil
+    var dataStore: DataStore! = nil
     
     // MARK: - ViewModels
-    func signUpViewModel() -> SignUpViewModel {
-        return SignUpViewModel(view: signUpView, networkingService: networkingService)
+    func signUpViewModel(view: SignUpViewable) -> SignUpViewModel {
+        return SignUpViewModel(view: view, networkingService: networkingService)
     }
     
     // TODO: - This should take in data store
-    func homeViewModel() -> HomeViewModel {
-      return  HomeViewModel(books: <#T##[Book]#>) // This should take in the data store instead
-    }
-    
-    // TODO: - This should take in a networking service
-    func manuallyAddViewModel() -> ManuallyAddBookViewModel {
-       return ManuallyAddBookViewModel(userID: <#T##String?#>)
-    }
+//    func homeViewModel() -> HomeViewModel {
+//      return  HomeViewModel(books: <#T##[Book]#>) // This should take in the data store instead
+//    }
+//    
+//    // TODO: - This should take in a networking service
+//    func manuallyAddViewModel() -> ManuallyAddBookViewModel {
+//       return ManuallyAddBookViewModel(userID: <#T##String?#>)
+//    }
 }

@@ -17,7 +17,7 @@ final class DataStore {
     
     private init() { }
     
-    func getBooks(from service: NetworkingService, completion: @escaping () -> Void) {
+    func getBooks(from service: FirebaseManager, completion: @escaping () -> Void) {
         books.removeAll()
         service.retrieveAllBooks { (storedBooks) in
             // TODO: - Maybe use higher order function indead
@@ -30,7 +30,7 @@ final class DataStore {
         }
     }
     
-    func getUsersBooks(from service: NetworkingService, for userID: String, completion: @escaping (Bool) -> Void) {
+    func getUsersBooks(from service: FirebaseManager, for userID: String, completion: @escaping (Bool) -> Void) {
         usersBooks.removeAll()
         service.getLibrary(for: userID) { (libraryID) in
             service.retrieveBooks(from: libraryID, completion: { (bookIDs) in

@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 
 // API Method
 extension HomeViewController {
-    func fetch(from service: NetworkingService) {
+    func fetch(from service: FirebaseManager) {
         DataStore.shared.getBooks(from: service) {
             DispatchQueue.main.async {
                 self.viewModel = HomeViewModel(books: DataStore.shared.books)

@@ -12,7 +12,7 @@ typealias JSON = [String: Any]
 
 // TODO: - Refactor 
 
-final class GoogleAPIClient {
+final class GoogleAdapter {
     
     class func get(_ isbn: String, completion: @escaping (JSON?) -> Void) {
         guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn + "&key=" + Secrets.googleKey) else {

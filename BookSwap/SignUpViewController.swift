@@ -6,6 +6,7 @@
 //  Copyright © 2017 Joyce Matos. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 // TODO: - Remove anything that is not in use
@@ -14,19 +15,29 @@ import UIKit
 // TODO: - Add keyboard observers
 // TODO: - Add extension for viewable 
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, SignUpViewable {
     
     @IBOutlet weak var signUpView: SignUpView!
     var viewModel: UserViewModel!
+    var vm: SignUpViewModel!
     let firebaseManager = FirebaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        vm = Injector().signUpViewModel(view: self)
         addSignUpAction()
     }
     
-    // NOTE: - Does this logic belong here?
-    // TODO: - Use textfield delegate to retrieve this info 
+    // TODO: - Part of viewable. Set to signup details
+    var firstName = ""
+    
+    var lastName = ""
+    
+    var email = ""
+    
+    var password = ""
+    
+    // TODO: - All logic will be stored on the view instead
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
         if let firstName = signUpView.firstNameField.text,
@@ -79,7 +90,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController {
 
-    func signUp(for service: NetworkingService, user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
+    func signUp(for service: FirebaseManager, user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
         service.create(user, password: password, completion: { (success, user) in
             if success {
                 completion(true, user?.id)
@@ -91,7 +102,7 @@ extension SignUpViewController {
         })
     }
     
-    func createLibrary(for service: NetworkingService, userID: String, completion: @escaping (String?) -> Void) {
+    func createLibrary(for service: FirebaseManager, userID: String, completion: @escaping (String?) -> Void) {
         service.addLibrary(for: userID) { (success) in
             if success {
                 service.retreiveAddedLibrary({ (libraryID) in
