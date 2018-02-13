@@ -11,10 +11,12 @@ import Foundation
 struct SignUpViewModel {
     unowned let view: SignUpViewable
     unowned let networkingService: FirebaseManager
+    unowned let memoryCacheDataStore: MemoryCacheDataStoring
     
-    init(view: SignUpViewable, networkingService: FirebaseManager) {
+    init(view: SignUpViewable, networkingService: FirebaseManager, memoryCacheDataStore: MemoryCacheDataStoring) {
         self.view = view
         self.networkingService = networkingService
+        self.memoryCacheDataStore = memoryCacheDataStore
     }
     
     func viewDidLoad() {
@@ -24,6 +26,7 @@ struct SignUpViewModel {
         let user = User(["firstName": view.firstName, "lastName": view.lastName, "email": view.email])
         networkingService.create(user, password: view.password, completion: { (success, user) in
             if success {
+                self.memoryCacheDataStore.cachedUserID = user?.id
                 // TODO: - Store User ID, Authenticate, and switch on a isLoggedInBool?
               //  completion(true, user?.id)
             } else {

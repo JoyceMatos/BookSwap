@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
         vm = Injector.currentInjector.signUpViewModel(view: self)
         addSignUpAction()
     }
-
+    
     // TODO: - All logic will be stored on the view instead
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
         }
         return input
     }
-
+    
     // MARK: - Action Methods
     
     func addSignUpAction() {
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
 // MARK: - API Methods
 
 extension SignUpViewController {
-
+    
     func signUp(for service: FirebaseManager, user: User, with password: String, completion: @escaping (Bool, String?) -> Void) {
         service.create(user, password: password, completion: { (success, user) in
             if success {
@@ -134,7 +134,9 @@ extension SignUpViewController: SignUpViewable {
         }
         get {
             return signUpView.emailField.text ?? ""
-        }    }
+        }
+        
+    }
     
     var password: String {
         set {
@@ -145,5 +147,3 @@ extension SignUpViewController: SignUpViewable {
         }
     }
 }
-
-
