@@ -8,7 +8,20 @@
 
 class Injector {
     
-    init() {}
+    private static var injector: Injector!
+    
+    static var currentInjector: Injector {
+        return injector
+    }
+    
+    static func setInjector(_ injector: Injector) {
+        self.injector = injector
+    }
+        
+    init() {
+        networkingService = FirebaseManager()
+        dataStore = DataStore.shared
+    }
     
     var networkingService: FirebaseManager! = nil
     var dataStore: DataStore! = nil

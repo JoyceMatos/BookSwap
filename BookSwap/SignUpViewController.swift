@@ -15,7 +15,7 @@ import UIKit
 // TODO: - Add keyboard observers
 // TODO: - Add extension for viewable 
 
-class SignUpViewController: UIViewController, SignUpViewable {
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpView: SignUpView!
     var viewModel: UserViewModel!
@@ -24,19 +24,10 @@ class SignUpViewController: UIViewController, SignUpViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm = Injector().signUpViewModel(view: self)
+        vm = Injector.currentInjector.signUpViewModel(view: self)
         addSignUpAction()
     }
-    
-    // TODO: - Part of viewable. Set to signup details
-    var firstName = ""
-    
-    var lastName = ""
-    
-    var email = ""
-    
-    var password = ""
-    
+
     // TODO: - All logic will be stored on the view instead
     func retrieveAuthDetails() -> [String: Any] {
         var input = [String: Any]()
@@ -48,7 +39,7 @@ class SignUpViewController: UIViewController, SignUpViewable {
         }
         return input
     }
-    
+
     // MARK: - Action Methods
     
     func addSignUpAction() {
@@ -115,6 +106,42 @@ extension SignUpViewController {
                     })
                 })
             }
+        }
+    }
+}
+
+extension SignUpViewController: SignUpViewable {
+    var firstName: String {
+        set {
+            signUpView.firstNameField.text = newValue
+        }
+        get {
+            return signUpView.firstNameField.text ?? ""
+        }
+    }
+    
+    var lastName: String {
+        set {
+            signUpView.lastNameField.text = newValue
+        }
+        get {
+            return signUpView.lastNameField.text ?? ""
+        }    }
+    
+    var email: String {
+        set {
+            signUpView.emailField.text = newValue
+        }
+        get {
+            return signUpView.emailField.text ?? ""
+        }    }
+    
+    var password: String {
+        set {
+            signUpView.passwordField.text = newValue
+        }
+        get {
+            return signUpView.passwordField.text ?? ""
         }
     }
 }

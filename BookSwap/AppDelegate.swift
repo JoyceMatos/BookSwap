@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // TODO: - Initialize injector
-    
+        let injector = Injector()
+        Injector.setInjector(injector)
         
         return true
     }

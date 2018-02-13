@@ -24,6 +24,7 @@ struct SignUpViewModel {
         let user = User(["firstName": view.firstName, "lastName": view.lastName, "email": view.email])
         networkingService.create(user, password: view.password, completion: { (success, user) in
             if success {
+                // TODO: - Store User ID, Authenticate, and switch on a isLoggedInBool?
               //  completion(true, user?.id)
             } else {
                 print("Error signing up")
@@ -32,7 +33,7 @@ struct SignUpViewModel {
             }
         })
         
-        // TODO: - Create Library and segue on completion 
+        // TODO: - Create Library for user and segue on completion 
     }
 
     

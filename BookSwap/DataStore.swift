@@ -10,7 +10,7 @@ import Foundation
 
 // TODO: - Account for errors
 
-final class DataStore {
+class DataStore {
     static let shared = DataStore()
     var books: [Book] = []
     var usersBooks: [Book] = []

@@ -25,7 +25,7 @@
 		251AA95C1F1420D700B34960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251AA95A1F1420D700B34960 /* LaunchScreen.storyboard */; };
 		251AA96A1F151E7A00B34960 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 251AA9691F151E7A00B34960 /* GoogleService-Info.plist */; };
 		251AA96D1F156AFB00B34960 /* GoogleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA96C1F156AFB00B34960 /* GoogleAdapter.swift */; };
-		251AA96F1F156B1200B34960 /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA96E1F156B1200B34960 /* FirebaseInteractor.swift */; };
+		251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA96E1F156B1200B34960 /* FirebaseManager.swift */; };
 		251AA9711F156B2400B34960 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9701F156B2400B34960 /* Book.swift */; };
 		251AA9731F156C8D00B34960 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9721F156C8D00B34960 /* User.swift */; };
 		251AA9771F1590EE00B34960 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251AA9761F1590EE00B34960 /* UserViewModel.swift */; };
@@ -67,6 +67,8 @@
 		25E9A0121F21525B00C1012B /* ManuallyAddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E9A0111F21525B00C1012B /* ManuallyAddBookView.swift */; };
 		25E9A0141F21526600C1012B /* ManuallyAddBookView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25E9A0131F21526600C1012B /* ManuallyAddBookView.xib */; };
 		25F83AF01F1E6B59002031A6 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F83AEF1F1E6B59002031A6 /* Dynamic.swift */; };
+		E98DF6DD203270A300FDED00 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DF6DC203270A300FDED00 /* Library.swift */; };
+		E98DF6DF2032719900FDED00 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DF6DE2032719900FDED00 /* AuthInteractor.swift */; };
 		E9FE613E20152EF5003401BA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE613D20152EF5003401BA /* Secrets.swift */; };
 		E9FE61402015362D003401BA /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FE613F2015362D003401BA /* SignUpFlow.storyboard */; };
 		E9FE61422015366A003401BA /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FE61412015366A003401BA /* LoginFlow.storyboard */; };
@@ -99,7 +101,7 @@
 		251AA95D1F1420D700B34960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		251AA9691F151E7A00B34960 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		251AA96C1F156AFB00B34960 /* GoogleAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAdapter.swift; sourceTree = "<group>"; };
-		251AA96E1F156B1200B34960 /* FirebaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
+		251AA96E1F156B1200B34960 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		251AA9701F156B2400B34960 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		251AA9721F156C8D00B34960 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		251AA9761F1590EE00B34960 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +145,8 @@
 		25F83AEF1F1E6B59002031A6 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.release.xcconfig"; sourceTree = "<group>"; };
 		ABA7E4F378FC2E1EDA3BAA4C /* Pods-BookSwap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSwap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookSwap/Pods-BookSwap.debug.xcconfig"; sourceTree = "<group>"; };
+		E98DF6DC203270A300FDED00 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		E98DF6DE2032719900FDED00 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		E9FE613D20152EF5003401BA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		E9FE613F2015362D003401BA /* SignUpFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFlow.storyboard; sourceTree = "<group>"; };
 		E9FE61412015366A003401BA /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		251AA9501F1420D600B34960 /* BookSwap */ = {
 			isa = PBXGroup;
 			children = (
+				E98DF6E0203271A300FDED00 /* Interactors */,
 				251AA96B1F156ACF00B34960 /* Networking */,
 				251AA9671F14212900B34960 /* Helpers */,
 				251AA9631F1420EB00B34960 /* Model */,
@@ -216,6 +221,7 @@
 				254096A01F2E573900ACF3B9 /* AlertMessage.swift */,
 				251AA9721F156C8D00B34960 /* User.swift */,
 				25F83AEF1F1E6B59002031A6 /* Dynamic.swift */,
+				E98DF6DC203270A300FDED00 /* Library.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,7 +304,7 @@
 			children = (
 				251AA96C1F156AFB00B34960 /* GoogleAdapter.swift */,
 				255843381F3A992A00238F83 /* NetworkingService.swift */,
-				251AA96E1F156B1200B34960 /* FirebaseInteractor.swift */,
+				251AA96E1F156B1200B34960 /* FirebaseManager.swift */,
 				255271E11F254B4F008FF87F /* DataStore.swift */,
 				2540969E1F2E56E300ACF3B9 /* Error.swift */,
 			);
@@ -390,6 +396,14 @@
 				99746DBF9CFFAED1B4277797 /* Pods-BookSwap.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E98DF6E0203271A300FDED00 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				E98DF6DE2032719900FDED00 /* AuthInteractor.swift */,
+			);
+			name = Interactors;
 			sourceTree = "<group>";
 		};
 		E9FE614F201560E7003401BA /* Viewable */ = {
@@ -566,9 +580,11 @@
 				25DA75691F43795700442F3F /* ProfileHeader.swift in Sources */,
 				25E9A0031F2123F600C1012B /* AddBookViewModel.swift in Sources */,
 				25E99FF51F21145100C1012B /* HomeViewController.swift in Sources */,
+				E98DF6DD203270A300FDED00 /* Library.swift in Sources */,
 				254096C31F2E70F500ACF3B9 /* ChatView.swift in Sources */,
 				255271E21F254B4F008FF87F /* DataStore.swift in Sources */,
-				251AA96F1F156B1200B34960 /* FirebaseInteractor.swift in Sources */,
+				E98DF6DF2032719900FDED00 /* AuthInteractor.swift in Sources */,
+				251AA96F1F156B1200B34960 /* FirebaseManager.swift in Sources */,
 				255843391F3A992A00238F83 /* NetworkingService.swift in Sources */,
 				25E99FFF1F2123C200C1012B /* AddBookBarView.swift in Sources */,
 				254096931F2D357600ACF3B9 /* DetailedBookView.swift in Sources */,

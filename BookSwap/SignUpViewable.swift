@@ -8,7 +8,7 @@
 
 protocol SignUpViewable: class {
     var firstName: String { get set }
-    var lastName: String { get set }
+    var lastName: String { get set}
     var email: String { get set }
     var password: String { get set }
 }
