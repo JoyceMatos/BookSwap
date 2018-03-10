@@ -9,6 +9,7 @@
 class MemoryCacheDataStore: MemoryCacheDataStoring {
     var cachedUserID: String?
     var cachedLibrary: Library!
+    var cachedLibraryID: String?
     
     func clear() {
         cachedLibrary = nil

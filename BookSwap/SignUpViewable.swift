@@ -11,4 +11,6 @@ protocol SignUpViewable: class {
     var lastName: String { get set}
     var email: String { get set }
     var password: String { get set }
+    
+    func showLocationScreen()
 }

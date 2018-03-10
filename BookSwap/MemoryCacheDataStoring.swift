@@ -8,5 +8,6 @@
 
 protocol MemoryCacheDataStoring: class {
     var cachedUserID: String? { get set }
+    var cachedLibraryID: String? { get set }
     var cachedLibrary: Library! { get set }
 }

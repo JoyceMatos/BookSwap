@@ -71,6 +71,8 @@
 		E98DF6DF2032719900FDED00 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DF6DE2032719900FDED00 /* AuthInteractor.swift */; };
 		E98DF6E4203278CB00FDED00 /* MemoryCacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DF6E3203278CB00FDED00 /* MemoryCacheDataStore.swift */; };
 		E98DF6E82032799000FDED00 /* MemoryCacheDataStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98DF6E72032799000FDED00 /* MemoryCacheDataStoring.swift */; };
+		E997F32E2054752F00D9151B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997F32D2054752F00D9151B /* LocationViewModel.swift */; };
+		E997F3302054756E00D9151B /* LocationViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997F32F2054756E00D9151B /* LocationViewable.swift */; };
 		E9FE613E20152EF5003401BA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE613D20152EF5003401BA /* Secrets.swift */; };
 		E9FE61402015362D003401BA /* SignUpFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FE613F2015362D003401BA /* SignUpFlow.storyboard */; };
 		E9FE61422015366A003401BA /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9FE61412015366A003401BA /* LoginFlow.storyboard */; };
@@ -151,6 +153,8 @@
 		E98DF6DE2032719900FDED00 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		E98DF6E3203278CB00FDED00 /* MemoryCacheDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCacheDataStore.swift; sourceTree = "<group>"; };
 		E98DF6E72032799000FDED00 /* MemoryCacheDataStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCacheDataStoring.swift; sourceTree = "<group>"; };
+		E997F32D2054752F00D9151B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		E997F32F2054756E00D9151B /* LocationViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewable.swift; sourceTree = "<group>"; };
 		E9FE613D20152EF5003401BA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		E9FE613F2015362D003401BA /* SignUpFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpFlow.storyboard; sourceTree = "<group>"; };
 		E9FE61412015366A003401BA /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			children = (
 				251AA9761F1590EE00B34960 /* UserViewModel.swift */,
 				E9FE614D201560A1003401BA /* SignUpViewModel.swift */,
+				E997F32D2054752F00D9151B /* LocationViewModel.swift */,
 				25E99FFA1F2114A100C1012B /* HomeViewModel.swift */,
 				25E9A0021F2123F600C1012B /* AddBookViewModel.swift */,
 				25E9A00F1F21524000C1012B /* ManuallyAddViewModel.swift */,
@@ -432,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				E9FE61502015645B003401BA /* SignUpViewable.swift */,
+				E997F32F2054756E00D9151B /* LocationViewable.swift */,
 			);
 			name = Viewable;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				254096C11F2E70D900ACF3B9 /* MessagesView.swift in Sources */,
 				250C668F1F2AC6800006BB8F /* CustomTextField.swift in Sources */,
 				254096B11F2E634100ACF3B9 /* ConfirmView.swift in Sources */,
+				E997F32E2054752F00D9151B /* LocationViewModel.swift in Sources */,
 				254096A11F2E573900ACF3B9 /* AlertMessage.swift in Sources */,
 				254096BD1F2E70B000ACF3B9 /* SearchBookView.swift in Sources */,
 				E98DF6E82032799000FDED00 /* MemoryCacheDataStoring.swift in Sources */,
@@ -621,6 +628,7 @@
 				25E99FF71F21148800C1012B /* HomeView.swift in Sources */,
 				251AA9771F1590EE00B34960 /* UserViewModel.swift in Sources */,
 				2511F9681F19889E00DC8665 /* LocationViewController.swift in Sources */,
+				E997F3302054756E00D9151B /* LocationViewable.swift in Sources */,
 				254096B51F2E702A00ACF3B9 /* MessagesViewController.swift in Sources */,
 				25E9A0121F21525B00C1012B /* ManuallyAddBookView.swift in Sources */,
 				25E9A0101F21524000C1012B /* ManuallyAddViewModel.swift in Sources */,

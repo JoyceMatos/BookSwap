@@ -16,21 +16,13 @@ import UIKit
 class LocationViewController: UIViewController {
     
     @IBOutlet weak var locationView: LocationView!
-    var viewModel: UserViewModel!
-    let firebaseManager = FirebaseManager()
-    
+    var viewModel: LocationViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = Injector.currentInjector.locationViewModel(view: self)
+
         addNextAction()
-    }
-    
-    // TODO: - Check if is valid
-    func retrieveLocation() -> String {
-        var location = String()
-        if let zipCode = locationView.zipCodeField.text {
-            location = zipCode
-        }
-        return location
     }
     
     func addNextAction() {
@@ -38,35 +30,22 @@ class LocationViewController: UIViewController {
     }
     
     func nextBtnTapped() {
-        let stringLocation = retrieveLocation()
-        let location = Int(stringLocation)
-        viewModel.user.location = location
-       
-        addLocation(for: firebaseManager, user: viewModel.user) { (success, user) in
-                if success {
-                    self.performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: nil )
-                } else {
-                    print("We have an error")
-                    // Handle case
-                }
-            }
-        }
+        viewModel.didTapNext()
+    }
 }
 
-extension LocationViewController {
-    func addLocation(for service: FirebaseManager, user: User, completion: @escaping (Bool, User?) -> Void) {
-        guard let userID = user.id, let location = user.location else {
-            print("No user ID, no location")
-            // Handle this
-            return
+
+extension LocationViewController: LocationViewable {
+    var location: String {
+        get {
+            return locationView.zipCodeField.text ?? ""
         }
+        set {
+            locationView.zipCodeField.text = newValue
+        }
+    }
     
-        service.addUserLocation(userID, location: location) { (success) in
-            if success {
-                completion(true, user)
-            } else {
-                completion(false, nil)
-            }
-        }
+    func showHomeScreen() {
+       self.performSegue(withIdentifier: SegueIdentifier.showTabBar, sender: nil )
     }
 }

@@ -33,6 +33,10 @@ class Injector {
         return SignUpViewModel(view: view, networkingService: networkingService, memoryCacheDataStore: memoryCacheDataStore)
     }
     
+    func locationViewModel(view: LocationViewable) -> LocationViewModel {
+        return LocationViewModel(view: view, networkingService: networkingService, memoryCacheDataStore: memoryCacheDataStore)
+    }
+    
     // TODO: - This should take in data store
 //    func homeViewModel() -> HomeViewModel {
 //      return  HomeViewModel(books: <#T##[Book]#>) // This should take in the data store instead
